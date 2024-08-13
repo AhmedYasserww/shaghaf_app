@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:shagaf/core/utils/app_router.dart';
+
+void main() {
+  runApp(const ShaghafApp());
+}
+
+class ShaghafApp extends StatelessWidget {
+  const ShaghafApp({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routerConfig:AppRouter.router,
+      debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+        textTheme: GoogleFonts.comfortaaTextTheme()
+        ),
+    );
+
+  }
+}
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Image.asset("assets/images/Game day-amico 1.jpg"),
+          Text("AhmedYasser , omar ",style: TextStyle(fontSize: 30),)
+        ],
+      ),
+    );
+  }
+}
+
