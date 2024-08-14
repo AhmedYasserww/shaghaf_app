@@ -10,19 +10,24 @@ void main() {
 class ShaghafApp extends StatelessWidget {
   const ShaghafApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig:AppRouter.router,
-      debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-        textTheme: GoogleFonts.comfortaaTextTheme()
-        ),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      // Use builder only if you need to use library outside ScreenUtilInit context
+      builder: (_, child) {
+        return MaterialApp.router(
+          routerConfig: AppRouter.router,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(textTheme: GoogleFonts.comfortaaTextTheme()),
+        );
+      },
     );
-
   }
 }
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -32,10 +37,12 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           Image.asset("assets/images/Game day-amico 1.jpg"),
-          Text("AhmedYasser , omar ",style: TextStyle(fontSize: 30),)
+          Text(
+            "AhmedYasser , omar ",
+            style: TextStyle(fontSize: 30),
+          )
         ],
       ),
     );
   }
 }
-
