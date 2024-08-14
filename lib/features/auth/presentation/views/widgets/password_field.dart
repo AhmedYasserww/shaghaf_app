@@ -9,21 +9,25 @@ class PasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? _password;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          "Password",
-          style: Styles.textStyle14,
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
-        CustomTextFormField(onSaved: (value){
-          _password = value;
-          print(_password);
-        }, hintText: "Enter your password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
-      ],
+    return SizedBox(
+      height: 62.h,
+      width: 323.w,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Password",
+            style: Styles.textStyle14,
+          ),
+          SizedBox(
+            height: 5.h,
+          ),
+          CustomTextFormField(onSaved: (value){
+            _password = value;
+            print(_password);
+          }, hintText: "Enter your password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
+        ],
+      ),
     );
   }
 }

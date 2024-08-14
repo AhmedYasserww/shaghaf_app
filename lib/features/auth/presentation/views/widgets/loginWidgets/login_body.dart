@@ -11,19 +11,20 @@ class LoginBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const CustomAppbarForAuth(),
-          SizedBox(height: 36.h,),
-          Center(child: CustomImage(width: 140.w, height: 235.25.h, url: AssetsData.logo)),
-          SizedBox(height: 32.75.h,),
-          Center(child: LoginDetails()),
-          SizedBox(
-            height: 156.h,
-          ),
-        ],
+      child: Padding(
+        padding: EdgeInsets.only(top: 60.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CustomAppbarForAuth(),
+            SizedBox(height: 36.h,),
+            const Center(child: CustomImage(width: 140, height: 235.25, url: AssetsData.logo)),
+            SizedBox(height: 32.75.h,),
+            const Center(child: LoginDetails()),
+
+          ],
+        ),
       ),
     );
   }

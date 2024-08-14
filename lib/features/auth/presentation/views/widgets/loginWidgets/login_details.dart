@@ -40,7 +40,9 @@ class LoginDetails extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomRight,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kForgetPassword);
+                  },
                   child: Container(
                     height: 11.h,
                     child: Text(
@@ -77,7 +79,7 @@ class LoginDetails extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     "Don’t have an account? ",
                     style: Styles.textStyle10,
                   ),

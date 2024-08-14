@@ -69,7 +69,7 @@ class SignUpDetails extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     "Already  have an account? ",
                     style: Styles.textStyle10,
                   ),
