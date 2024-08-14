@@ -9,22 +9,26 @@ class UserNameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? _userName;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          "User Name",
-          style: Styles.textStyle14,
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
-        CustomTextFormField(onSaved: (value){
-          _userName = value;
-          print(_userName);
-        }, hintText: "Enter your name", icon: Icons.person, textInputType: TextInputType.name),
+    return SizedBox(
+      height: 62.h,
+      width: 323.w,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "User Name",
+            style: Styles.textStyle14,
+          ),
+          SizedBox(
+            height: 5.h,
+          ),
+          CustomTextFormField(onSaved: (value){
+            _userName = value;
+            print(_userName);
+          }, hintText: "Enter your name", icon: Icons.person, textInputType: TextInputType.name),
 
-      ],
+        ],
+      ),
     );
   }
 }

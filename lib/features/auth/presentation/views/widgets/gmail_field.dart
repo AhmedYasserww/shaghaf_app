@@ -9,22 +9,26 @@ class GmailField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? _gmail;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          "Gmail",
-          style: Styles.textStyle14,
-        ),
-        SizedBox(
-          height: 5.h,
-        ),
-        CustomTextFormField(onSaved: (value){
-          _gmail = value;
-          print(_gmail);
-        }, hintText: "Enter your gmail", icon: Icons.email, textInputType: TextInputType.emailAddress),
+    return SizedBox(
+      height: 62.h,
+      width: 323.w,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Gmail",
+            style: Styles.textStyle14,
+          ),
+          SizedBox(
+            height: 5.h,
+          ),
+          CustomTextFormField(onSaved: (value){
+            _gmail = value;
+            print(_gmail);
+          }, hintText: "Enter your gmail", icon: Icons.email, textInputType: TextInputType.emailAddress),
 
-      ],
+        ],
+      ),
     );
   }
 }
