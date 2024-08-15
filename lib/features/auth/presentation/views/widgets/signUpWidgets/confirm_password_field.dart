@@ -22,7 +22,6 @@ class ConfirmPasswordField extends StatelessWidget {
         ),
         CustomTextFormField(onSaved: (value){
           _confirmPassword = value;
-          print(_confirmPassword);
         }, hintText: "Confirm password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
       ],
     );

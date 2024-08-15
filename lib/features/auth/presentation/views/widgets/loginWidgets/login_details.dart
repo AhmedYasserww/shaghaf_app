@@ -42,7 +42,7 @@ class LoginDetails extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(AppRouter.kForgetPassword);
                   },
-                  child: Container(
+                  child: SizedBox(
                     height: 11.h,
                     child: Text(
                       "Forget Password?",
@@ -65,7 +65,6 @@ class LoginDetails extends StatelessWidget {
                         if (formState.currentState!.validate()) {
                           formState.currentState!.save();
                         } else {
-                          print("not valid");
                         }
                       },
                     ),

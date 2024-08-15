@@ -56,7 +56,6 @@ class SignUpDetails extends StatelessWidget {
                         if (formState.currentState!.validate()) {
                           formState.currentState!.save();
                         } else {
-                          print("not valid");
                         }
                       },
                     ),

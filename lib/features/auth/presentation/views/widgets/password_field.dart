@@ -21,7 +21,6 @@ class PasswordField extends StatelessWidget {
         ),
         CustomTextFormField(onSaved: (value){
           _password = value;
-          print(_password);
         }, hintText: "Enter your password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
       ],
     );

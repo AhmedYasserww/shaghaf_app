@@ -21,7 +21,6 @@ class GmailField extends StatelessWidget {
         ),
         CustomTextFormField(onSaved: (value){
           _gmail = value;
-          print(_gmail);
         }, hintText: "Enter your gmail", icon: Icons.email, textInputType: TextInputType.emailAddress),
 
       ],
