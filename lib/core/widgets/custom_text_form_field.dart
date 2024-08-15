@@ -33,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
         constraints: BoxConstraints(
           maxWidth: 323.w,
-          maxHeight: 36.h,
+          maxHeight: 35.h,
         ),
       ),
       keyboardType: textInputType,

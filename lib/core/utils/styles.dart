@@ -1,29 +1,30 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 abstract class Styles {
-  static const textStyle12 = TextStyle(
-    fontSize: 12,
+  static  TextStyle textStyle12 = TextStyle(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w500,
   );
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
+  static  TextStyle textStyle20 = TextStyle(
+    fontSize: 20.sp,
     fontWeight: FontWeight.w600
   );
-  static const textStyle10 = TextStyle(
-    fontSize: 10,
+  static  TextStyle textStyle10 = TextStyle(
+    fontSize: 10.sp,
     fontWeight: FontWeight.w400,
 
   );
-  static const textStyle14 = TextStyle(
-    fontSize: 14,
+  static  TextStyle textStyle14 = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
   );
 
-  static const textStyle16 = TextStyle(
-    fontSize: 16,
+  static  TextStyle textStyle16 = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.w400,
   );
-  static const textStyle17 = TextStyle(
-    fontSize: 17,
+  static  TextStyle textStyle17 = TextStyle(
+    fontSize: 17.sp,
     fontWeight: FontWeight.w400,
   );
 }
