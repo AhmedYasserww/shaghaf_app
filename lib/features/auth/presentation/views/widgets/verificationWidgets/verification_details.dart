@@ -68,7 +68,6 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                   child: CustomButton(
                     text: "verify",
                     onPressed: () {
-                      print(widget.testVerificationCode);
                         return showAlertDialog(context);
                     },
                   ),

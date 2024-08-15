@@ -45,7 +45,6 @@ class ForgetPasswordDetails extends StatelessWidget {
                           formState.currentState!.save();
                           GoRouter.of(context).push(AppRouter.kVerification);
                         } else {
-                          print("not valid");
                         }
                       },
                     ),

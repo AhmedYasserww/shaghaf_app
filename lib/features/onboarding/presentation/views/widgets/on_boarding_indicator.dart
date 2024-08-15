@@ -4,9 +4,9 @@ class OnboardingIndicators extends StatelessWidget {
   final int currentIndex;
 
   const OnboardingIndicators({
-    Key? key,
+    super.key,
     required this.currentIndex,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,10 @@ class OnboardingIndicators extends StatelessWidget {
       children: List.generate(3, (index) {
         return Container(
           margin: EdgeInsets.symmetric(horizontal: 5.w),
-          width: 18.w,
-          height: 18.h,
+          width: 15.r,
+          height: 15.r,
           decoration: BoxDecoration(
-            color: index == currentIndex ? Colors.orange : Colors.brown,
+            color: index == currentIndex ? const Color(0xffF04C29) : const Color(0xffF04C29,).withOpacity(.5),
             shape: BoxShape.circle,
           ),
         );

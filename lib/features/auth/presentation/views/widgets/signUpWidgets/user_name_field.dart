@@ -21,7 +21,6 @@ class UserNameField extends StatelessWidget {
         ),
         CustomTextFormField(onSaved: (value){
           _userName = value;
-          print(_userName);
         }, hintText: "Enter your name", icon: Icons.person, textInputType: TextInputType.name),
 
       ],

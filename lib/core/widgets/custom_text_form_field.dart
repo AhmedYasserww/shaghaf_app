@@ -36,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
           maxWidth: 323.w,
           maxHeight: 36.h,
         ),
-        errorStyle: TextStyle(height: 10,fontSize: 0),
+        errorStyle: const TextStyle(height: 10,fontSize: 0),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide(width: 2.w, color: Colors.red), // Thicker red border on error

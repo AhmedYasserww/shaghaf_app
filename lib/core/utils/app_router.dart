@@ -1,7 +1,10 @@
 import 'package:go_router/go_router.dart';
+import 'package:shagaf/features/auth/presentation/views/forget_password_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
+import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
 import 'package:shagaf/features/onboarding/presentation/views/home_view.dart';
+import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
 
 
 abstract class AppRouter {
@@ -32,8 +35,12 @@ abstract class AppRouter {
           builder: (context, state) => const SignUpScreen(),
         ),
         GoRoute(
-          path: kLogin,
-          builder: (context, state) => const LoginScreen(),
+          path: kForgetPassword,
+          builder: (context, state) => const ForgetPasswordScreen(),
+        ),
+        GoRoute(
+          path: kVerification,
+          builder: (context, state) => const VerificationScreen(),
         ),
       ]);
 }
