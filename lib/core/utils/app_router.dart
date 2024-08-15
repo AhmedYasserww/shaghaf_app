@@ -1,16 +1,29 @@
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
+import 'package:shagaf/features/onboarding/presentation/views/home_view.dart';
 
 import '../../features/onboarding/presentation/views/splash_view.dart';
 
 abstract class AppRouter {
   static const kSignUp = '/signUp';
   static const kLogin = '/login';
+  static const kSplashScreen = '/splashScreen';
+  static const kHomeView = '/homeView';
+
+
   static final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
+          builder: (context, state) => const SplashView()
+        ),
+        GoRoute(
+            path:kHomeView,
+            builder: (context, state) => const HomeView()
+        ),
+        GoRoute(
+          path: kLogin,
           builder: (context, state) => const LoginScreen(),
         ),
         GoRoute(

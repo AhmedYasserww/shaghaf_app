@@ -28,21 +28,4 @@ class ShaghafApp extends StatelessWidget {
   }
 }
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Image.asset("assets/images/Game day-amico 1.jpg"),
-          Text(
-            "AhmedYasser , omar ",
-            style: TextStyle(fontSize: 30),
-          )
-        ],
-      ),
-    );
-  }
-}
