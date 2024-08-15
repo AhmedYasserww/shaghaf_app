@@ -5,7 +5,7 @@ import 'package:shagaf/core/widgets/custom_image.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/custom_appbar_for_auth.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/verificationWidgets/verification_details.dart';
 class VerificationBody extends StatelessWidget {
-  const VerificationBody({Key? key}) : super(key: key);
+  const VerificationBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class VerificationBody extends StatelessWidget {
             SizedBox(height: 36.h,),
             const Center(child: CustomImage(width: 140, height: 235.25, url: AssetsData.logo)),
             SizedBox(height: 32.75.h,),
-            const Center(child: VerificationDetails()),
+            Center(child: VerificationDetails()),
           ],
         ),
       ),

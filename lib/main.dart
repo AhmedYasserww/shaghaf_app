@@ -37,7 +37,7 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           Image.asset("assets/images/Game day-amico 1.jpg"),
-          Text(
+          const Text(
             "AhmedYasser , omar ",
             style: TextStyle(fontSize: 30),
           )

@@ -6,7 +6,7 @@ import 'package:shagaf/features/auth/presentation/views/widgets/custom_appbar_fo
 import 'package:shagaf/features/auth/presentation/views/widgets/loginWidgets/login_details.dart';
 
 class LoginBody extends StatelessWidget {
-  const LoginBody({Key? key}) : super(key: key);
+  const LoginBody({super.key});
 
   @override
   Widget build(BuildContext context) {

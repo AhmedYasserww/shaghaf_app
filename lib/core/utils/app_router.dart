@@ -4,7 +4,6 @@ import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
 
-import '../../features/onboarding/presentation/views/splash_view.dart';
 
 abstract class AppRouter {
   static const kSignUp = '/signUp';

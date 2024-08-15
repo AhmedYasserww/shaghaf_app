@@ -7,7 +7,7 @@ import 'package:shagaf/core/utils/styles.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/gmail_field.dart';
 class ForgetPasswordDetails extends StatelessWidget {
-  const ForgetPasswordDetails({Key? key}) : super(key: key);
+  const ForgetPasswordDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,10 @@ class ForgetPasswordDetails extends StatelessWidget {
               SizedBox(height: 13.h,),
               Text("Enter your gmail, we will send you confirmation code",style: Styles.textStyle12.copyWith(
                 fontWeight: FontWeight.w400,
-                color: Color(0xff787878)
+                color: const Color(0xff787878)
               ),),
               SizedBox(height: 47.h,),
-              GmailField(),
+              const GmailField(),
               SizedBox(height: 24.h,),
               Row(
                 children: [

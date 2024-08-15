@@ -12,7 +12,7 @@ import 'package:shagaf/features/auth/presentation/views/widgets/signUpWidgets/us
 import '../../../../../../constants.dart';
 
 class SignUpDetails extends StatelessWidget {
-  const SignUpDetails({Key? key}) : super(key: key);
+  const SignUpDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +31,19 @@ class SignUpDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GmailField(),
+              const GmailField(),
               SizedBox(
                 height: 19.h,
               ),
-              UserNameField(),
+              const UserNameField(),
               SizedBox(
                 height: 19.h,
               ),
-              PasswordField(),
+              const PasswordField(),
               SizedBox(
                 height: 19.h,
               ),
-              ConfirmPasswordField(),
+              const ConfirmPasswordField(),
               SizedBox(
                 height: 19.h,
               ),
