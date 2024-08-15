@@ -6,7 +6,7 @@ import 'package:shagaf/features/auth/presentation/views/widgets/signUpWidgets/si
 import '../../../../../../core/utils/assets.dart';
 import '../../../../../../core/widgets/custom_image.dart';
 class SignUpBody extends StatelessWidget {
-  const SignUpBody({Key? key}) : super(key: key);
+  const SignUpBody({super.key});
 
   @override
   Widget build(BuildContext context) {

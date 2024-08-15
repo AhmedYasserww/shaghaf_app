@@ -28,11 +28,11 @@ class LoginDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GmailField(),
+              const GmailField(),
               SizedBox(
                 height: 24.h,
               ),
-              PasswordField(),
+              const PasswordField(),
               SizedBox(
                 height: 6.h,
               ),

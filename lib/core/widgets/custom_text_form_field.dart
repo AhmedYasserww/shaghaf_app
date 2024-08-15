@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/utils/styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({Key? key, required this.onSaved, required this.hintText, required this.icon, required this.textInputType}) : super(key: key);
+  const CustomTextFormField({super.key, required this.onSaved, required this.hintText, required this.icon, required this.textInputType});
   final void Function(String?) onSaved;
   final String hintText;
   final IconData icon;
@@ -14,8 +14,9 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       validator: (value) {
         if (value!.isEmpty) {
-          return "message";
+          return "";
         }
+        return null;
       },
       onSaved: (value) {
         onSaved(value);
@@ -33,7 +34,12 @@ class CustomTextFormField extends StatelessWidget {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
         constraints: BoxConstraints(
           maxWidth: 323.w,
-          maxHeight: 35.h,
+          maxHeight: 36.h,
+        ),
+        errorStyle: TextStyle(height: 10,fontSize: 0),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.r),
+          borderSide: BorderSide(width: 2.w, color: Colors.red), // Thicker red border on error
         ),
       ),
       keyboardType: textInputType,

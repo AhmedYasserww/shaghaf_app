@@ -6,7 +6,7 @@ import 'package:shagaf/features/auth/presentation/views/widgets/custom_appbar_fo
 import 'package:shagaf/features/auth/presentation/views/widgets/forgetPasswordWidgets/forget_password_details.dart';
 
 class ForgetPasswordBody extends StatelessWidget {
-  const ForgetPasswordBody({Key? key}) : super(key: key);
+  const ForgetPasswordBody({super.key});
 
   @override
   Widget build(BuildContext context) {

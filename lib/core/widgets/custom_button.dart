@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/utils/styles.dart';
 
@@ -12,7 +11,7 @@ class CustomButton extends StatelessWidget {
   });
   final String text;
   final BorderRadius? borderRadius;
-  final void Function()? onPressed;
+  final  Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,7 +19,7 @@ class CustomButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: Color(0xff20473E),
+          backgroundColor: const Color(0xff20473E),
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius ??
                 BorderRadius.circular(
