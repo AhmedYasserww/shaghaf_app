@@ -10,6 +10,8 @@ abstract class AppRouter {
   static const kLogin = '/login';
   static const kSplashScreen = '/splashScreen';
   static const kHomeView = '/homeView';
+  static const kForgetPassword = '/forgetPassword';
+  static const kVerification= '/verification';
 
 
   static final router = GoRouter(

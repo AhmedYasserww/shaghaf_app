@@ -66,7 +66,7 @@ class _HomeViewState extends State<HomeViewBody> {
                       ),
                     ),
                     Padding(
-                      padding:  EdgeInsets.only(top: 48.h),
+                      padding:  EdgeInsets.only(top: 40.h),
                       child: SvgPicture.asset(content[i].image),
                     ),
                      SizedBox(
@@ -93,7 +93,7 @@ class _HomeViewState extends State<HomeViewBody> {
           OnboardingIndicators(currentIndex: currentIndex,),
            SizedBox(height: 24.h),
      NextButton(onPressed:onNextButtonPressed ),
-          SizedBox(height: 24.h,)
+          SizedBox(height: 12.h,)
         ],
       );
 
