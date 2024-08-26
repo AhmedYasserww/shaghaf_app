@@ -11,7 +11,7 @@ class CustomImage extends StatelessWidget {
       width: width.w,
       height: height.h,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(url))
+        image: DecorationImage(image: AssetImage(url),fit: BoxFit.fill)
       ),
     );
   }

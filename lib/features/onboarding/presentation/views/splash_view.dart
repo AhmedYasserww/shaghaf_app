@@ -18,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
   }
   navigateToHome() async {
     await Future.delayed(const Duration(seconds: 3), () {}); // Adjust the duration as needed
-    GoRouter.of(context).push(AppRouter.kHomeView);
+    GoRouter.of(context).push(AppRouter.kBoardingView);
   }
   @override
   Widget build(BuildContext context) {

@@ -64,6 +64,7 @@ class LoginDetails extends StatelessWidget {
                       onPressed: () {
                         if (formState.currentState!.validate()) {
                           formState.currentState!.save();
+                          GoRouter.of(context).push(AppRouter.kHomeView);
                         } else {
                         }
                       },
