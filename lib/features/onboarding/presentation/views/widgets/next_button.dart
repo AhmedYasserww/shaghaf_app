@@ -5,7 +5,7 @@ class NextButton extends StatelessWidget {
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
-    return    SizedBox(
+    return SizedBox(
       height: 70.h,
       width: 70.w,
       child: CircleAvatar(

@@ -6,16 +6,16 @@ import 'package:shagaf/core/utils/app_router.dart';
 import 'package:shagaf/core/utils/styles.dart';
 import 'package:shagaf/features/onboarding/data/models/onboarding_model.dart';
 import 'package:shagaf/features/onboarding/presentation/views/widgets/next_button.dart';
-import 'package:shagaf/features/onboarding/presentation/views/widgets/on_boarding_indicator.dart';
+import 'package:shagaf/core/widgets/custom_indicator.dart';
 
-class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
+class BoardingViewBody extends StatefulWidget {
+  const BoardingViewBody({super.key});
 
   @override
-  State<HomeViewBody> createState() => _HomeViewState();
+  State<BoardingViewBody> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeViewBody> {
+class _HomeViewState extends State<BoardingViewBody> {
   int currentIndex = 0;
   late PageController controller;
 
@@ -101,12 +101,14 @@ class _HomeViewState extends State<HomeViewBody> {
           ),
         ),
         SizedBox(height: 24.h),
-        OnboardingIndicators(
+        CustomIndicator(
           currentIndex: currentIndex,
+          length: content.length,
+          width: 15,
+          height: 15,
         ),
         SizedBox(height: 24.h),
         NextButton(onPressed: onNextButtonPressed),
-
       ],
     );
   }
