@@ -8,6 +8,7 @@ class HomeViewLocationAndName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           width: 96.w,

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 import 'package:shagaf/features/home/data/models/model.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/home_view_carousel_details.dart';
-import 'package:shagaf/core/widgets/custom_indicator.dart';
 
 class HomeViewCarousel extends StatefulWidget {
   HomeViewCarousel({Key? key, required this.onIndexChanged}) : super(key: key);

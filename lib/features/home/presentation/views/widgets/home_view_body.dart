@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shagaf/features/home/data/models/model.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_carousel.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/home_view_carousel_details.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/home_view_details.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             });
           },
         ),
-        HomeViewCarouselDetails(
+        HomeViewDetails(
           currentIndex: _currentIndex,
           length: images.length,
         ),

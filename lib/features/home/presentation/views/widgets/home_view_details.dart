@@ -5,9 +5,10 @@ import 'package:shagaf/features/home/presentation/views/widgets/home_view_app_ba
 import 'package:shagaf/core/widgets/custom_indicator.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_list.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_location_and_name.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/home_view_row_buttons.dart';
 
-class HomeViewCarouselDetails extends StatelessWidget {
-  const HomeViewCarouselDetails({
+class HomeViewDetails extends StatelessWidget {
+  const HomeViewDetails({
     Key? key,
     required this.currentIndex,
     required this.length,
@@ -19,16 +20,17 @@ class HomeViewCarouselDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 23.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 23.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           HomeViewAppBar(),
           SizedBox(
             height: 88.h,
           ), // Adjust the height here
           HomeViewLocationAndName(),
-          SizedBox(height: 24.h),
+          SizedBox(height: 10.h),
           Align(
             alignment: Alignment.bottomLeft,
             child: CustomIndicator(
@@ -40,13 +42,21 @@ class HomeViewCarouselDetails extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 44.h,
+            height: 40.h,
+          ),
+          SizedBox(
+            height: 12.h,
           ),
           Text(
             "Advertisement",
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
           ),
-          HomeViewList()
+          HomeViewList(),
+          SizedBox(
+            height: 24.h,
+          ),
+          HomeViewRowButtons(),
+
         ],
       ),
     );

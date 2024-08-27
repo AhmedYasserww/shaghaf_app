@@ -5,14 +5,17 @@ class HomeViewAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.menu_outlined,size: 24.sp,)),
-        Spacer(),
-        IconButton(onPressed: (){}, icon: Icon(Icons.notifications,size: 24.sp,)),
-      ],
-    ));
+    return Padding(
+      padding:  EdgeInsets.only(top: 60.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.menu_outlined,size: 24.sp,)),
+          Spacer(),
+          IconButton(onPressed: (){}, icon: Icon(Icons.notifications,size: 24.sp,)),
+        ],
+      ),
+    );
   }
 }

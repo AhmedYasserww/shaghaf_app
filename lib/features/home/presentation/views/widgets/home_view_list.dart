@@ -16,7 +16,8 @@ class HomeViewList extends StatelessWidget {
               CustomImage(
                   width: 243.w,
                   height: 108.h,
-                  url: "assets/images/Rectangle 346.png"),
+                  url: "assets/images/Rectangle 346.png",
+              borderRadius: BorderRadius.circular(12),),
               SizedBox(
                 width: 16.w,
               )
