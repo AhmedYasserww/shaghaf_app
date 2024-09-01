@@ -6,7 +6,7 @@ class HomeViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(top: 60.h),
+      padding:  EdgeInsets.only(top: 40.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

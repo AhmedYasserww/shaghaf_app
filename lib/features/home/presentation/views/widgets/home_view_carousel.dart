@@ -14,6 +14,7 @@ class HomeViewCarousel extends StatefulWidget {
 class _HomeViewCarouselState extends State<HomeViewCarousel> {
   @override
   Widget build(BuildContext context) {
+
     return CarouselSlider(
       items: images.map((imagePath) {
         return CustomImage(

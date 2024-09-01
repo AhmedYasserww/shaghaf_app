@@ -27,9 +27,9 @@ class HomeViewDetails extends StatelessWidget {
         children: [
           HomeViewAppBar(),
           SizedBox(
-            height: 88.h,
+            height: 100.h,
           ), // Adjust the height here
-          HomeViewLocationAndName(),
+          const HomeViewLocationAndName(),
           SizedBox(height: 10.h),
           Align(
             alignment: Alignment.bottomLeft,
@@ -42,20 +42,18 @@ class HomeViewDetails extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 40.h,
+            height: 52.h,
           ),
-          SizedBox(
-            height: 12.h,
-          ),
+
           Text(
             "Advertisement",
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
           ),
-          HomeViewList(),
+          const HomeViewList(),
           SizedBox(
             height: 24.h,
           ),
-          HomeViewRowButtons(),
+          const HomeViewRowButtons(),
 
         ],
       ),

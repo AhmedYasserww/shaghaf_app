@@ -31,10 +31,13 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: textStyle ?? Styles.textStyle12.copyWith(
-              color: Colors.white,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              style: textStyle ?? Styles.textStyle12.copyWith(
+                color: Colors.white,
+              ),
             ),
           ),
         ),
