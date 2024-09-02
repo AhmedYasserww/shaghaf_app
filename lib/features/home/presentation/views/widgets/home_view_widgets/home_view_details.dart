@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shagaf/core/utils/assets.dart';
 import 'package:shagaf/core/utils/styles.dart';
 import 'package:shagaf/core/widgets/custom_indicator.dart';
 import 'home_view_advertisments_list.dart';
@@ -44,7 +45,6 @@ class HomeViewDetails extends StatelessWidget {
           SizedBox(
             height: 52.h,
           ),
-
           Text(
             "Advertisement",
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
@@ -55,8 +55,61 @@ class HomeViewDetails extends StatelessWidget {
           ),
           const HomeViewRowButtons(),
 
+          // ClipPath added here
+          ClipPath(
+            clipper: CustomClipperPath(),
+            child: Container(
+              height: 150.h,
+              width: 342.w,
+              color: Colors.grey[200], // لون الخلفية
+              child: CustomPaint(
+                size: Size(342.w, 150.h),
+                painter: RPSCustomPainter(), // إذا كنت تحتاج لرسم شيء فوق الخلفية
+              ),
+            ),
+          ),
         ],
       ),
     );
+  }
+}
+
+class CustomClipperPath extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    final borderRadius = Radius.circular(15); // نصف القطر لجميع الزوايا
+
+    path.addRRect(
+      RRect.fromRectAndRadius(
+        Rect.fromLTWH(0, 0, size.width, size.height), // تحديد المستطيل
+        borderRadius,
+      ),
+    );
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}
+class RPSCustomPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()..style = PaintingStyle.fill;
+    paint.color = Colors.red.withOpacity(1.0);
+    RRect rRect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Radius.circular(15), // نصف القطر
+    );
+
+    canvas.drawRRect(rRect, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }
