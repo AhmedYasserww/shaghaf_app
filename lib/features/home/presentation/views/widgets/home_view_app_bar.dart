@@ -11,7 +11,9 @@ class HomeViewAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.menu_outlined,size: 24.sp,)),
+          IconButton(onPressed: (){
+            Scaffold.of(context).openDrawer();
+          }, icon: Icon(Icons.menu_outlined,size: 24.sp,)),
           Spacer(),
           IconButton(onPressed: (){}, icon: Icon(Icons.notifications,size: 24.sp,)),
         ],

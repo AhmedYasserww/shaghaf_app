@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shagaf/features/home/data/models/model.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_carousel.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_details.dart';
+
+import '../../../data/models/image_model.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({Key? key}) : super(key: key);
