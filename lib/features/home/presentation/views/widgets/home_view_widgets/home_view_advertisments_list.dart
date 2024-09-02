@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 
-class HomeViewList extends StatelessWidget {
-  const HomeViewList({super.key});
+class HomeViewAdvertismentsList extends StatelessWidget {
+  const HomeViewAdvertismentsList({super.key});
 
   @override
   Widget build(BuildContext context) {

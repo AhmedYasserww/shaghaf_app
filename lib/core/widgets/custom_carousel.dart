@@ -1,29 +1,29 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/widgets/custom_image.dart';
-import 'package:shagaf/features/home/data/models/image_model.dart';
 
-class HomeViewCarousel extends StatefulWidget {
-  HomeViewCarousel({Key? key, required this.onIndexChanged}) : super(key: key);
+import '../../features/home/data/models/image_model.dart';
+import 'custom_image.dart';
+class CustomCarousel extends StatefulWidget {
+  const CustomCarousel({super.key, required this.onIndexChanged, required this.height});
   final ValueChanged<int> onIndexChanged;
+  final double height;
   @override
-  State<HomeViewCarousel> createState() => _HomeViewCarouselState();
+  State<CustomCarousel> createState() => _CustomCarouselState();
 }
 
-class _HomeViewCarouselState extends State<HomeViewCarousel> {
+class _CustomCarouselState extends State<CustomCarousel> {
   @override
   Widget build(BuildContext context) {
-
     return CarouselSlider(
       items: images.map((imagePath) {
         return CustomImage(
             width: MediaQuery.of(context).size.width,
-            height: 300.h,
+            height: widget.height.h,
             url: imagePath);
       }).toList(),
       options: CarouselOptions(
-        height: 300.h,
+        height: widget.height.h,
         autoPlay: false,
         enlargeCenterPage: true,
         viewportFraction: 1.0,
