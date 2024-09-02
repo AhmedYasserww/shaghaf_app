@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/location_container.dart';
 
 class HomeViewLocationAndName extends StatelessWidget {
   const HomeViewLocationAndName({super.key});
@@ -10,33 +11,7 @@ class HomeViewLocationAndName extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: 96.w,
-          height: 27.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.r),
-            color: Color(0xffF04C29),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.location_on,
-                color: Colors.white.withOpacity(.6),
-                size: 12.5.sp,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                "Location",
-                style: Styles.textStyle12.copyWith(
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        ),
+         LocationContainer(text: "Location"),
         SizedBox(height: 10.h), // Adjust the height here
         Row(
           children: [

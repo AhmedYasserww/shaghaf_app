@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/styles.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/widgets/custom_button.dart';
+
 class HomeViewCustomButton extends StatelessWidget {
   const HomeViewCustomButton({super.key, required this.text, this.onPressed});
   final String text;

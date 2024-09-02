@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/utils/styles.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/home_view_app_bar.dart';
 import 'package:shagaf/core/widgets/custom_indicator.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/home_view_list.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/home_view_location_and_name.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/home_view_row_buttons.dart';
+import 'home_view_advertisments_list.dart';
+import 'home_view_app_bar.dart';
+import 'home_view_location_and_name.dart';
+import 'home_view_row_buttons.dart';
 
 class HomeViewDetails extends StatelessWidget {
   const HomeViewDetails({
@@ -49,7 +49,7 @@ class HomeViewDetails extends StatelessWidget {
             "Advertisement",
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
           ),
-          const HomeViewList(),
+          const HomeViewAdvertismentsList(),
           SizedBox(
             height: 24.h,
           ),

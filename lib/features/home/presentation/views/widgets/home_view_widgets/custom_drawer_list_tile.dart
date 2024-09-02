@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/models/drawer_item_model.dart';
+import '../../../../data/models/drawer_item_model.dart';
 class CustomDrawerListTile extends StatelessWidget {
   final DrawerItemModel drawerItemModel;
   final VoidCallback onTap;
