@@ -30,7 +30,7 @@ class _SelectPlanBottomSheetState extends State<SelectPlanBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 272.h, // Fixed height as per your requirement
+      height: 278.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
