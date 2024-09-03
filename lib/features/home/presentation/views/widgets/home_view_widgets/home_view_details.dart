@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
-import 'package:shagaf/core/widgets/custom_indicator.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/home_view_clip_pathes.dart';
+
+import '../../../../../../core/utils/styles.dart';
 import 'home_view_advertisments_list.dart';
-import 'home_view_app_bar.dart';
-import 'home_view_location_and_name.dart';
 import 'home_view_row_buttons.dart';
 
 class HomeViewDetails extends StatelessWidget {
-  const HomeViewDetails({
-    Key? key,
-    required this.currentIndex,
-    required this.length,
-  }) : super(key: key);
-
-  final int currentIndex;
-  final int length;
+  const HomeViewDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,38 +17,38 @@ class HomeViewDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          HomeViewAppBar(),
           SizedBox(
-            height: 100.h,
-          ), // Adjust the height here
-          const HomeViewLocationAndName(),
-          SizedBox(height: 10.h),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: CustomIndicator(
-              currentIndex: currentIndex,
-              length: length,
-              mainAxisAlignment: MainAxisAlignment.start,
-              height: 10,
-              width: 10,
-            ),
+            height: 20.h,
           ),
-          SizedBox(
-            height: 52.h,
-          ),
-
           Text(
             "Advertisement",
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
+          ),
+          SizedBox(
+            height: 12.h,
           ),
           const HomeViewAdvertismentsList(),
           SizedBox(
             height: 24.h,
           ),
           const HomeViewRowButtons(),
-
+          SizedBox(
+            height: 24.h,
+          ),
+          Text(
+            "Categories",
+            style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
+          ),
+          SizedBox(
+            height: 12.h,
+          ),
+          HomeViewClipPathes(),
+          SizedBox(
+            height: 30.h,
+          ),
         ],
       ),
     );
   }
 }
+

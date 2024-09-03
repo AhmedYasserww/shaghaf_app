@@ -12,7 +12,7 @@ class HomeViewLocationAndName extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          LocationContainer(text: "Location"),
-        SizedBox(height: 10.h), // Adjust the height here
+        SizedBox(height: 20.h), // Adjust the height here
         Row(
           children: [
             Text(
