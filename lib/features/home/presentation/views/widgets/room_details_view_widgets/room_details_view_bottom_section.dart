@@ -69,6 +69,7 @@ class RoomDetailsViewBottomSection extends StatelessWidget {
 
   void _showSelectPlanBottomSheet(BuildContext context) {
     showModalBottomSheet(
+      useSafeArea: true,
       context: context,
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
