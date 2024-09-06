@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
+import 'package:shagaf/core/utils/styles.dart';
+
+import '../../../../../../core/utils/app_router.dart';
+
 class HomeViewClipPathes extends StatelessWidget {
   const HomeViewClipPathes({super.key});
 
@@ -8,18 +13,41 @@ class HomeViewClipPathes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ClipPath(
-          clipper: ContainerClipper1(),
-          child: Container(
-            width: 342.w,
-            height: 200.h,
-            decoration: BoxDecoration(
-                color: Color(0xff20473E).withOpacity(.65), borderRadius: BorderRadius.circular(10.r)),
+        InkWell(
+          onTap: (){
+            GoRouter.of(context).push(AppRouter.kCategoryDetailsView);
+          },
+          child: ClipPath(
+            clipper: ContainerClipper1(),
+            child: Container(
+              width: 342.w,
+              height: 200.h,
+              decoration: BoxDecoration(
+                color: const Color(0xff20473E).withOpacity(.65),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Padding(
+                padding:  EdgeInsets.only(left: 30.0.w,right: 15.w),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Rooms",style: Styles.textStyle24.copyWith(
+                      color: Colors.white,
+                    ),),
+                    const Spacer(),
+                    const Image(image: AssetImage("assets/images/Game day-amico 2.png")),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
         Column(
           children: [
-            SizedBox(height: 150.h,),
+            SizedBox(
+              height: 150.h,
+            ),
             Row(
               children: [
                 ClipPath(
@@ -39,7 +67,7 @@ class HomeViewClipPathes extends StatelessWidget {
                     width: 163.w,
                     height: 200.h,
                     decoration: BoxDecoration(
-                        color: Color(0xffFFCC0A).withOpacity(.65),
+                        color: const Color(0xffFFCC0A).withOpacity(.65),
                         borderRadius: BorderRadius.circular(20.r)),
                   ),
                 ),
@@ -51,6 +79,7 @@ class HomeViewClipPathes extends StatelessWidget {
     );
   }
 }
+
 class ContainerClipper1 extends CustomClipper<Path> {
   var path = Path();
 

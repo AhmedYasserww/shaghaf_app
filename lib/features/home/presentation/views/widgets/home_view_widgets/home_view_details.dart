@@ -42,7 +42,7 @@ class HomeViewDetails extends StatelessWidget {
           SizedBox(
             height: 12.h,
           ),
-          HomeViewClipPathes(),
+          const HomeViewClipPathes(),
           SizedBox(
             height: 30.h,
           ),
