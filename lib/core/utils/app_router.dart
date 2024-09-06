@@ -4,6 +4,7 @@ import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
 import 'package:shagaf/features/home/presentation/views/category_details_view.dart';
+import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
 import 'package:shagaf/features/home/presentation/views/home_view.dart';
 import 'package:shagaf/features/home/presentation/views/room_details_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
@@ -20,6 +21,7 @@ abstract class AppRouter {
   static const kVerification= '/verification';
   static const kCategoryDetailsView = '/categoryDetailsView';
   static const kRoomDetailsView = '/roomDetailsView';
+  static const kDateAndTimeView = '/dateAndTimeView';
 
   static final router = GoRouter(
       routes: [
@@ -58,6 +60,10 @@ abstract class AppRouter {
         GoRoute(
             path:kRoomDetailsView,
             builder: (context, state) => const RoomDetailsView()
+        ),
+        GoRoute(
+            path:kDateAndTimeView,
+            builder: (context, state) => const DateAndTimeView()
         ),
       ]);
 }

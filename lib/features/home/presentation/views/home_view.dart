@@ -8,7 +8,7 @@ class HomeView extends StatelessWidget {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return const Scaffold(
       drawer:CustomDrawerItem(),
         bottomNavigationBar: CustomBottomNavigationBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

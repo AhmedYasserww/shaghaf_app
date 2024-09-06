@@ -33,7 +33,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
             ],
           ),
-          HomeViewDetails()
+          HomeViewDetails(),
         ],
       ),
     );

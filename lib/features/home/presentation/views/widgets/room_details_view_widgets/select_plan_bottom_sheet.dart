@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shagaf/core/utils/app_router.dart';
 
 import '../../../../../../constants.dart';
 import '../../../../../../core/utils/styles.dart';
@@ -80,7 +82,7 @@ class _SelectPlanBottomSheetState extends State<SelectPlanBottomSheet> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Handle button press
+                GoRouter.of(context).push(AppRouter.kDateAndTimeView);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: kMostColorPicked,
