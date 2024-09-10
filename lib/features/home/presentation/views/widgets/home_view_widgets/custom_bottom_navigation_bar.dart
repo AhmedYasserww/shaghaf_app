@@ -9,7 +9,8 @@ class CustomBottomNavigationBar extends StatefulWidget {
   final ValueChanged<int> onIndexChanged; // Callback function to pass index
 
   @override
-  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
@@ -21,14 +22,18 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       type: BottomNavigationBarType.fixed,
       selectedFontSize: 12.0,
       unselectedFontSize: 10.0,
+      backgroundColor: Colors.white,
       selectedItemColor: Colors.red,
       unselectedItemColor: Colors.blue,
       currentIndex: selectedIndex, // Reflect the selected index
       onTap: (index) {
-        setState(() {
-          selectedIndex = index;
-          widget.onIndexChanged(selectedIndex); // Notify parent of the index change
-        });
+        // Skip index 2, which is the placeholder
+        if (index != 2) {
+          setState(() {
+            selectedIndex = index;
+            widget.onIndexChanged(selectedIndex); // Notify parent of the index change
+          });
+        }
       },
       items: const [
         BottomNavigationBarItem(
@@ -40,8 +45,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           label: 'Book',
         ),
         BottomNavigationBarItem(
-          icon: SizedBox.shrink(), // Placeholder for FAB
-          label: '',
+          // Placeholder that should not affect index
+          icon: SizedBox.shrink(), // Invisible widget
+          label: '', // Empty label or non-interactive
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.local_offer),

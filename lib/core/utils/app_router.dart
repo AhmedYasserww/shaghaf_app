@@ -3,14 +3,14 @@ import 'package:shagaf/features/auth/presentation/views/forget_password_screen.d
 import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
-import 'package:shagaf/features/home/presentation/views/booking_history_view.dart';
 import 'package:shagaf/features/home/presentation/views/booking_review_view.dart';
 import 'package:shagaf/features/home/presentation/views/category_details_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
 import 'package:shagaf/features/home/presentation/views/home_view.dart';
 import 'package:shagaf/features/home/presentation/views/room_details_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
-import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
+
+import '../../features/onboarding/presentation/views/splash_view.dart';
 
 
 abstract class AppRouter {

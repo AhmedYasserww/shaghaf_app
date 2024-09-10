@@ -68,7 +68,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                   child: CustomButton(
                     text: "verify",
                     onPressed: () {
-                        return showAlertDialog(context);
+                        return _showAlertDialog(context);
                     },
                   ),
                 ),
@@ -80,7 +80,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
     );
   }
 
-  showAlertDialog(BuildContext context) {
+  _showAlertDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {

@@ -4,6 +4,8 @@ import 'package:shagaf/features/home/presentation/views/widgets/home_view_widget
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_drawer.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_floating_action_button.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/home_view_body.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/offers_widgets/offers_app_bar.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/offers_widgets/offers_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -13,21 +15,31 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  int selectedIndex = 0 ;
+  int selectedIndex = 0;
+
   List<Widget> views = [
     const HomeViewBody(),
     const BookingHistoryBody(),
+    Container(),
+    const OffersBody(),
   ];
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        drawer: selectedIndex == 0 ? CustomDrawerItem() : null, // Left drawer for HomeViewBody
-        endDrawer: selectedIndex == 1 ? CustomDrawerItem() : null,         bottomNavigationBar: CustomBottomNavigationBar(onIndexChanged: (int value) {setState(() {
-          selectedIndex = value;
-        });  },),
+    return Scaffold(
+        backgroundColor: Colors.white,
+        drawer: selectedIndex == 0 ? CustomDrawerItem() : null,
+        // Left drawer for HomeViewBody
+        endDrawer: (selectedIndex == 1 || selectedIndex == 3)  ? CustomDrawerItem() : null,
+        bottomNavigationBar: CustomBottomNavigationBar(
+          onIndexChanged: (int value) {
+            setState(() {
+              selectedIndex = value;
+            });
+          },
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: CustomFloatingActionButton(),
-        body: views.elementAt(selectedIndex)
-    );
+        body: views.elementAt(selectedIndex));
   }
 }

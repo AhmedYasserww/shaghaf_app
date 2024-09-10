@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shagaf/core/widgets/custom_image.dart';
 
 import '../../../../../../core/utils/assets.dart';
 
@@ -21,13 +22,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           color: const Color(0xff20473E).withOpacity(.59),
           shape: BoxShape.circle,
         ),
-        child: const SizedBox(
-          height: 40,
-          width: 24,
-          child: Image(
-            image: AssetImage(AssetsData.logo),
-          ),
-        ),
+        child: const CustomImage(width: 20, height: 40, url: "assets/images/LOGO FINAL 1.png")
       ),
     );
   }
