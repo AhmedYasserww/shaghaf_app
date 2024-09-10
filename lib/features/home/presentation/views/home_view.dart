@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shagaf/features/home/presentation/views/booking_history_view.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/booking_history_widgets/booking_history_body.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_bottom_navigation_bar.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_drawer.dart';
