@@ -3,6 +3,7 @@ import 'package:shagaf/features/auth/presentation/views/forget_password_screen.d
 import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
+import 'package:shagaf/features/home/presentation/views/booking_review_view.dart';
 import 'package:shagaf/features/home/presentation/views/category_details_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
 import 'package:shagaf/features/home/presentation/views/home_view.dart';
@@ -22,6 +23,7 @@ abstract class AppRouter {
   static const kCategoryDetailsView = '/categoryDetailsView';
   static const kRoomDetailsView = '/roomDetailsView';
   static const kDateAndTimeView = '/dateAndTimeView';
+  static const kBookingReviewView = '/bookingReviewView';
 
   static final router = GoRouter(
       routes: [
@@ -64,6 +66,10 @@ abstract class AppRouter {
         GoRoute(
             path:kDateAndTimeView,
             builder: (context, state) => const DateAndTimeView()
+        ),
+        GoRoute(
+            path: kBookingReviewView,
+            builder: (context, state) => const BookingReviewView()
         ),
       ]);
 }

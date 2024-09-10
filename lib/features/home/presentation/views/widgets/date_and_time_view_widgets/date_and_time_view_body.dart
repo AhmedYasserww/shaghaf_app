@@ -11,11 +11,12 @@ class DateAndTimeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: 24.w),
-      child: SingleChildScrollView(
+      child: const SingleChildScrollView(
         child: Column(
           children: [
             DateAndTimeViewAppBar(),
             DateAndTimeTableCalender(),
+            DateAndTimeTimePicker(),
           ],
         ),
       ),
