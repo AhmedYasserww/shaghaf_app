@@ -3,6 +3,7 @@ import 'package:shagaf/features/auth/presentation/views/forget_password_screen.d
 import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
+import 'package:shagaf/features/home/presentation/views/booking_history_view.dart';
 import 'package:shagaf/features/home/presentation/views/booking_review_view.dart';
 import 'package:shagaf/features/home/presentation/views/category_details_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
