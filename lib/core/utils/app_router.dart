@@ -5,6 +5,7 @@ import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
 import 'package:shagaf/features/home/presentation/views/booking_review_view.dart';
 import 'package:shagaf/features/home/presentation/views/category_details_view.dart';
+import 'package:shagaf/features/home/presentation/views/contact_us_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
 import 'package:shagaf/features/home/presentation/views/events_view.dart';
 import 'package:shagaf/features/home/presentation/views/home_view.dart';
@@ -27,12 +28,13 @@ abstract class AppRouter {
   static const kDateAndTimeView = '/dateAndTimeView';
   static const kBookingReviewView = '/bookingReviewView';
   static const kEventsView = '/eventsView';
+  static const kContactUsView = '/contactUsView';
 
   static final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const SplashView()
+          builder: (context, state) => const HomeView()
         ),
         GoRoute(
             path:kBoardingView,
@@ -77,6 +79,10 @@ abstract class AppRouter {
         GoRoute(
             path: kEventsView,
             builder: (context, state) => const EventsView()
+        ),
+        GoRoute(
+            path: kContactUsView,
+            builder: (context, state) => const ContactUsView()
         ),
       ]);
 }
