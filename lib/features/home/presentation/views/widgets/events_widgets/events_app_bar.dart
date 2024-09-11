@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/styles.dart';
-class OffersAppBar extends StatelessWidget {
-  const OffersAppBar({super.key});
+class EventsAppBar extends StatelessWidget {
+  const EventsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,9 @@ class OffersAppBar extends StatelessWidget {
           onPressed: () {
           },
         ),
-        Text("Offers", style: Styles.textStyle16),
+        Text("Events", style: Styles.textStyle16.copyWith(
+          fontWeight: FontWeight.w500
+        )),
         IconButton(
           icon: Icon(Icons.list_sharp, color: Colors.black, size: 24.sp),
           onPressed: () {
