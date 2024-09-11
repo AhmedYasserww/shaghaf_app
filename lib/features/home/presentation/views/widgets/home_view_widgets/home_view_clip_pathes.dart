@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/widgets/custom_image.dart';
 
 import '../../../../../../core/utils/app_router.dart';
 
@@ -58,17 +59,47 @@ class HomeViewClipPathes extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: kMostColorPicked.withOpacity(.65),
                         borderRadius: BorderRadius.circular(20.r)),
+                    child: Padding(
+                      padding:  EdgeInsets.only(top: 56.0.h,left: 6.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Orders",style: Styles.textStyle18.copyWith(
+                            color: Colors.white,
+                          ),),
+                          CustomImage(width: 115, height: 115, url: "assets/images/Ecommerce web page-amico 1.png")
+
+                        ],
+                      ),
+                    ),
                   ),
                 ),
                 const Spacer(),
-                ClipPath(
-                  clipper: ContainerClipper3(),
-                  child: Container(
-                    width: 163.w,
-                    height: 200.h,
-                    decoration: BoxDecoration(
-                        color: const Color(0xffFFCC0A).withOpacity(.65),
-                        borderRadius: BorderRadius.circular(20.r)),
+                InkWell(
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kEventsView);
+                  },
+                  child: ClipPath(
+                    clipper: ContainerClipper3(),
+                    child: Container(
+                      width: 163.w,
+                      height: 200.h,
+                      decoration: BoxDecoration(
+                          color: const Color(0xffFFCC0A).withOpacity(.65),
+                          borderRadius: BorderRadius.circular(20.r)),
+                      child: Padding(
+                        padding:  EdgeInsets.only(top: 56.0.h,right: 6.h),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text("Events",style: Styles.textStyle18.copyWith(
+                              color: Colors.white,
+                            ),),
+                            CustomImage(width: 115, height: 115, url: "assets/images/Prototyping process-amico (1) 3.png")
+
+                          ],
+                        ),
+                      ),                  ),
                   ),
                 ),
               ],
