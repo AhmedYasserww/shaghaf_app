@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
 import 'package:shagaf/core/widgets/custom_indicator.dart';
-import 'home_view_advertisments_list.dart';
 import 'home_view_app_bar.dart';
 import 'home_view_location_and_name.dart';
-import 'home_view_row_buttons.dart';
 
 class HomeViewCarouselDetails extends StatelessWidget {
   const HomeViewCarouselDetails({

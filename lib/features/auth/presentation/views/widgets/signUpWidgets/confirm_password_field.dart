@@ -9,7 +9,7 @@ class ConfirmPasswordField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? _confirmPassword;
+    String? confirmPassword;
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -21,7 +21,7 @@ class ConfirmPasswordField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(onSaved: (value){
-          _confirmPassword = value;
+          confirmPassword = value;
         }, hintText: "Confirm password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
       ],
     );

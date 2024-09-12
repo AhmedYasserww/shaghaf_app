@@ -12,12 +12,12 @@ class BookingHistoryPast extends StatelessWidget {
         SizedBox(height: 16.h,),
         ListView.builder(
           shrinkWrap: true, // Use shrinkWrap to size the ListView according to its content
-          physics: NeverScrollableScrollPhysics(), // Disable scrolling for the inner ListView
+          physics: const NeverScrollableScrollPhysics(), // Disable scrolling for the inner ListView
           itemCount: 3,
           itemBuilder: (context, i) {
             return Padding(
               padding: EdgeInsets.only(bottom: 16.h,right: 18.w,left: 17.w),
-              child: BookingHistoryPastItem(),
+              child: const BookingHistoryPastItem(),
             );
           },
         ),

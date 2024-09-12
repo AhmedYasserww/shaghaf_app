@@ -5,7 +5,10 @@ class MemberShipView  extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MembershipViewBody();
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(child: MembershipViewBody()),
+    );
   }
 }
 

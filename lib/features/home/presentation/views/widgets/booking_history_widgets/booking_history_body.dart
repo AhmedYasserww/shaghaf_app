@@ -19,11 +19,11 @@ class _BookingHistoryBodyState extends State<BookingHistoryBody> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            BookingHistoryAppBar(),
+            const BookingHistoryAppBar(),
             BookingHistoryTapBar(onIndexChanged: (int value) { setState(() {
               _index = value;
             }); },),
-            _index == 1 ? BookingHistoryUpcoming() : BookingHistoryPast(),
+            _index == 1 ? const BookingHistoryUpcoming() : const BookingHistoryPast(),
           ],
         ),
       ),

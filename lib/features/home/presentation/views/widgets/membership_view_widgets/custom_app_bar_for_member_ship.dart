@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/styles.dart';
 class CustomAppBarForMemberShip extends StatelessWidget {
@@ -11,11 +12,13 @@ class CustomAppBarForMemberShip extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Row(
         children: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.arrow_back_ios_new_outlined)),
+          InkWell(
+              onTap: () {
+                GoRouter.of(context).pop();
+              },
+              child: const Icon(Icons.arrow_back_ios_new_outlined,size: 20,)),
           SizedBox(
-            width: 83.w,
+            width: 85.w,
           ),
           Text(
             "Membership",

@@ -59,7 +59,7 @@ class BookingReviewBody extends StatelessWidget {
                   shadow: true,
                   color: Colors.white,
                   textStyle: Styles.textStyle16.copyWith(
-                      fontWeight: FontWeight.w500, color: Color(0xff455A64)),
+                      fontWeight: FontWeight.w500, color: const Color(0xff455A64)),
                   height: 51.h,
                 ))
               ],

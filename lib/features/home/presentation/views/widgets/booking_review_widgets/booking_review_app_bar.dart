@@ -14,7 +14,7 @@ class BookingReviewAppBar extends StatelessWidget {
       children: [
         IconButton(onPressed: (){
           GoRouter.of(context).pop();
-        }, icon: Icon(Icons.arrow_back_ios_new),),
+        }, icon: const Icon(Icons.arrow_back_ios_new),),
         SizedBox(width: 70.w,),
         Text("Booking Review",style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w500),)
       ],

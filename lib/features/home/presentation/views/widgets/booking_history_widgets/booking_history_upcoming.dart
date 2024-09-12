@@ -10,9 +10,9 @@ class BookingHistoryUpcoming extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 16.h,),
-        BookingHistoryContianerForClock(),
+        const BookingHistoryContianerForClock(),
         SizedBox(height: 12.h,),
-        BookingHistoryDetails(),
+        const BookingHistoryDetails(),
         SizedBox(height: 20.h,),
       ],
     );

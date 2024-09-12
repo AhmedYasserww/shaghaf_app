@@ -8,7 +8,7 @@ class UserNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? _userName;
+    String? userName;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -20,7 +20,7 @@ class UserNameField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(onSaved: (value){
-          _userName = value;
+          userName = value;
         }, hintText: "Enter your name", icon: Icons.person, textInputType: TextInputType.name),
 
       ],

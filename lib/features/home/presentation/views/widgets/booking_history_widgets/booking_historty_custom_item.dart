@@ -21,7 +21,7 @@ class BookingHistortyCustomItem extends StatelessWidget {
               Text(text,style: Styles.textStyle16,)
             ],
           ),
-          Text(timeOrPrice,style: Styles.textStyle14.copyWith(color: Color(0xff4E4E4E)),)
+          Text(timeOrPrice,style: Styles.textStyle14.copyWith(color: const Color(0xff4E4E4E)),)
         ],
       ),
     );

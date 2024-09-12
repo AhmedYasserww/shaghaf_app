@@ -4,7 +4,6 @@ import 'package:shagaf/features/home/presentation/views/widgets/home_view_widget
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_drawer.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_floating_action_button.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/home_view_body.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/offers_widgets/offers_app_bar.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/offers_widgets/offers_body.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/settings_widgets/settings_body.dart';
 
@@ -30,9 +29,8 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        drawer: selectedIndex == 0 ? CustomDrawerItem() : null,
-        // Left drawer for HomeViewBody
-        endDrawer: (selectedIndex == 1 || selectedIndex == 3)  ? CustomDrawerItem() : null,
+        drawer: selectedIndex == 0 ? const CustomDrawerItem() : null,
+        endDrawer: (selectedIndex == 1 || selectedIndex == 3)  ? const CustomDrawerItem() : null,
         bottomNavigationBar: CustomBottomNavigationBar(
           onIndexChanged: (int value) {
             setState(() {
@@ -41,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: CustomFloatingActionButton(),
+        floatingActionButton: const CustomFloatingActionButton(),
         body: views.elementAt(selectedIndex));
   }
 }

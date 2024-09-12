@@ -8,7 +8,7 @@ class GmailField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? _gmail;
+    String? gmail;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -20,7 +20,7 @@ class GmailField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(onSaved: (value){
-          _gmail = value;
+          gmail = value;
         }, hintText: "Enter your gmail", icon: Icons.email, textInputType: TextInputType.emailAddress),
 
       ],

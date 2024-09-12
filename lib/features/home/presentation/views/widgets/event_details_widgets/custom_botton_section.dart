@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/utils/app_router.dart';
 import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/widgets/custom_button.dart';
 
 class CustomButtonSection extends StatelessWidget {
   const CustomButtonSection({super.key});
@@ -12,12 +13,12 @@ class CustomButtonSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80.h,
-      padding: EdgeInsets.symmetric(vertical: 12.0.h, horizontal: 33.w),
+      padding: EdgeInsets.symmetric(vertical: 21.0.h, horizontal: 30.w),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(16.r)),
-        boxShadow: [
-          const BoxShadow(
+        boxShadow: const [
+          BoxShadow(
             color: Colors.black26,
             offset: Offset(0, -2),
             blurRadius: 10,
@@ -30,41 +31,30 @@ class CustomButtonSection extends StatelessWidget {
           Row(
             children: [
               Text(
-                '100.0 EGP/person',
+                '200.0 EGP/person',
                 style: Styles.textStyle16.copyWith(
                   fontWeight: FontWeight.w700,
                   color: kMostColorPicked,
                 ),
               ),
-
             ],
           ),
           // Select Date Button
-          SizedBox(
-            height: 38.h,
-            child: ElevatedButton(
-              onPressed: () {
-GoRouter.of(context).push(AppRouter.kMemberShipView);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: kMostColorPicked,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Book Now',
-                  style: Styles.textStyle16.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+          CustomButton(
+            text: "Book Now",
+            color: kMostColorPicked,
+            borderRadius: BorderRadius.circular(12.r),
+            width: 131,
+            height: 38,
+            textStyle: Styles.textStyle16.copyWith(
+              color: Colors.white,
             ),
-          ),
+            onPressed: (){
+              GoRouter.of(context).push(AppRouter.kBookingReviewView);
+            },
+          )
         ],
       ),
     );
   }
-
 }

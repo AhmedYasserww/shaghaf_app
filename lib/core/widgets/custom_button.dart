@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
     this.color,
     this.textStyle,
     this.height,
-    this.shadow = false, // Default to false
+    this.shadow = false, this.width, // Default to false
   });
 
   final String text;
@@ -20,12 +20,14 @@ class CustomButton extends StatelessWidget {
   final Color? color;
   final TextStyle? textStyle;
   final double? height;
-  final bool shadow; // Changed to non-nullable, default is false
+  final bool shadow;
+  final double? width;// Changed to non-nullable, default is false
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height?.h ?? 37.h,
+      width: width != null ? width!.w : null, // Apply width only if it's not null
       child: Container(
         decoration: BoxDecoration(
           // Conditionally apply shadow if `shadow` is true
@@ -35,7 +37,7 @@ class CustomButton extends StatelessWidget {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ]
               : [], // No shadow when `shadow` is false
