@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/core/utils/styles.dart';
 class RoomDetailsViewAppBar extends StatelessWidget {
-  const RoomDetailsViewAppBar({super.key});
-
+  const RoomDetailsViewAppBar({super.key, required this.textAppbar});
+final String textAppbar;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,8 +15,8 @@ class RoomDetailsViewAppBar extends StatelessWidget {
           IconButton(icon: Icon(Icons.arrow_back_ios_new,size: 16.sp,color: Colors.black), onPressed: () {
             GoRouter.of(context).pop();
           },),
-          Text("Training room",style: Styles.textStyle16.copyWith(
-            color: Color(0xff111111),
+          Text(textAppbar,style: Styles.textStyle16.copyWith(
+            color: const Color(0xff111111),
             fontWeight: FontWeight.w500
           ),),
           Container(

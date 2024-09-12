@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/styles.dart';
 import 'package:shagaf/core/widgets/custom_carousel.dart';
 import 'package:shagaf/features/home/data/models/image_model.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/room_details_view_widgets/room_details_view_bottom_section.dart';

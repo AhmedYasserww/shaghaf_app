@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shagaf/core/utils/app_router.dart';
 
 import '../../../../../../constants.dart';
 import '../../../../../../core/utils/styles.dart';
@@ -51,7 +53,9 @@ class EventsItem extends StatelessWidget {
                 SizedBox(width: 14.w),
                 // Adds spacing between text and CircleAvatar
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+              GoRouter.of(context).push(AppRouter.kEventDetailsView);
+                  },
                   child: CircleAvatar(
                     radius: 12.r,
                     backgroundColor: kMostColorPicked,
