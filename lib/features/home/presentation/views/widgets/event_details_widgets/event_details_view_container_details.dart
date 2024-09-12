@@ -1,100 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/styles.dart';
-import 'package:shagaf/core/widgets/custom_image.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/room_details_view_widgets/room_details_view_container_details_icon_and_text.dart';
-
+import 'package:shagaf/features/home/presentation/views/widgets/event_details_widgets/custom_dotted_line.dart';
+import '../../../../../../core/utils/styles.dart';
 class EventDetailsViewContainerDetails extends StatelessWidget {
   const EventDetailsViewContainerDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 24.w, top: 12.h),
-      child: SingleChildScrollView(
-        child: Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+            padding: const EdgeInsets.only(top: 24,left: 25),
+            child: Text("Details",style: Styles.textStyle16.copyWith(color: const Color(0xffF04C29)),)),
+         SizedBox(height: 19.h),
+        Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
+            Padding(
+              padding: const EdgeInsets.only(left:47 ),
+              child: Column(
+                children: [
+                  buildTimelineDot(),
+                  buildDottedLine(),
+                  buildTimelineDot(),
+                  buildDottedLine(),
+                  buildTimelineDot(),
+                  buildDottedLine(),
+                  buildTimelineDot(),
+                  buildDottedLine(),
+                  buildTimelineDot(),
+                ],
+              ),
+            ),
+             SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  buildDetailsText(
+                      "We will learn how to make ceramics and use them after that"),
+                  buildDetailsText(
+                      "The workshop will last for one day and last 3 hours. We will learn about it"),
+                  buildDetailsText(
+                      "We will learn about the types of clay to differentiate the final result of the product"),
+                  buildDetailsText(
+                      "How do I make shapes with clay without them cracking?"),
+                  buildDetailsText(
+                      "We will burn the shapes we made and find out how they burn so that you can use them after that and live with you"),
+                ],
+              ),
+            ),
           ],
         ),
-      ),
+      ],
     );
   }
-
-
-  void showAmenitiesBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (BuildContext context) {
-        return Container(
-          width: double.infinity,
-          height: 324.h, // Fixed height as per your requirement
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 16.0.w,top: 12.h),
-                child: Text(
-                  'All Amenities',
-                  style: Styles.textStyle16,
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 22.0.w),
-                  child: ListView(
-                    children: [
-                      ListTile(
-                        leading: Icon(Icons.print, color: kIconColor),
-                        title: Text('Printer, Scanner and Photocopier',style: Styles.textStyle14,),
-                        subtitle: Text('Printing, photocopier and scanning services',style: Styles.textStyle12.copyWith(
-                            fontWeight: FontWeight.w400
-                        )),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.wifi, color: kIconColor),
-                        title: Text('Wi-Fi',style: Styles.textStyle14),
-                        subtitle: Text('Free high-speed Wi-Fi',style: Styles.textStyle12.copyWith(
-                            fontWeight: FontWeight.w400
-                        )),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.coffee, color: kIconColor),
-                        title: Text('Free Coffee',style: Styles.textStyle14),
-                        subtitle: Text('Free coffee and tea provided',style: Styles.textStyle12.copyWith(
-                            fontWeight: FontWeight.w400
-                        )),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.videocam, color: kIconColor),
-                        title: Text('Video Conference',style: Styles.textStyle14),
-                        subtitle: Text('Video conferencing setup available',style: Styles.textStyle12.copyWith(
-                            fontWeight: FontWeight.w400
-                        )),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.tv, color: kIconColor),
-                        title: Text('LED Screen',style: Styles.textStyle14),
-                        subtitle: Text('LED screen',style: Styles.textStyle12.copyWith(
-                            fontWeight: FontWeight.w400
-                        )),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
 }
