@@ -16,7 +16,7 @@ class EventDetailsViewDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const RoomDetailsViewAppBar(textAppbar: "Events",),
-          SizedBox(height: 202.h,),
+          SizedBox(height: 150.h,),
           Padding(
             padding: EdgeInsets.only(left: 24.0.w),
             child: const LocationContainer(text: "Roxy"),

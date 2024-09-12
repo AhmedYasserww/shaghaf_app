@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shagaf/features/home/presentation/views/widgets/event_details_widgets/custom_botton_section.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/event_details_widgets/event_details_view_details.dart';
 
 import '../../../../../../core/widgets/custom_carousel.dart';
@@ -26,12 +27,12 @@ class _EventDetailsViewBodyState extends State<EventDetailsViewBody> {
             }, height: 454,
           ),
           EventDetailsViewDetails(currentIndex: _currentIndex, length: images.length,),
-          // const Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //   right: 0,
-          //   child: RoomDetailsViewBottomSection(),
-          // ),
+          const Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: CustomButtonSection(),
+          ),
 
         ],
       ),
