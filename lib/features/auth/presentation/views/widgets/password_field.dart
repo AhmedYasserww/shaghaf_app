@@ -8,7 +8,7 @@ class PasswordField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? _password;
+    String? password;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -20,7 +20,7 @@ class PasswordField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(onSaved: (value){
-          _password = value;
+          password = value;
         }, hintText: "Enter your password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
       ],
     );

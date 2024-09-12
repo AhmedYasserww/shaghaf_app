@@ -19,7 +19,7 @@ class HomeViewRowButtons extends StatelessWidget {
               text: "Membership",
               color: const Color(0xffF04C29).withOpacity(.9),
               onPressed: (){
-                GoRouter.of(context).push(AppRouter.kCategoryDetailsView);
+                GoRouter.of(context).push(AppRouter.kMemberShipView);
               },
             )),
         SizedBox(
