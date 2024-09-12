@@ -9,6 +9,7 @@ import 'package:shagaf/features/home/presentation/views/contact_us_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
 import 'package:shagaf/features/home/presentation/views/events_view.dart';
 import 'package:shagaf/features/home/presentation/views/home_view.dart';
+import 'package:shagaf/features/home/presentation/views/member_ship_view.dart';
 import 'package:shagaf/features/home/presentation/views/room_details_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
 
@@ -31,6 +32,8 @@ abstract class AppRouter {
   static const kEventsView = '/eventsView';
   static const kContactUsView = '/contactUsView';
   static const kEventDetailsView = '/eventDetailsView';
+  static const kMemberShipView = '/memberShipView';
+
 
 
   static final router = GoRouter(
@@ -90,6 +93,10 @@ abstract class AppRouter {
         GoRoute(
             path: kEventDetailsView,
             builder: (context, state) => const EventDetailsView()
+        ),
+        GoRoute(
+            path: kMemberShipView,
+            builder: (context, state) => const MemberShipView()
         ),
       ]);
 }

@@ -4,7 +4,6 @@ import 'package:shagaf/features/home/presentation/views/widgets/event_details_wi
 
 import '../../../../../../core/widgets/custom_carousel.dart';
 import '../../../../data/models/image_model.dart';
-import '../room_details_view_widgets/room_details_view_bottom_section.dart';
 class EventDetailsViewBody extends StatefulWidget {
   const EventDetailsViewBody({super.key});
 

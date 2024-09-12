@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
+import 'package:shagaf/core/utils/app_router.dart';
 import 'package:shagaf/core/utils/styles.dart';
 
 class CustomButtonSection extends StatelessWidget {
@@ -42,6 +44,7 @@ class CustomButtonSection extends StatelessWidget {
             height: 38.h,
             child: ElevatedButton(
               onPressed: () {
+GoRouter.of(context).push(AppRouter.kMemberShipView);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: kMostColorPicked,
