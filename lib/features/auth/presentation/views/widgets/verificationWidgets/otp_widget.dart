@@ -7,7 +7,7 @@ class OtpWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OtpTextField(
-      margin: EdgeInsets.only(left: 12.w),
+      margin: EdgeInsets.only(right: 12.w),
       numberOfFields: 6,
       cursorColor: Colors.red,
       enabledBorderColor: Colors.red,

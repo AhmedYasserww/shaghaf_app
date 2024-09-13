@@ -24,7 +24,7 @@ class _RoomDetailsViewBodyState extends State<RoomDetailsViewBody> {
           }, height: 454,
         ),
         RoomDetailsViewDetails(currentIndex: _currentIndex, length: images.length,),
-        Positioned(
+        const Positioned(
           bottom: 0,
           left: 0,
           right: 0,

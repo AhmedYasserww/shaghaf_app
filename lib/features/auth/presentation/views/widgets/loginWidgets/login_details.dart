@@ -14,89 +14,75 @@ class LoginDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GlobalKey<FormState> formState = GlobalKey();
-    return Container(
-      width: 342.w,
-      height: 300.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.r),
-        color: kContainerColorForAuth,
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(left: 9.w, top: 15.h, right: 10.w),
-        child: Form(
-          key: formState,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Form(
+      key: formState,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const GmailField(),
+          SizedBox(
+            height: 24.h,
+          ),
+          const PasswordField(),
+          SizedBox(
+            height: 6.h,
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: InkWell(
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kForgetPassword);
+              },
+              child: Text(
+                "Forget Password?",
+                style: Styles.textStyle10.copyWith(
+                    fontWeight: FontWeight.w300,
+                    color: const Color(0xff363636)),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 22.h,
+          ),
+          Row(
             children: [
-              const GmailField(),
-              SizedBox(
-                height: 24.h,
-              ),
-              const PasswordField(),
-              SizedBox(
-                height: 6.h,
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: InkWell(
-                  onTap: () {
-                    GoRouter.of(context).push(AppRouter.kForgetPassword);
+              Expanded(
+                child: CustomButton(
+                  text: "LOGIN",
+                  onPressed: () {
+                    if (formState.currentState!.validate()) {
+                      formState.currentState!.save();
+                      GoRouter.of(context).push(AppRouter.kHomeView);
+                    } else {
+                    }
                   },
-                  child: SizedBox(
-                    height: 11.h,
-                    child: Text(
-                      "Forget Password?",
-                      style: Styles.textStyle10.copyWith(
-                          fontWeight: FontWeight.w300,
-                          color: const Color(0xff363636)),
-                    ),
-                  ),
                 ),
               ),
-              SizedBox(
-                height: 22.h,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomButton(
-                      text: "LOGIN",
-                      onPressed: () {
-                        if (formState.currentState!.validate()) {
-                          formState.currentState!.save();
-                          GoRouter.of(context).push(AppRouter.kHomeView);
-                        } else {
-                        }
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Don’t have an account? ",
-                    style: Styles.textStyle10,
-                  ),
-                  InkWell(
-                    onTap: (){
-                      GoRouter.of(context).push(AppRouter.kSignUp);
-                    },
-                      child: Text(
-                    "Sign up",
-                    style:
-                        Styles.textStyle12.copyWith(color: const Color(0xffF04C29)),
-                  ))
-                ],
-              ),
-
             ],
           ),
-        ),
+          SizedBox(
+            height: 16.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Don’t have an account? ",
+                style: Styles.textStyle10,
+              ),
+              InkWell(
+                  onTap: (){
+                    GoRouter.of(context).push(AppRouter.kSignUp);
+                  },
+                  child: Text(
+                    "Sign up",
+                    style:
+                    Styles.textStyle12.copyWith(color: kMostColorPicked),
+                  ))
+            ],
+          ),
+
+        ],
       ),
     );
   }

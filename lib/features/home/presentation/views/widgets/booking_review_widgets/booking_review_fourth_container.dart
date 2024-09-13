@@ -21,7 +21,7 @@ class BookingReviewFourthContainer extends StatelessWidget {
             color: Colors.grey.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -39,7 +39,7 @@ class BookingReviewFourthContainer extends StatelessWidget {
                       style:
                           Styles.textStyle14.copyWith(fontWeight: FontWeight.w500),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     CustomButton(
                       text: "Add promo",
                       textStyle:

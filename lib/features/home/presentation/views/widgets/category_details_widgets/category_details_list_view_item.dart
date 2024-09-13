@@ -22,7 +22,7 @@ class CategoryDetailsListViewItem extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(topLeft: Radius.circular(12.r),topRight: Radius.circular(12.r)),
-              image: DecorationImage(image: AssetImage("assets/images/Rectangle 346.png"),fit: BoxFit.fill),
+              image: const DecorationImage(image: AssetImage("assets/images/Rectangle 346.png"),fit: BoxFit.fill),
             ),
             child: Column(
               children: [
@@ -37,7 +37,7 @@ class CategoryDetailsListViewItem extends StatelessWidget {
                         color: Colors.white.withOpacity(.5),
                         shape: BoxShape.circle
                       ),
-                      child: Center(child: Icon(Icons.favorite,size: 18.sp,color: Color(0xffF04C29),)),
+                      child: Center(child: Icon(Icons.favorite,size: 18.sp,color: const Color(0xffF04C29),)),
                     ),
                   ),
                 ),
@@ -50,7 +50,7 @@ class CategoryDetailsListViewItem extends StatelessWidget {
                       width: 51,
                       height: 22,
                       decoration: BoxDecoration(
-                          color: Color(0xffF04C29).withOpacity(.52),
+                          color: const Color(0xffF04C29).withOpacity(.52),
                           borderRadius: BorderRadius.circular(12.r)
                       ),
                       child: Row(

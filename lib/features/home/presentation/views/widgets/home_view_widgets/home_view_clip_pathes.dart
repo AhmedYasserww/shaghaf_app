@@ -67,7 +67,7 @@ class HomeViewClipPathes extends StatelessWidget {
                           Text("Orders",style: Styles.textStyle18.copyWith(
                             color: Colors.white,
                           ),),
-                          CustomImage(width: 115, height: 115, url: "assets/images/Ecommerce web page-amico 1.png")
+                          const CustomImage(width: 115, height: 115, url: "assets/images/Ecommerce web page-amico 1.png")
 
                         ],
                       ),
@@ -95,7 +95,7 @@ class HomeViewClipPathes extends StatelessWidget {
                             Text("Events",style: Styles.textStyle18.copyWith(
                               color: Colors.white,
                             ),),
-                            CustomImage(width: 115, height: 115, url: "assets/images/Prototyping process-amico (1) 3.png")
+                            const CustomImage(width: 115, height: 115, url: "assets/images/Prototyping process-amico (1) 3.png")
 
                           ],
                         ),

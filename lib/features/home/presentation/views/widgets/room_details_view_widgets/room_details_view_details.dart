@@ -22,7 +22,7 @@ class RoomDetailsViewDetails extends StatelessWidget {
           ),
           Center(child: CustomIndicator(currentIndex: currentIndex, length: length, width: 10, height: 10)),
           SizedBox(height: 14.h,),
-          RoomDetailsViewContainer()
+          const RoomDetailsViewContainer()
 
         ],
       ),

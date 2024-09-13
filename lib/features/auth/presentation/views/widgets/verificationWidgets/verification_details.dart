@@ -19,64 +19,53 @@ class VerificationDetails extends StatefulWidget {
 class _VerificationDetailsState extends State<VerificationDetails> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 342.w,
-      height: 300.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.r),
-        color: kContainerColorForAuth,
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(left: 9.w, top: 15.h, right: 10.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Enter Verification Code",
+          style: Styles.textStyle20,
+        ),
+        SizedBox(
+          height: 13.h,
+        ),
+        Text(
+          "Enter code that we have sent to your email",
+          style: Styles.textStyle12.copyWith(
+              fontWeight: FontWeight.w400, color: const Color(0xff787878)),
+        ),
+        Text(
+          "email",
+          style: Styles.textStyle12.copyWith(
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        SizedBox(
+          height: 47.h,
+        ),
+        OtpWidget(
+          onSubmit: (verificationCode) {
+            setState(() {
+              widget.testVerificationCode = verificationCode;
+            });
+          },
+        ),
+        SizedBox(
+          height: 40.h,
+        ),
+        Row(
           children: [
-            Text(
-              "Enter Verification Code",
-              style: Styles.textStyle20,
-            ),
-            SizedBox(
-              height: 13.h,
-            ),
-            Text(
-              "Enter code that we have sent to your email",
-              style: Styles.textStyle12.copyWith(
-                  fontWeight: FontWeight.w400, color: const Color(0xff787878)),
-            ),
-            Text(
-              "email",
-              style: Styles.textStyle12.copyWith(
-                fontWeight: FontWeight.w400,
+            Expanded(
+              child: CustomButton(
+                text: "verify",
+                onPressed: () {
+                    return _showAlertDialog(context);
+                },
               ),
-            ),
-            SizedBox(
-              height: 47.h,
-            ),
-            OtpWidget(
-              onSubmit: (verificationCode) {
-                setState(() {
-                  widget.testVerificationCode = verificationCode;
-                });
-              },
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: CustomButton(
-                    text: "verify",
-                    onPressed: () {
-                        return _showAlertDialog(context);
-                    },
-                  ),
-                ),
-              ],
             ),
           ],
         ),
-      ),
+      ],
     );
   }
 
@@ -146,6 +135,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                     width: 187.w,
                     child: CustomButton(
                       text: "Done",
+                      textStyle: Styles.textStyle17.copyWith(color: Colors.white),
                       borderRadius: BorderRadius.circular(12.r),
                       onPressed: () {
                         GoRouter.of(context).pop();

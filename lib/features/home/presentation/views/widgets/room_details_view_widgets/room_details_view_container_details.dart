@@ -18,7 +18,7 @@ class RoomDetailsViewContainerDetails extends StatelessWidget {
           children: [
             Text(
               "Training Room",
-              style: Styles.textStyle18.copyWith(color: Color(0xffF04C29)),
+              style: Styles.textStyle18.copyWith(color: const Color(0xffF04C29)),
             ),
             SizedBox(
               height: 16.h,
@@ -33,7 +33,7 @@ class RoomDetailsViewContainerDetails extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.table_chart_outlined),
+                  const Icon(Icons.table_chart_outlined),
                   Text(
                     "30 Seats",
                     style: Styles.textStyle14,
@@ -47,17 +47,17 @@ class RoomDetailsViewContainerDetails extends StatelessWidget {
               style: Styles.textStyle12.copyWith(fontWeight: FontWeight.w400),
             ),
             SizedBox(height: 16.h,),
-            Text("Amenities",style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600,color: Color(0xffF04C29)),),
+            Text("Amenities",style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600,color: const Color(0xffF04C29)),),
             SizedBox(height: 14.h,),
-            RoomDetailsViewContainerDetailsIconAndText(icon: Icons.print, text: "Printer, Scanner and photocopier"),
+            const RoomDetailsViewContainerDetailsIconAndText(icon: Icons.print, text: "Printer, Scanner and photocopier"),
             SizedBox(height: 12.h,),
-            RoomDetailsViewContainerDetailsIconAndText(icon: Icons.wifi, text: "Wi_fi"),
+            const RoomDetailsViewContainerDetailsIconAndText(icon: Icons.wifi, text: "Wi_fi"),
             SizedBox(height: 12.h,),
-            RoomDetailsViewContainerDetailsIconAndText(icon: Icons.coffee, text: "Free coffee"),
+            const RoomDetailsViewContainerDetailsIconAndText(icon: Icons.coffee, text: "Free coffee"),
             SizedBox(height: 12.h,),
-            RoomDetailsViewContainerDetailsIconAndText(icon: Icons.video_library_sharp, text: "Video conf"),
+            const RoomDetailsViewContainerDetailsIconAndText(icon: Icons.video_library_sharp, text: "Video conf"),
             SizedBox(height: 12.h,),
-            RoomDetailsViewContainerDetailsIconAndText(icon: Icons.screenshot_monitor_rounded, text: "LED screen"),
+            const RoomDetailsViewContainerDetailsIconAndText(icon: Icons.screenshot_monitor_rounded, text: "LED screen"),
             SizedBox(height: 24.h,),
             Center(child: IconButton(icon: Icon(Icons.keyboard_double_arrow_down,size: 20.sp,), onPressed: () {
               showAmenitiesBottomSheet(context);
@@ -73,7 +73,7 @@ class RoomDetailsViewContainerDetails extends StatelessWidget {
               ],
             ),
             SizedBox(height: 16.h,),
-            CustomImage(width: 342, height: 146, url: "assets/images/Rectangle 346.png"),
+            const CustomImage(width: 342, height: 146, url: "assets/images/Rectangle 346.png"),
             SizedBox(height: 96.h,)
           ],
         ),
@@ -110,35 +110,35 @@ class RoomDetailsViewContainerDetails extends StatelessWidget {
                   child: ListView(
                     children: [
                       ListTile(
-                        leading: Icon(Icons.print, color: kIconColor),
+                        leading: const Icon(Icons.print, color: kIconColor),
                         title: Text('Printer, Scanner and Photocopier',style: Styles.textStyle14,),
                         subtitle: Text('Printing, photocopier and scanning services',style: Styles.textStyle12.copyWith(
                           fontWeight: FontWeight.w400
                         )),
                       ),
                       ListTile(
-                        leading: Icon(Icons.wifi, color: kIconColor),
+                        leading: const Icon(Icons.wifi, color: kIconColor),
                         title: Text('Wi-Fi',style: Styles.textStyle14),
                         subtitle: Text('Free high-speed Wi-Fi',style: Styles.textStyle12.copyWith(
                             fontWeight: FontWeight.w400
                         )),
                       ),
                       ListTile(
-                        leading: Icon(Icons.coffee, color: kIconColor),
+                        leading: const Icon(Icons.coffee, color: kIconColor),
                         title: Text('Free Coffee',style: Styles.textStyle14),
                         subtitle: Text('Free coffee and tea provided',style: Styles.textStyle12.copyWith(
                             fontWeight: FontWeight.w400
                         )),
                       ),
                       ListTile(
-                        leading: Icon(Icons.videocam, color: kIconColor),
+                        leading: const Icon(Icons.videocam, color: kIconColor),
                         title: Text('Video Conference',style: Styles.textStyle14),
                         subtitle: Text('Video conferencing setup available',style: Styles.textStyle12.copyWith(
                             fontWeight: FontWeight.w400
                         )),
                       ),
                       ListTile(
-                        leading: Icon(Icons.tv, color: kIconColor),
+                        leading: const Icon(Icons.tv, color: kIconColor),
                         title: Text('LED Screen',style: Styles.textStyle14),
                         subtitle: Text('LED screen',style: Styles.textStyle12.copyWith(
                             fontWeight: FontWeight.w400

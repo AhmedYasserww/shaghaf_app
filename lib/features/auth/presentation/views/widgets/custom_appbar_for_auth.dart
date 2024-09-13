@@ -7,20 +7,13 @@ class CustomAppbarForAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:  EdgeInsets.only(left: 12.w),
-      child: SizedBox(
-        height: 24.h,
-        width: 24.w,
-        child: IconButton(
-            onPressed: () {
-              GoRouter.of(context).pop();
-            },
-            icon:  Icon(
-              Icons.arrow_back_ios_sharp,
-              size: 24.sp,
-            )),
-      ),
-    );
+    return IconButton(
+        onPressed: () {
+          GoRouter.of(context).pop();
+        },
+        icon:  Icon(
+          Icons.arrow_back_ios_sharp,
+          size: 18.sp,
+        ));
   }
 }

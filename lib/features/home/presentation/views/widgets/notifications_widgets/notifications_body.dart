@@ -12,9 +12,9 @@ class NotificationsBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 16.h,),
-          NotificationsAppBar(),
+          const NotificationsAppBar(),
           SizedBox(height: 32.h,),
-          Expanded(child: NotificationsListView())
+          const Expanded(child: NotificationsListView())
         ],
       ),
     );

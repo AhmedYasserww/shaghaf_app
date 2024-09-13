@@ -21,7 +21,7 @@ class ShaghafApp extends StatelessWidget {
         return MaterialApp.router(
           routerConfig: AppRouter.router,
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(textTheme: GoogleFonts.comfortaaTextTheme()),
+          theme: ThemeData(textTheme: GoogleFonts.comfortaaTextTheme(),scaffoldBackgroundColor: Colors.white),
         );
       },
     );

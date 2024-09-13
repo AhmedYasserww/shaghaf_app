@@ -13,6 +13,7 @@ import 'package:shagaf/features/home/presentation/views/member_ship_view.dart';
 import 'package:shagaf/features/home/presentation/views/notifications_view.dart';
 import 'package:shagaf/features/home/presentation/views/room_details_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
+import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
 import '../../features/home/presentation/views/event_details_view.dart';
 
 
@@ -40,7 +41,7 @@ abstract class AppRouter {
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const HomeView()
+          builder: (context, state) => const SplashView()
         ),
         GoRoute(
             path:kBoardingView,

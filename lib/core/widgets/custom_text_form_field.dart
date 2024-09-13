@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/utils/styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -28,12 +29,11 @@ class CustomTextFormField extends StatelessWidget {
         hintStyle: Styles.textStyle10,
         prefixIcon: Icon(
           icon,
-          size: 16.sp,
-          color: const Color(0xff969696),
+          size: 12.25.sp,
+          color: kIconsColorForAuth,
         ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r),borderSide: BorderSide(color: Colors.black.withOpacity(.5),width: 1)),
         constraints: BoxConstraints(
-          maxWidth: 323.w,
           maxHeight: 36.h,
         ),
         errorStyle: const TextStyle(height: 10,fontSize: 0),

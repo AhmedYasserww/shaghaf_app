@@ -33,14 +33,14 @@ class _HomeViewState extends State<BoardingViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.only(top: 16.h, right: 8.w),
-          child: Align(
+    return Padding(
+      padding: EdgeInsets.only(top: 16.h, right: 24.w,left: 24.w),
+      child: Column(
+        children: [
+          Align(
             alignment: Alignment.topRight,
-            child: TextButton(
-              onPressed: () {
+            child: InkWell(
+              onTap: () {
                 GoRouter.of(context).push(AppRouter.kLogin);
               },
               child: Text(
@@ -49,67 +49,59 @@ class _HomeViewState extends State<BoardingViewBody> {
               ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 76.h,
-        ),
-        SizedBox(
-          height: 492.h,
-          width: 350.w,
-          child: PageView.builder(
-            controller: controller,
-            onPageChanged: (index) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-            itemCount: content.length,
-            itemBuilder: (context, i) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                      height: 350.h,
-                      width: 350.w,
-                      child: SvgPicture.asset(content[i].image)),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  SizedBox(
-                    height: 26.h,
-                    child: Text(
+          SizedBox(
+            height: 40.h,
+          ),
+          Expanded(
+            child: PageView.builder(
+              controller: controller,
+              onPageChanged: (index) {
+                setState(() {
+                  currentIndex = index;
+                });
+              },
+              itemCount: content.length,
+              itemBuilder: (context, i) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                        height: 335.h,
+                        width: 335.w,
+                        child: SvgPicture.asset(content[i].image)),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Text(
                       content[i].title,
                       style: Styles.textStyle20.copyWith(color: Colors.white),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  SizedBox(
-                    height: 72.h,
-                    width: 342.h,
-                    child: Text(
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    Text(
                       content[i].desc,
                       style: Styles.textStyle16
                           .copyWith(color: const Color(0xffFFC100)),
                       textAlign: TextAlign.center,
-                    ),
-                  )
-                ],
-              );
-            },
+                    )
+                  ],
+                );
+              },
+            ),
           ),
-        ),
-        SizedBox(height: 24.h),
-        CustomIndicator(
-          currentIndex: currentIndex,
-          length: content.length,
-          width: 15,
-          height: 15,
-        ),
-        SizedBox(height: 24.h),
-        NextButton(onPressed: onNextButtonPressed),
-      ],
+          SizedBox(height: 24.h),
+          CustomIndicator(
+            currentIndex: currentIndex,
+            length: content.length,
+            width: 15,
+            height: 15,
+          ),
+          SizedBox(height: 24.h),
+          NextButton(onPressed: onNextButtonPressed),
+          SizedBox(height: 60.h,)
+        ],
+      ),
     );
   }
 
