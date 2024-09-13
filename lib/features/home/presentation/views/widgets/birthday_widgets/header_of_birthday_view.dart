@@ -8,7 +8,6 @@ class HeaderOfBirthDayView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.symmetric(horizontal: 24.w),
       padding:  EdgeInsets.only(left: 13.w,right: 5.w ,top: 18.h,bottom: 19.h),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -29,7 +28,7 @@ class HeaderOfBirthDayView extends StatelessWidget {
               padding:  EdgeInsets.only(top: 4.h),
               child: buildTimelineDot()),
           SizedBox(width: 16.w),
-          Expanded(
+          const Expanded(
             child: Text(
                 maxLines: 2,
                 "You can buy them from any where else without any cost or services"),
