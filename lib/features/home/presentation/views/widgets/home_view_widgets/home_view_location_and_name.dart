@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/widgets/rating_container.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/location_container.dart';
 
 class HomeViewLocationAndName extends StatelessWidget {
@@ -8,48 +9,25 @@ class HomeViewLocationAndName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-         const LocationContainer(text: "Location"),
-        SizedBox(height: 20.h), // Adjust the height here
-        Row(
-          children: [
-            Text(
-              "Delightful open air",
-              style: Styles.textStyle20.copyWith(color: Colors.white),
-            ),
-            const Spacer(),
-            Container(
-              width: 51.w,
-              height: 22.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12.r),
-                color: const Color(0xffF04C29).withOpacity(.52),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 23.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+           const LocationContainer(text: "Location"),
+          SizedBox(height: 20.h), // Adjust the height here
+          Row(
+            children: [
+              Text(
+                "Delightful open air",
+                style: Styles.textStyle20.copyWith(color: Colors.white),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.star_rounded,
-                    color: Colors.yellow,
-                    size: 12.sp,
-                  ),
-                  SizedBox(width: .5.w),
-                  Text(
-                    "4.7",
-                    style: Styles.textStyle12.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ],
+              const Spacer(),
+              RatingContainer(rating: 4.7,),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

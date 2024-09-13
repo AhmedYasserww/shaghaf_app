@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/home_view_clip_pathes.dart';
 
 import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/widgets/custom_indicator.dart';
 import 'home_view_advertisments_list.dart';
 import 'home_view_row_buttons.dart';
 
@@ -12,13 +13,13 @@ class HomeViewDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 23.w),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            height: 20.h,
+            height: 22.h,
           ),
           Text(
             "Advertisement",

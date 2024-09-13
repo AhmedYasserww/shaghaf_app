@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shagaf/constants.dart';
 
 class CustomIndicator extends StatelessWidget {
   final int currentIndex;
@@ -27,10 +28,8 @@ class CustomIndicator extends StatelessWidget {
           height: height.r,
           decoration: BoxDecoration(
             color: index == currentIndex
-                ? const Color(0xffF04C29)
-                : const Color(
-                    0xffF04C29,
-                  ).withOpacity(.5),
+                ? kMostColorPicked
+                : kMostColorPicked.withOpacity(.5),
             shape: BoxShape.circle,
           ),
         );
