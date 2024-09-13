@@ -34,6 +34,8 @@ abstract class AppRouter {
   static const kEventDetailsView = '/eventDetailsView';
   static const kMemberShipView = '/memberShipView';
   static const kNotificationsView = '/notificationsView';
+  static const kBirthDayView = '/birthdayView';
+
 
 
 
@@ -98,9 +100,14 @@ abstract class AppRouter {
         GoRoute(
             path: kMemberShipView,
             builder: (context, state) => const MemberShipView()
-        ),GoRoute(
+        ),
+        GoRoute(
             path: kNotificationsView,
             builder: (context, state) => const NotificationsView()
+        ),
+        GoRoute(
+            path: kBirthDayView,
+            builder: (context, state) => const BirthdayView()
         ),
       ]);
 }
