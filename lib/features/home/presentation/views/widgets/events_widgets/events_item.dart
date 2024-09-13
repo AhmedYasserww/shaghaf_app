@@ -43,7 +43,7 @@ class EventsItem extends StatelessWidget {
                   child: Text(
                     "Positive education workshop",
                     style: Styles.textStyle10.copyWith(
-                      color: Color(0xff252525)
+                      color: const Color(0xff252525)
                     ),
                     maxLines: 2, // Limits the// text to a maximum of 2 lines
                     overflow: TextOverflow

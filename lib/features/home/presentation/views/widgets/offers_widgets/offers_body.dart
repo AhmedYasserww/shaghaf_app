@@ -10,7 +10,7 @@ class OffersBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 12.h),
-        child: Column(
+        child: const Column(
           children: [
             OffersAppBar(),
             Expanded(child: OffersGridView())

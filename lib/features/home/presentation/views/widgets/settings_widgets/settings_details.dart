@@ -29,7 +29,7 @@ class SettingsDetails extends StatelessWidget {
             ),
           ],
         ),
-        Divider(thickness: 1,color: Color(0xffDCDCDC),),
+        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),
         Row(
           children: [
@@ -52,7 +52,7 @@ class SettingsDetails extends StatelessWidget {
             ),
           ],
         ),
-        Divider(thickness: 1,color: Color(0xffDCDCDC),),
+        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),
         Row(
           children: [
@@ -70,7 +70,7 @@ class SettingsDetails extends StatelessWidget {
             ),
           ],
         ),
-        Divider(thickness: 1,color: Color(0xffDCDCDC),),
+        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),
         InkWell(
           onTap: (){
@@ -93,7 +93,7 @@ class SettingsDetails extends StatelessWidget {
             ],
           ),
         ),
-        Divider(thickness: 1,color: Color(0xffDCDCDC),),
+        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),
         Row(
           children: [
@@ -111,7 +111,7 @@ class SettingsDetails extends StatelessWidget {
             ),
           ],
         ),
-        Divider(thickness: 1,color: Color(0xffDCDCDC),)
+        const Divider(thickness: 1,color: Color(0xffDCDCDC),)
       ],
     );
   }

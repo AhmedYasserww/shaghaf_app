@@ -8,11 +8,11 @@ class DateAndTimeTimePicker extends StatefulWidget {
 }
 
 class _DateAndTimeTimePickerState extends State<DateAndTimeTimePicker> {
-  DateTime _selectedTime = DateTime.now();
+  final DateTime _selectedTime = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         //Text("From:",style: Styles.textStyle16,),

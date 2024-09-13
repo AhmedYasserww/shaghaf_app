@@ -20,7 +20,7 @@ class CustomImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width != null ? width!.w : null, // Apply width only if it's not null
+      width: width?.w, // Apply width only if it's not null
       height: height.h,
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(url), fit: BoxFit.fill),

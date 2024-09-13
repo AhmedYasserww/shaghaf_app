@@ -15,7 +15,7 @@ class OffersGridView extends StatelessWidget {
         ),
         itemCount: 10,
         itemBuilder: (context,index){
-          return OffersItem();
+          return const OffersItem();
         });
   }
 }

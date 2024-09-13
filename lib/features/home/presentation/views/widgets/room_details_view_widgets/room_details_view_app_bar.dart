@@ -26,7 +26,7 @@ final String textAppbar;
                 color: Colors.white.withOpacity(.5),
                 shape: BoxShape.circle
             ),
-            child: Center(child: Icon(Icons.favorite,size: 18.sp,color: Color(0xffF04C29),)),
+            child: Center(child: Icon(Icons.favorite,size: 18.sp,color: const Color(0xffF04C29),)),
           ),
         ],
       ),

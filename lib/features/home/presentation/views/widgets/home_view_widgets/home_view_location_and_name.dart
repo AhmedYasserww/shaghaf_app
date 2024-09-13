@@ -11,7 +11,7 @@ class HomeViewLocationAndName extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         LocationContainer(text: "Location"),
+         const LocationContainer(text: "Location"),
         SizedBox(height: 20.h), // Adjust the height here
         Row(
           children: [
@@ -19,13 +19,13 @@ class HomeViewLocationAndName extends StatelessWidget {
               "Delightful open air",
               style: Styles.textStyle20.copyWith(color: Colors.white),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               width: 51.w,
               height: 22.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.r),
-                color: Color(0xffF04C29).withOpacity(.52),
+                color: const Color(0xffF04C29).withOpacity(.52),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,

@@ -14,7 +14,7 @@ class CustomDrawerItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               width: 95,
               height: 160,
                 child: Image(image: AssetImage(AssetsData.logo))),

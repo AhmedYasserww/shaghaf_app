@@ -13,7 +13,7 @@ class ContactUsBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.0.h,horizontal: 24.w),
       child: Column(
         children: [
-          ContactUsAppBar(),
+          const ContactUsAppBar(),
           SizedBox(height: 33.h,),
           Row(
             children: [
@@ -31,7 +31,7 @@ class ContactUsBody extends StatelessWidget {
               ),
             ],
           ),
-          Divider(thickness: 1,color: Color(0xffDCDCDC),),
+          const Divider(thickness: 1,color: Color(0xffDCDCDC),),
           SizedBox(height: 32.h,),
           Row(
             children: [
@@ -49,7 +49,7 @@ class ContactUsBody extends StatelessWidget {
               ),
             ],
           ),
-          Divider(thickness: 1,color: Color(0xffDCDCDC),),
+          const Divider(thickness: 1,color: Color(0xffDCDCDC),),
           SizedBox(height: 32.h,),
           Row(
             children: [
@@ -67,7 +67,7 @@ class ContactUsBody extends StatelessWidget {
               ),
             ],
           ),
-          Divider(thickness: 1,color: Color(0xffDCDCDC),),
+          const Divider(thickness: 1,color: Color(0xffDCDCDC),),
           SizedBox(height: 32.h,),
           Row(
             children: [
@@ -85,7 +85,7 @@ class ContactUsBody extends StatelessWidget {
               ),
             ],
           ),
-          Divider(thickness: 1,color: Color(0xffDCDCDC),),
+          const Divider(thickness: 1,color: Color(0xffDCDCDC),),
           SizedBox(height: 32.h,),
           Row(
             children: [
@@ -103,7 +103,7 @@ class ContactUsBody extends StatelessWidget {
               ),
             ],
           ),
-          Divider(thickness: 1,color: Color(0xffDCDCDC),),
+          const Divider(thickness: 1,color: Color(0xffDCDCDC),),
           SizedBox(height: 32.h,),
           Row(
             children: [

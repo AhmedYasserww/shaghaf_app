@@ -5,7 +5,7 @@ import 'package:shagaf/core/utils/app_router.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 
 class HomeViewRowButtons extends StatelessWidget {
-  const HomeViewRowButtons({Key? key}) : super(key: key);
+  const HomeViewRowButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

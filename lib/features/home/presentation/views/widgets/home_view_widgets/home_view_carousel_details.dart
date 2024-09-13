@@ -22,7 +22,7 @@ class HomeViewCarouselDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          HomeViewAppBar(),
+          const HomeViewAppBar(),
           SizedBox(
             height: 88.h,
           ), // Adjust the height here

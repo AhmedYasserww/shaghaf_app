@@ -8,7 +8,7 @@ class NotificationsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: 6.h),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: Color(0xff263238)))
       ),
@@ -16,7 +16,7 @@ class NotificationsItem extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 37.5.r,
-            backgroundImage: AssetImage("assets/images/Frame 1080 2.png"),
+            backgroundImage: const AssetImage("assets/images/Frame 1080 2.png"),
           ),
           SizedBox(width: 8.h,),
           Column(

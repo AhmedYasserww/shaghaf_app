@@ -12,48 +12,37 @@ class ForgetPasswordDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GlobalKey<FormState> formState = GlobalKey();
-    return Container(
-      width: 342.w,
-      height: 300.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.r),
-        color: kContainerColorForAuth,
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(left: 9.w, top: 15.h, right: 10.w),
-        child: Form(
-          key: formState,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Form(
+      key: formState,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Forgot Your Password?",style: Styles.textStyle20,),
+          SizedBox(height: 13.h,),
+          Text("Enter your gmail, we will send you confirmation code",style: Styles.textStyle12.copyWith(
+            fontWeight: FontWeight.w400,
+            color: const Color(0xff787878)
+          ),),
+          SizedBox(height: 47.h,),
+          const GmailField(),
+          SizedBox(height: 24.h,),
+          Row(
             children: [
-              Text("Forgot Your Password?",style: Styles.textStyle20,),
-              SizedBox(height: 13.h,),
-              Text("Enter your gmail, we will send you confirmation code",style: Styles.textStyle12.copyWith(
-                fontWeight: FontWeight.w400,
-                color: const Color(0xff787878)
-              ),),
-              SizedBox(height: 47.h,),
-              const GmailField(),
-              SizedBox(height: 24.h,),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomButton(
-                      text: "Reset Password",
-                      onPressed: () {
-                        if (formState.currentState!.validate()) {
-                          formState.currentState!.save();
-                          GoRouter.of(context).push(AppRouter.kVerification);
-                        } else {
-                        }
-                      },
-                    ),
-                  ),
-                ],
+              Expanded(
+                child: CustomButton(
+                  text: "Reset Password",
+                  onPressed: () {
+                    if (formState.currentState!.validate()) {
+                      formState.currentState!.save();
+                      GoRouter.of(context).push(AppRouter.kVerification);
+                    } else {
+                    }
+                  },
+                ),
               ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
