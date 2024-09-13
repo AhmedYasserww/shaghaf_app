@@ -7,7 +7,7 @@ import 'package:shagaf/core/widgets/custom_button.dart';
 import '../../../../../../core/utils/styles.dart';
 
 class HomeViewRowButtons extends StatelessWidget {
-  const HomeViewRowButtons({super.key});
+  const HomeViewRowButtons({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -43,3 +43,5 @@ class HomeViewRowButtons extends StatelessWidget {
     );
   }
 }
+
+
