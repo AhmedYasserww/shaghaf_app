@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 
 import 'clock.dart';
+import 'current_time.dart';
 
 class BookingHistoryContianerForClock extends StatelessWidget {
   const BookingHistoryContianerForClock({super.key});
@@ -13,10 +14,11 @@ class BookingHistoryContianerForClock extends StatelessWidget {
       width: 390.w,
       height: 329,
       url: "assets/images/Rectangle 346.png",
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child:  Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Clock(),
+          const Clock(),
+          CurrentTime(),
         ],
       ),
     );

@@ -11,30 +11,22 @@ class OffersItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 163.w,
-      height: 176.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
+          kBoxShadow
         ],
         color: Colors.white,
       ),
       child: Column(
         children: [
           CustomImage(
-            width: 163,
-            height: 108,
+            height: 100,
             url: "assets/images/Frame 1080.png",
             borderRadius: BorderRadius.vertical(top: Radius.circular(12.r)),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 8.0.w, right: 12.w, top: 4.h),
+            padding: EdgeInsets.only(left: 8.0.w, right: 12.w, top: 4.h,bottom: 8.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

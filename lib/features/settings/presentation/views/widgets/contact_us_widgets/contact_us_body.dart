@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shagaf/core/widgets/custom_app_bar_title_and_arrow.dart';
 
 import '../../../../../../constants.dart';
 import '../../../../../../core/utils/styles.dart';
-import 'contact_us_app_bar.dart';
 class ContactUsBody extends StatelessWidget {
   const ContactUsBody({super.key});
 
@@ -13,7 +13,7 @@ class ContactUsBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.0.h,horizontal: 24.w),
       child: Column(
         children: [
-          const ContactUsAppBar(),
+          const CustomAppBarTitleAndArrow(title: "Contact us"),
           SizedBox(height: 33.h,),
           Row(
             children: [

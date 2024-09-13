@@ -14,17 +14,12 @@ class BookingReviewThirdContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        boxShadow: [kBoxShadow],
       ),
       child: Padding(
-        padding: EdgeInsets.only(left: 15.w,),
+        padding: EdgeInsets.only(
+          left: 15.w,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -33,17 +28,29 @@ class BookingReviewThirdContainer extends StatelessWidget {
               "Payment Method",
               style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w500),
             ),
-            SizedBox(height: 8.h,),
-            Text("You will not be debited until your booking is confirmed", style: Styles.textStyle10),
-            SizedBox(height: 15.h,),
+            SizedBox(
+              height: 8.h,
+            ),
+            Text("You will not be debited until your booking is confirmed",
+                style: Styles.textStyle10),
+            SizedBox(
+              height: 15.h,
+            ),
             Row(
               children: [
                 CircleAvatar(
                   radius: 8.r,
                   backgroundColor: kMostColorPicked,
-                  child: Center(child: Icon(Icons.check,color: Colors.white,size: 12.sp,)),
+                  child: Center(
+                      child: Icon(
+                    Icons.check,
+                    color: Colors.white,
+                    size: 12.sp,
+                  )),
                 ),
-                SizedBox(width: 5.w,),
+                SizedBox(
+                  width: 5.w,
+                ),
                 Text(
                   "Add card",
                   style: Styles.textStyle10,

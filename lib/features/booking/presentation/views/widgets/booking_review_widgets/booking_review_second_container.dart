@@ -4,6 +4,7 @@ import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 
 import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/widgets/custom_dotted_line.dart';
 
 class BookingReviewSecondContainer extends StatelessWidget {
   const BookingReviewSecondContainer({super.key});
@@ -16,12 +17,7 @@ class BookingReviewSecondContainer extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
+          kBoxShadow
         ],
       ),
       child: Padding(
@@ -37,24 +33,12 @@ class BookingReviewSecondContainer extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    CircleAvatar(
-                      radius: 4.r,
-                      backgroundColor: kMostColorPicked,
-                    ),
-                    SizedBox(
-                      height: 31.5.h,
-                      child: const VerticalDivider(
-                        color: kMostColorPicked,
-                        thickness: 1,
-                        width: 20,
-                      ),
-                    ),
-                    CircleAvatar(
-                      radius: 4.r,
-                      backgroundColor: kMostColorPicked,
-                    ),
+                    buildTimelineDot(),
+                    buildDottedLine(lineLength: 31.5),
+                    buildTimelineDot(),
                   ],
                 ),
+                SizedBox(width: 3.w,),
                 Column(
                   children: [
                     Text(
