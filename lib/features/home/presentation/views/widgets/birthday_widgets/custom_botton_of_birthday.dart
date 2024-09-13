@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/styles.dart';
 class CustomButtonOfBirthDayView extends StatelessWidget {
-  const CustomButtonOfBirthDayView({super.key});
-
+  const CustomButtonOfBirthDayView({super.key, required this.price,});
+final String price;
   @override
   Widget build(BuildContext context) {
     return    Container(
@@ -26,7 +26,7 @@ class CustomButtonOfBirthDayView extends StatelessWidget {
               ),
             ),
             Text(
-              "EGP 600.0",
+              price,
               style: Styles.textStyle16.copyWith(
                 fontWeight: FontWeight.w600,
                 color: Colors.white,

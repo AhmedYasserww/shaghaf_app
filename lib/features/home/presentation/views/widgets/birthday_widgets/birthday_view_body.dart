@@ -55,7 +55,7 @@ class _BirthdayViewBodyState extends State<BirthdayViewBody> {
 
             const SizedBox(height: 20),
 
-            isItemSelected? CustomButtonOfBirthDayView():Text(""),
+            isItemSelected? CustomButtonOfBirthDayView(price: "EGP 500.0",):Text(""),
             const SizedBox(height: 20),
           ],
         ),

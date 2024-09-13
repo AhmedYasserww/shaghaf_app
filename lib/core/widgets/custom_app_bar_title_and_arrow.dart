@@ -8,6 +8,7 @@ import '../utils/styles.dart';
 class CustomAppBarTitleAndArrow extends StatelessWidget {
   const CustomAppBarTitleAndArrow({super.key, required this.title});
 
+
   final String title;
 
   @override

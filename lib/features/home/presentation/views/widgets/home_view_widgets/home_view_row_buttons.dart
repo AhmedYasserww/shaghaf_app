@@ -31,13 +31,20 @@ class HomeViewRowButtons extends StatelessWidget {
           textStyle: Styles.textStyle16.copyWith(color: Colors.white,fontWeight: FontWeight.w500),
           color: const Color(0xffF04C29).withOpacity(.9),
 
+          onPressed: (){
+            GoRouter.of(context).push(AppRouter.kBirthDayView);
+          },
         ),
         CustomButton(
+
           width: 110,
           height: 48,
           text: "Photo session",
           textStyle: Styles.textStyle16.copyWith(color: Colors.white,fontWeight: FontWeight.w500),
           color: const Color(0xffF04C29).withOpacity(.9),
+          onPressed: (){
+            GoRouter.of(context).push(AppRouter.kPhotoSessionView);
+          },
         ),
       ],
     );
