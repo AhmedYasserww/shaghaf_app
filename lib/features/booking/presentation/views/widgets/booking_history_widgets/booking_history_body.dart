@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'booking_history_app_bar.dart';
 import 'booking_history_past.dart';
@@ -20,7 +21,9 @@ class _BookingHistoryBodyState extends State<BookingHistoryBody> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 16.h,),
             const BookingHistoryAppBar(),
+            SizedBox(height: 24.h,),
             BookingHistoryTapBar(onIndexChanged: (int value) { setState(() {
               _index = value;
             }); },),

@@ -23,8 +23,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       selectedFontSize: 12.0,
       unselectedFontSize: 10.0,
       backgroundColor: Colors.white,
-      selectedItemColor: Colors.red,
-      unselectedItemColor: Colors.blue,
+      selectedItemColor: Color(0xff20473E),
+      unselectedItemColor: Color(0xff5E5F60),
       currentIndex: selectedIndex, // Reflect the selected index
       onTap: (index) {
         // Skip index 2, which is the placeholder
