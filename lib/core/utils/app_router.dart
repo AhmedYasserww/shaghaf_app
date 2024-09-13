@@ -3,6 +3,7 @@ import 'package:shagaf/features/auth/presentation/views/forget_password_screen.d
 import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
+import 'package:shagaf/features/home/presentation/views/birthday_view.dart';
 import 'package:shagaf/features/home/presentation/views/booking_review_view.dart';
 import 'package:shagaf/features/home/presentation/views/category_details_view.dart';
 import 'package:shagaf/features/home/presentation/views/contact_us_view.dart';
@@ -33,6 +34,8 @@ abstract class AppRouter {
   static const kEventDetailsView = '/eventDetailsView';
   static const kMemberShipView = '/memberShipView';
   static const kNotificationsView = '/notificationsView';
+  static const kBirthDayView = '/birthdayView';
+
 
 
 
@@ -97,9 +100,14 @@ abstract class AppRouter {
         GoRoute(
             path: kMemberShipView,
             builder: (context, state) => const MemberShipView()
-        ),GoRoute(
+        ),
+        GoRoute(
             path: kNotificationsView,
             builder: (context, state) => const NotificationsView()
+        ),
+        GoRoute(
+            path: kBirthDayView,
+            builder: (context, state) => const BirthdayView()
         ),
       ]);
 }

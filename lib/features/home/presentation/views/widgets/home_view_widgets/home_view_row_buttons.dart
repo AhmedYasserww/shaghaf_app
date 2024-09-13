@@ -5,7 +5,7 @@ import 'package:shagaf/core/utils/app_router.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 
 class HomeViewRowButtons extends StatelessWidget {
-  const HomeViewRowButtons({Key? key}) : super(key: key);
+  const HomeViewRowButtons({super.key}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,13 @@ class HomeViewRowButtons extends StatelessWidget {
         SizedBox(
             width: 110.w,
             child: CustomButton(
+
               height: 48,
               text: "Birthday",
               color: const Color(0xffF04C29).withOpacity(.9),
+              onPressed: (){
+          GoRouter.of(context).push(AppRouter.kBirthDayView);
+              },
 
             )),
         SizedBox(
@@ -36,8 +40,13 @@ class HomeViewRowButtons extends StatelessWidget {
               height: 48,
               text: "Photo session",
               color: const Color(0xffF04C29).withOpacity(.9),
+              onPressed: (){
+
+              },
             )),
       ],
     );
   }
 }
+
+
