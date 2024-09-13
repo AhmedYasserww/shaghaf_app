@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/booking_history_widgets/booking_history_body.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_bottom_navigation_bar.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_drawer.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_floating_action_button.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/home_view_body.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/offers_widgets/offers_body.dart';
-import 'package:shagaf/features/home/presentation/views/widgets/settings_widgets/settings_body.dart';
+
+import '../../../booking/presentation/views/widgets/booking_history_widgets/booking_history_body.dart';
+import '../../../settings/presentation/views/widgets/settings_widgets/settings_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

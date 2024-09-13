@@ -7,12 +7,14 @@ import 'home_view_carousel_details.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -25,7 +27,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   setState(() {
                     _currentIndex = index;
                   });
-                }, height: 300,
+                },
+                height: 300,
               ),
               HomeViewCarouselDetails(
                 currentIndex: _currentIndex,
