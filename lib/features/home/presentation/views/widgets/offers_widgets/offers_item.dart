@@ -116,7 +116,7 @@ class OffersItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 113.w,child: CustomButton(text: "Copy",color: kMostColorPicked,))
+                  SizedBox(width: 113.w,child: const CustomButton(text: "Copy",color: kMostColorPicked,))
                 ],
               ),),
         );

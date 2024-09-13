@@ -14,7 +14,7 @@ class EventsGirdView extends StatelessWidget {
         ),
         itemCount: 10,
         itemBuilder: (context,index){
-          return EventsItem();
+          return const EventsItem();
         });
   }
 }

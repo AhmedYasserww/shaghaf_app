@@ -20,7 +20,7 @@ class CategoryDetailsViewBody extends StatelessWidget {
                   onTap: (){
                     GoRouter.of(context).push(AppRouter.kRoomDetailsView);
                   },
-                    child: CategoryDetailsListViewItem()),
+                    child: const CategoryDetailsListViewItem()),
                 SizedBox(
                   height: 16.h,
                 ),

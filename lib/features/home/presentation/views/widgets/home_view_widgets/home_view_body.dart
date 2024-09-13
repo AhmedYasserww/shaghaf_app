@@ -6,7 +6,7 @@ import '../../../../data/models/image_model.dart';
 import 'home_view_carousel_details.dart';
 
 class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({Key? key}) : super(key: key);
+  const HomeViewBody({super.key});
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
 }
@@ -33,7 +33,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
             ],
           ),
-          HomeViewDetails(),
+          const HomeViewDetails(),
         ],
       ),
     );

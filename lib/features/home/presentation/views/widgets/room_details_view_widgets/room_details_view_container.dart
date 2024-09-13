@@ -14,7 +14,7 @@ class RoomDetailsViewContainer extends StatelessWidget {
           borderRadius: BorderRadius.only(topLeft: Radius.circular(32.r),topRight: Radius.circular(32.r)),
           color: Colors.white
         ),
-        child: RoomDetailsViewContainerDetails(),
+        child: const RoomDetailsViewContainerDetails(),
       ),
     );
   }

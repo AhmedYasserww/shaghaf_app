@@ -27,7 +27,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height?.h ?? 37.h,
-      width: width != null ? width!.w : null, // Apply width only if it's not null
+      width: width?.w, // Apply width only if it's not null
       child: Container(
         decoration: BoxDecoration(
           // Conditionally apply shadow if `shadow` is true
