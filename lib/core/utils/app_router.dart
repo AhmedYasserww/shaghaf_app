@@ -4,7 +4,7 @@ import 'package:shagaf/features/auth/presentation/views/login_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
 import 'package:shagaf/features/booking/presentation/views/booking_review_view.dart';
-import 'package:shagaf/features/home/photo_session_view.dart';
+import 'package:shagaf/features/home/presentation/views/photo_session_view.dart';
 import 'package:shagaf/features/rooms/presentations/views/rooms_view.dart';
 import 'package:shagaf/features/settings/presentation/views/contact_us_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
@@ -15,6 +15,7 @@ import 'package:shagaf/features/settings/presentation/views/notifications_view.d
 import 'package:shagaf/features/rooms/presentations/views/room_details_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
+import 'package:shagaf/features/settings/presentation/views/profile_view.dart';
 import '../../features/events/presentations/views/event_details_view.dart';
 import '../../features/home/presentation/views/birthday_view.dart';
 
@@ -38,8 +39,8 @@ abstract class AppRouter {
   static const kNotificationsView = '/notificationsView';
   static const kBirthDayView = '/birthdayView';
   static const kPhotoSessionView = '/photoSessionView';
-
-
+  static const kNotificationView= '/notificationView';
+  static const kProfileView= '/profileView';
 
 
 
@@ -116,6 +117,14 @@ abstract class AppRouter {
         GoRoute(
             path: kPhotoSessionView,
             builder: (context, state) => const PhotoSessionView()
+        ),
+        GoRoute(
+            path: kNotificationsView,
+            builder: (context, state) => const NotificationsView()
+        ),
+        GoRoute(
+            path: kProfileView,
+            builder: (context, state) => const ProfileView()
         ),
       ]);
 }

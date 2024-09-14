@@ -13,21 +13,26 @@ class SettingsDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            const Icon(
-              Icons.people_alt_rounded,
-              color: kMostColorPicked,
-            ),
-            SizedBox(
-              width: 4.h,
-            ),
-            Text(
-              "Profile",
-              style:
-                  Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
-            ),
-          ],
+        InkWell(
+          onTap: (){
+            GoRouter.of(context).push(AppRouter.kProfileView);
+          },
+          child: Row(
+            children: [
+              const Icon(
+                Icons.people_alt_rounded,
+                color: kMostColorPicked,
+              ),
+              SizedBox(
+                width: 4.h,
+              ),
+              Text(
+                "Profile",
+                style:
+                    Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
         ),
         const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),
@@ -54,21 +59,26 @@ class SettingsDetails extends StatelessWidget {
         ),
         const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),
-        Row(
-          children: [
-            const Icon(
-              Icons.notification_add_outlined,
-              color: kMostColorPicked,
-            ),
-            SizedBox(
-              width: 4.h,
-            ),
-            Text(
-              "Notifications",
-              style:
-              Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
-            ),
-          ],
+        InkWell(
+          onTap: (){
+            GoRouter.of(context).push(AppRouter.kNotificationsView);
+          },
+          child: Row(
+            children: [
+              const Icon(
+                Icons.notification_add_outlined,
+                color: kMostColorPicked,
+              ),
+              SizedBox(
+                width: 4.h,
+              ),
+              Text(
+                "Notifications",
+                style:
+                Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
         ),
         const Divider(thickness: 1,color: Color(0xffDCDCDC),),
         SizedBox(height: 24.h,),

@@ -21,7 +21,7 @@ class CustomDrawerItem extends StatelessWidget {
 
             CustomDrawerListView(
               onItemTap: (value){
-                print(value.title);
+
               }
                 ,
                 items: items),
