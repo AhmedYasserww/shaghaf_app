@@ -24,7 +24,7 @@ class ForgetPasswordDetails extends StatelessWidget {
             color: const Color(0xff787878)
           ),),
           SizedBox(height: 47.h,),
-          const GmailField(),
+           GmailField(onSaved: (String ) { },),
           SizedBox(height: 24.h,),
           Row(
             children: [

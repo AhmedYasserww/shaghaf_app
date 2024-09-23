@@ -18,7 +18,7 @@ class NotificationsItem extends StatelessWidget {
             radius: 37.5.r,
             backgroundImage: const AssetImage("assets/images/Frame 1080 2.png"),
           ),
-          SizedBox(width: 8.h,),
+          SizedBox(width: 7.h,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,

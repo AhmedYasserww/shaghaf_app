@@ -33,9 +33,6 @@ class CustomTextFormField extends StatelessWidget {
           color: kIconsColorForAuth,
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r),borderSide: BorderSide(color: Colors.black.withOpacity(.5),width: 1)),
-        constraints: BoxConstraints(
-          maxHeight: 36.h,
-        ),
         errorStyle: const TextStyle(height: 10,fontSize: 0),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.r),
