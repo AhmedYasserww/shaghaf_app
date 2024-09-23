@@ -3,12 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
+
 class GmailField extends StatelessWidget {
-  const GmailField({super.key});
+  final void Function(String?) onSaved;
+
+  const GmailField({super.key, required this.onSaved}); // Accept onSaved as a parameter
+
 
   @override
   Widget build(BuildContext context) {
-    String? gmail;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -19,10 +22,12 @@ class GmailField extends StatelessWidget {
         SizedBox(
           height: 5.h,
         ),
-        CustomTextFormField(onSaved: (value){
-          gmail = value;
-        }, hintText: "Enter your gmail", icon: Icons.email, textInputType: TextInputType.emailAddress),
-
+        CustomTextFormField(
+          onSaved: onSaved, // Pass the onSaved callback to the text form field
+          hintText: "Enter your gmail",
+          icon: Icons.email,
+          textInputType: TextInputType.emailAddress,
+        ),
       ],
     );
   }
