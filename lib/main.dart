@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shagaf/core/utils/app_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shagaf/features/auth/presentation/manager/verification/verification_cubit.dart';
 
 import 'core/utils/api_serivce.dart';
 import 'features/auth/data/repos/auth_repo/auth_repo_impl.dart';
@@ -21,7 +22,9 @@ class ShaghafApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => SignUpCubit(AuthRepoImpl(apiService: ApiService(Dio())))
+            create: (context) => SignUpCubit(AuthRepoImpl(apiService: ApiService(Dio()))),
+        ),BlocProvider(
+            create: (context) => VerificationCubit(AuthRepoImpl(apiService: ApiService(Dio()))),
         ),
       ],
       child: ScreenUtilInit(

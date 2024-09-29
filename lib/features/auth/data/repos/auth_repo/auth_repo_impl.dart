@@ -31,7 +31,7 @@ class AuthRepoImpl implements AuthRepo{
   @override
   Future<Either<Failure, Unit>> verifyEmail({required String code, required String email}) async{
     try {
-      var data = await apiService.post(endPoint: 'api/users/signup', data: {
+      var data = await apiService.post(endPoint: 'api/users/verify', data: {
         "code" : code,
         "email" : email,
       });
