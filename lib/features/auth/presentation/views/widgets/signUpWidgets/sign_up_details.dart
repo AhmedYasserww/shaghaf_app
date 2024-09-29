@@ -28,7 +28,7 @@ class SignUpDetails extends StatelessWidget {
         if (state is SignUpSuccess) {
           // Handle success - navigate or show a success message
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Sign Up Successful!')),
+            SnackBar(content: Text('Validate your email!')),
           );
           GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
         } else if (state is SignUpFailure) {
@@ -44,6 +44,8 @@ class SignUpDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (state is SignUpLoading)
+                Center(child: CircularProgressIndicator()), // Show loading indicator during sign-up
               GmailField(
                 onSaved: (value) => email = value ?? '',
               ),
@@ -68,23 +70,23 @@ class SignUpDetails extends StatelessWidget {
                       onPressed: () {
                         if (formState.currentState!.validate()) {
                           formState.currentState!.save();
-
                           // Call the cubit's signUp method with form data
                           context.read<SignUpCubit>().signUp(
-                            phone: '1234567890', // Add logic to collect phone if needed
+                            phone: '01200000000',
                             email: email,
                             useName: userName,
                             password: password,
-                            birthDate: '2000-01-01', // Example birthDate, change it accordingly
+                            birthDate: '2004-07-05', // Example birthDate, change it accordingly
                           );
+                          print(email);
+                          print(password);
+                          print(userName);
                         }
                       },
                     ),
                   ),
                 ],
               ),
-              if (state is SignUpLoading)
-                Center(child: CircularProgressIndicator()), // Show loading indicator during sign-up
               SizedBox(height: 16.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

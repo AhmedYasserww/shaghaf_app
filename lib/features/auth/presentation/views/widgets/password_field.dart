@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
+
 class PasswordField extends StatelessWidget {
   const PasswordField({super.key, required this.onSaved});
+
   final void Function(String?) onSaved;
 
   @override
@@ -20,9 +22,10 @@ class PasswordField extends StatelessWidget {
         SizedBox(
           height: 5.h,
         ),
-        CustomTextFormField(onSaved: (value){
-          password = value;
-        }, hintText: "Enter your password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
+        CustomTextFormField(onSaved: onSaved,
+            hintText: "Enter your password",
+            icon: Icons.lock,
+            textInputType: TextInputType.visiblePassword),
       ],
     );
   }

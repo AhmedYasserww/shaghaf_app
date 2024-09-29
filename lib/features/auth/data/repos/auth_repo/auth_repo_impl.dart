@@ -10,7 +10,7 @@ class AuthRepoImpl implements AuthRepo{
 
   AuthRepoImpl({required this.apiService});
   @override
-  Future<Either<Failure, Unit>> signUo({required String phone, required String email, required String useName, required String password, required String birthDate})  async{
+  Future<Either<Failure, Unit>> signUp({required String phone, required String email, required String useName, required String password, required String birthDate})  async{
     try {
       var data = await apiService.post(endPoint: 'api/users/signup', data: {
         "username" : useName,
