@@ -8,6 +8,7 @@ import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/gmail_field.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/password_field.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/signUpWidgets/confirm_password_field.dart';
+import 'package:shagaf/features/auth/presentation/views/widgets/signUpWidgets/phone_field.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/signUpWidgets/user_name_field.dart';
 
 import '../../../manager/sign_up/sign_up_cubit.dart'; // Import your cubit
@@ -21,6 +22,7 @@ class SignUpDetails extends StatelessWidget {
     String email = '';
     String userName = '';
     String password = '';
+    String phone = '';
     String confirmPassword = '';
 
     return BlocConsumer<SignUpCubit, SignUpState>(
@@ -30,7 +32,7 @@ class SignUpDetails extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Validate your email!')),
           );
-          GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
+          GoRouter.of(context).push(AppRouter.kVerification,extra: email); // Navigate to home page
         } else if (state is SignUpFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -48,6 +50,10 @@ class SignUpDetails extends StatelessWidget {
                 Center(child: CircularProgressIndicator()), // Show loading indicator during sign-up
               GmailField(
                 onSaved: (value) => email = value ?? '',
+              ),
+              SizedBox(height: 19.h),
+              PhoneField(
+                onSaved: (value) => phone = value ?? '',
               ),
               SizedBox(height: 19.h),
               UserNameField(
@@ -72,15 +78,16 @@ class SignUpDetails extends StatelessWidget {
                           formState.currentState!.save();
                           // Call the cubit's signUp method with form data
                           context.read<SignUpCubit>().signUp(
-                            phone: '01200000000',
+                            phone: phone,
                             email: email,
                             useName: userName,
                             password: password,
-                            birthDate: '2004-07-05', // Example birthDate, change it accordingly
+                            birthDate: '2000-02-01', // Example birthDate, change it accordingly
                           );
                           print(email);
-                          print(password);
+                          print(phone);
                           print(userName);
+                          print(password);
                         }
                       },
                     ),

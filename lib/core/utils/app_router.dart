@@ -19,7 +19,6 @@ import 'package:shagaf/features/settings/presentation/views/profile_view.dart';
 import '../../features/events/presentations/views/event_details_view.dart';
 import '../../features/home/presentation/views/birthday_view.dart';
 
-
 abstract class AppRouter {
   static const kSignUp = '/signUp';
   static const kLogin = '/login';
@@ -27,7 +26,7 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kBoardingView = '/boardingView';
   static const kForgetPassword = '/forgetPassword';
-  static const kVerification= '/verification';
+  static const kVerification = '/verification';
   static const kCategoryDetailsView = '/categoryDetailsView';
   static const kRoomDetailsView = '/roomDetailsView';
   static const kDateAndTimeView = '/dateAndTimeView';
@@ -39,92 +38,69 @@ abstract class AppRouter {
   static const kNotificationsView = '/notificationsView';
   static const kBirthDayView = '/birthdayView';
   static const kPhotoSessionView = '/photoSessionView';
-  static const kNotificationView= '/notificationView';
-  static const kProfileView= '/profileView';
+  static const kNotificationView = '/notificationView';
+  static const kProfileView = '/profileView';
 
-
-
-  static final router = GoRouter(
-      routes: [
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const LoginScreen()
-        ),
-        GoRoute(
-            path:kBoardingView,
-            builder: (context, state) => const BoardingView()
-        ),
-        GoRoute(
-          path: kLogin,
-          builder: (context, state) => const LoginScreen(),
-        ),
-        GoRoute(
-          path: kSignUp,
-          builder: (context, state) => const SignUpScreen(),
-        ),
-        GoRoute(
-          path: kForgetPassword,
-          builder: (context, state) => const ForgetPasswordScreen(),
-        ),
-        GoRoute(
-          path: kVerification,
-          builder: (context, state) => const VerificationScreen(),
-        ),
-        GoRoute(
-            path:kHomeView,
-            builder: (context, state) => const HomeView()
-        ),
-        GoRoute(
-            path:kCategoryDetailsView,
-            builder: (context, state) => const RoomsView()
-        ),
-        GoRoute(
-            path:kRoomDetailsView,
-            builder: (context, state) => const RoomDetailsView()
-        ),
-        GoRoute(
-            path:kDateAndTimeView,
-            builder: (context, state) => const DateAndTimeView()
-        ),
-        GoRoute(
-            path: kBookingReviewView,
-            builder: (context, state) => const BookingReviewView()
-        ),
-        GoRoute(
-            path: kEventsView,
-            builder: (context, state) => const EventsView()
-        ),
-        GoRoute(
-            path: kContactUsView,
-            builder: (context, state) => const ContactUsView()
-        ),
-        GoRoute(
-            path: kEventDetailsView,
-            builder: (context, state) => const EventDetailsView()
-        ),
-        GoRoute(
-            path: kMemberShipView,
-            builder: (context, state) => const MemberShipView()
-        ),
-        GoRoute(
-            path: kNotificationsView,
-            builder: (context, state) => const NotificationsView()
-        ),
-        GoRoute(
-            path: kBirthDayView,
-            builder: (context, state) => const BirthdayView()
-        ),
-        GoRoute(
-            path: kPhotoSessionView,
-            builder: (context, state) => const PhotoSessionView()
-        ),
-        GoRoute(
-            path: kNotificationsView,
-            builder: (context, state) => const NotificationsView()
-        ),
-        GoRoute(
-            path: kProfileView,
-            builder: (context, state) => const ProfileView()
-        ),
-      ]);
+  static final router = GoRouter(routes: [
+    GoRoute(path: '/', builder: (context, state) => const LoginScreen()),
+    GoRoute(
+        path: kBoardingView, builder: (context, state) => const BoardingView()),
+    GoRoute(
+      path: kLogin,
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: kSignUp,
+      builder: (context, state) => const SignUpScreen(),
+    ),
+    GoRoute(
+      path: kForgetPassword,
+      builder: (context, state) => const ForgetPasswordScreen(),
+    ),
+    GoRoute(
+      path: kVerification,
+      builder: (context, state) {
+        print(state.extra as String);
+        return VerificationScreen(
+          email: state.extra as String,
+        );
+      },
+    ),
+    GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
+    GoRoute(
+        path: kCategoryDetailsView,
+        builder: (context, state) => const RoomsView()),
+    GoRoute(
+        path: kRoomDetailsView,
+        builder: (context, state) => const RoomDetailsView()),
+    GoRoute(
+        path: kDateAndTimeView,
+        builder: (context, state) => const DateAndTimeView()),
+    GoRoute(
+        path: kBookingReviewView,
+        builder: (context, state) => const BookingReviewView()),
+    GoRoute(path: kEventsView, builder: (context, state) => const EventsView()),
+    GoRoute(
+        path: kContactUsView,
+        builder: (context, state) => const ContactUsView()),
+    GoRoute(
+        path: kEventDetailsView,
+        builder: (context, state) => const EventDetailsView()),
+    GoRoute(
+        path: kMemberShipView,
+        builder: (context, state) => const MemberShipView()),
+    GoRoute(
+        path: kNotificationsView,
+        builder: (context, state) => const NotificationsView()),
+    GoRoute(
+        path: kBirthDayView, builder: (context, state) => const BirthdayView()),
+    GoRoute(
+        path: kPhotoSessionView,
+        builder: (context, state) => const PhotoSessionView()),
+    GoRoute(
+        path: kNotificationsView,
+        builder: (context, state) => const NotificationsView()),
+    GoRoute(
+        path: kProfileView, builder: (context, state) => const ProfileView()),
+  ]);
 }
