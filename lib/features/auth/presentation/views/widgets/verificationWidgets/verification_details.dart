@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
@@ -22,16 +21,24 @@ class VerificationDetails extends StatefulWidget {
 
 class _VerificationDetailsState extends State<VerificationDetails> {
   String code = '';
+  bool isValidatebutton = false;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VerificationCubit, VerificationState>(
       listener: (context, state) {
         if (state is VerificationSuccess) {
-          // Handle success - navigate or show a success message
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Validate your email!')),
-          );
-          GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
+         if(isValidatebutton){
+           isValidatebutton = false;
+           // Handle success - navigate or show a success message
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text('Validated your email successfly!')),
+           );
+           GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
+         }else{
+           ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text('Check your email ${widget.email}')),
+           );
+         }
         } else if (state is VerificationFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -82,9 +89,27 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                   child: CustomButton(
                     text: "verify",
                     onPressed: () {
+                      isValidatebutton = true;
                       print(code);
                       print(widget.email);
                       context.read<VerificationCubit>().verifyEmail(email: widget.email, code: code);
+                      // return _showAlertDialog(context);
+                    },
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: CustomButton(
+                    text: "Resend Code",
+                    onPressed: () {
+                      print(widget.email);
+                      context.read<VerificationCubit>().resendCode(email: widget.email);
                       // return _showAlertDialog(context);
                     },
                   ),
