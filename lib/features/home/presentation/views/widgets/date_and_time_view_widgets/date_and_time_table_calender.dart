@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shagaf/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 
 class DateAndTimeTableCalender extends StatefulWidget {
   const DateAndTimeTableCalender({super.key});

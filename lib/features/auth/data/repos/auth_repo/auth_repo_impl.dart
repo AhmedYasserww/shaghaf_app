@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:shagaf/core/errors/failures.dart';
 import 'package:shagaf/features/auth/data/repos/auth_repo/auth_repo.dart';
 
-import '../../../../../core/utils/api_serivce.dart';
+import '../../../../../core/utils/functions/api_service.dart';
 
 class AuthRepoImpl implements AuthRepo{
   final ApiService apiService;
@@ -34,6 +34,24 @@ class AuthRepoImpl implements AuthRepo{
       var data = await apiService.post(endPoint: 'api/users/verify', data: {
         "code" : code,
         "email" : email,
+      });
+      return right(unit);
+    } on Exception catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+  @override
+  Future<Either<Failure, Unit>> logIn({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      var data = await apiService.post(endPoint: 'api/users/signin', data: {
+        "email": email,
+        "password": password,
       });
       return right(unit);
     } on Exception catch (e) {

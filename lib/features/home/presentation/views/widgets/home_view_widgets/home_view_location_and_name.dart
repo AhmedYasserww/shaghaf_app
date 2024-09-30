@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/rating_container.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/location_container.dart';
 

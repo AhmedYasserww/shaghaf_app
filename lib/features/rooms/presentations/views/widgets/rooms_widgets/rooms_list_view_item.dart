@@ -4,7 +4,7 @@ import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/widgets/favourite_container.dart';
 import 'package:shagaf/core/widgets/rating_container.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 class RoomsListViewItem extends StatelessWidget {
   const RoomsListViewItem({super.key});
 

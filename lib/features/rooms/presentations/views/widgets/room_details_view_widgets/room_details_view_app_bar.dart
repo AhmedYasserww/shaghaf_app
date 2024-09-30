@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/favourite_container.dart';
 class RoomDetailsViewAppBar extends StatelessWidget {
   const RoomDetailsViewAppBar({super.key, required this.textAppbar});

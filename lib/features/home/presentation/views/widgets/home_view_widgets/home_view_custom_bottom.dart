@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 
 class HomeViewCustomButton extends StatelessWidget {

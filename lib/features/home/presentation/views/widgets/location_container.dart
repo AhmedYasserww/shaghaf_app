@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/utils/styles.dart';
+import '../../../../../core/utils/functions/styles.dart';
 
 class LocationContainer extends StatelessWidget {
   const LocationContainer({super.key, required this.text});

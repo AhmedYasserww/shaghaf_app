@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
 
-import '../utils/styles.dart';
+import '../utils/functions/styles.dart';
 
 Widget buildTimelineDot() {
   return CircleAvatar(

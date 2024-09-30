@@ -8,8 +8,13 @@ abstract class AuthRepo {
     required String useName,
     required String password,
     required String birthDate,
-  });Future<Either<Failure, Unit>> verifyEmail({
+  });
+  Future<Either<Failure, Unit>> verifyEmail({
     required String code,
     required String email,
+  });
+  Future<Either<Failure, Unit>> logIn({
+    required String email,
+    required String password,
   });
 }

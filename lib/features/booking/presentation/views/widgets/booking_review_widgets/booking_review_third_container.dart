@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 
 class BookingReviewThirdContainer extends StatelessWidget {
   const BookingReviewThirdContainer({super.key});

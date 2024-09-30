@@ -16,8 +16,8 @@ import 'package:shagaf/features/rooms/presentations/views/room_details_view.dart
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
 import 'package:shagaf/features/settings/presentation/views/profile_view.dart';
-import '../../features/events/presentations/views/event_details_view.dart';
-import '../../features/home/presentation/views/birthday_view.dart';
+import '../../../features/events/presentations/views/event_details_view.dart';
+import '../../../features/home/presentation/views/birthday_view.dart';
 
 abstract class AppRouter {
   static const kSignUp = '/signUp';

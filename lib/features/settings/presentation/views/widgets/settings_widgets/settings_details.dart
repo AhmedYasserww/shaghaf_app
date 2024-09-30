@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/app_router.dart';
+import 'package:shagaf/core/utils/functions/app_router.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 
 class SettingsDetails extends StatelessWidget {
   const SettingsDetails({super.key});

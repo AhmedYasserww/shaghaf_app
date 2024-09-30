@@ -4,7 +4,7 @@ import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 
 class BookingReviewFourthContainer extends StatelessWidget {
   const BookingReviewFourthContainer({super.key});
