@@ -44,6 +44,20 @@ class AuthRepoImpl implements AuthRepo{
     }
   }
   @override
+  Future<Either<Failure, Unit>> resendCode({required String email}) async{
+    try {
+      var data = await apiService.post(endPoint: 'api/users/resend-code', data: {
+        "email" : email,
+      });
+      return right(unit);
+    } on Exception catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+  @override
   Future<Either<Failure, Unit>> logIn({
     required String email,
     required String password,

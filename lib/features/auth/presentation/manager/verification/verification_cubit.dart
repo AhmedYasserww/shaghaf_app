@@ -22,4 +22,13 @@ class VerificationCubit extends Cubit<VerificationState> {
       emit(VerificationSuccess());
     });
   }
+  resendCode({required String email,})async{
+    emit(VerificationLoading());
+    var result = await authRepo.resendCode(email: email);
+    result.fold((l) {
+      emit(VerificationFailure( errMessage: l.errorMessage,));
+    }, (r) {
+      emit(VerificationSuccess());
+    });
+  }
 }
