@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'select_plan_bottom_sheet.dart'; // Import the SelectPlanBottomSheet widget
 
 class RoomDetailsViewBottomSection extends StatelessWidget {

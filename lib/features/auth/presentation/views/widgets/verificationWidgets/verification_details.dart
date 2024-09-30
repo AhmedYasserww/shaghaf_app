@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 import 'package:shagaf/features/auth/presentation/manager/verification/verification_cubit.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/verificationWidgets/otp_widget.dart';
 
-import '../../../../../../core/utils/app_router.dart';
+import '../../../../../../core/utils/functions/app_router.dart';
 
 class VerificationDetails extends StatefulWidget {
   VerificationDetails({super.key, required this.email});
@@ -21,7 +21,7 @@ class VerificationDetails extends StatefulWidget {
 }
 
 class _VerificationDetailsState extends State<VerificationDetails> {
-  late String code;
+  String code = '';
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VerificationCubit, VerificationState>(

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/widgets/custom_app_bar_title_and_arrow.dart';
 
 import '../../../../../../constants.dart';
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 class ContactUsBody extends StatelessWidget {
   const ContactUsBody({super.key});
 

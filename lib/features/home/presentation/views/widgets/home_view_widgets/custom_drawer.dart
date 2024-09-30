@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shagaf/core/utils/assets.dart';
+import 'package:shagaf/core/utils/functions/assets.dart';
 import 'package:shagaf/features/home/data/models/drawer_item_model.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/home_view_widgets/custom_drawer_list_view.dart';
 

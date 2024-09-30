@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/membership_view_widgets/membership_check.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/membership_view_widgets/membership_view_details_box.dart';

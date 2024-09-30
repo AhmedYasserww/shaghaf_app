@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/custom_app_bar_title_and_arrow.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'booking_review_first_container.dart';

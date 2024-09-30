@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 import 'booking_historty_custom_item.dart';
 class BookingHistoryPastItem extends StatelessWidget {
   const BookingHistoryPastItem({super.key});

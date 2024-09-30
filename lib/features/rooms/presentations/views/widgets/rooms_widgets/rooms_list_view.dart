@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/features/rooms/presentations/views/widgets/rooms_widgets/rooms_list_view_item.dart';
 
-import '../../../../../../core/utils/app_router.dart';
+import '../../../../../../core/utils/functions/app_router.dart';
 class RoomsListView extends StatelessWidget {
   const RoomsListView({super.key});
 

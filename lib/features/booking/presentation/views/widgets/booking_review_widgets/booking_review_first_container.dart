@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 
-import '../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 class BookingReviewFirstContainer extends StatelessWidget {
   const BookingReviewFirstContainer({super.key});
 
