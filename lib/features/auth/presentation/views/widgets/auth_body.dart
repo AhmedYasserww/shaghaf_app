@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../constants.dart';
-import '../../../../../core/utils/assets.dart';
+import '../../../../../core/utils/functions/assets.dart';
 import '../../../../../core/widgets/custom_image.dart';
 import 'custom_appbar_for_auth.dart';
 class AuthBody extends StatelessWidget {

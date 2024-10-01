@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../utils/styles.dart';
+import '../utils/functions/styles.dart';
 
 class CustomAppBarTitleAndArrow extends StatelessWidget {
   const CustomAppBarTitleAndArrow({super.key, required this.title});

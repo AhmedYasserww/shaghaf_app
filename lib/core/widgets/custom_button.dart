@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/constants.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -33,12 +34,7 @@ class CustomButton extends StatelessWidget {
           // Conditionally apply shadow if `shadow` is true
           boxShadow: shadow
               ? [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
+            kBoxShadow
           ]
               : [], // No shadow when `shadow` is false
           borderRadius: borderRadius ?? BorderRadius.circular(10.r),

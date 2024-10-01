@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 class RoomDetailsViewContainerDetailsIconAndText extends StatelessWidget {
   const RoomDetailsViewContainerDetailsIconAndText({super.key, required this.icon, required this.text});
 final IconData icon;

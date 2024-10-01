@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/custom_image.dart';
 
-import '../../../../../../core/utils/app_router.dart';
+import '../../../../../../core/utils/functions/app_router.dart';
 
 class HomeViewClipPathes extends StatelessWidget {
   const HomeViewClipPathes({super.key});

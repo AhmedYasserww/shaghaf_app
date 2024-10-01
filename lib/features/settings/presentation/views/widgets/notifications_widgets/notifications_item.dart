@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 class NotificationsItem extends StatelessWidget {
   const NotificationsItem({super.key});
 
@@ -18,7 +18,7 @@ class NotificationsItem extends StatelessWidget {
             radius: 37.5.r,
             backgroundImage: const AssetImage("assets/images/Frame 1080 2.png"),
           ),
-          SizedBox(width: 8.h,),
+          SizedBox(width: 7.h,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,

@@ -11,7 +11,7 @@ class CustomAppbarForAuth extends StatelessWidget {
         onPressed: () {
           GoRouter.of(context).pop();
         },
-        icon:  Icon(
+        icon: Icon(
           Icons.arrow_back_ios_sharp,
           size: 18.sp,
         ));

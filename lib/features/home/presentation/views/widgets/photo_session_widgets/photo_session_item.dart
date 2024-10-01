@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/functions/styles.dart';
 class PhotoSessionItem extends StatefulWidget {
   final Function(bool) onItemSelected;
   const PhotoSessionItem({super.key, required this.onItemSelected});

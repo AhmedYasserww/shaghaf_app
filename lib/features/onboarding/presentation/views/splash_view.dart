@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/utils/app_router.dart';
+import '../../../../core/utils/functions/app_router.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

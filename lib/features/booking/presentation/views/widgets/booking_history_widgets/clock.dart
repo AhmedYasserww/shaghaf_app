@@ -2,7 +2,7 @@
 import 'dart:async';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 class Clock extends StatefulWidget {

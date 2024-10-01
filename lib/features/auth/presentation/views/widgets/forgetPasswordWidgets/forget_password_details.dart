@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shagaf/constants.dart';
-import 'package:shagaf/core/utils/app_router.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/app_router.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/gmail_field.dart';
 class ForgetPasswordDetails extends StatelessWidget {
@@ -24,7 +23,7 @@ class ForgetPasswordDetails extends StatelessWidget {
             color: const Color(0xff787878)
           ),),
           SizedBox(height: 47.h,),
-          const GmailField(),
+           GmailField(onSaved: (String ) { },),
           SizedBox(height: 24.h,),
           Row(
             children: [
@@ -34,7 +33,7 @@ class ForgetPasswordDetails extends StatelessWidget {
                   onPressed: () {
                     if (formState.currentState!.validate()) {
                       formState.currentState!.save();
-                      GoRouter.of(context).push(AppRouter.kVerification);
+                      GoRouter.of(context).push(AppRouter.kVerification,extra: "omarmohamed0128466@gmail.com");
                     } else {
                     }
                   },

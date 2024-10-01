@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/utils/styles.dart';
+import 'package:shagaf/core/utils/functions/styles.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/birthday_widgets/custom_botton_of_birthday.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/birthday_widgets/section%20one%20of%20birthdayWidget/birthDay_list_view_cakes.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/birthday_widgets/section%20two%20of%20birthday%20widget/birthday_list_view_decoration.dart';
@@ -28,7 +28,7 @@ class _BirthdayViewBodyState extends State<BirthdayViewBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
