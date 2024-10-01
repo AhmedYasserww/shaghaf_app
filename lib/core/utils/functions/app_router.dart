@@ -42,7 +42,7 @@ abstract class AppRouter {
   static const kProfileView = '/profileView';
 
   static final router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (context, state) => const SplashView()),
+    GoRoute(path: '/', builder: (context, state) => const LoginScreen()),
     GoRoute(
         path: kBoardingView, builder: (context, state) => const BoardingView()),
     GoRoute(
@@ -58,14 +58,18 @@ abstract class AppRouter {
       builder: (context, state) => const ForgetPasswordScreen(),
     ),
     GoRoute(
-      path: kVerification,
+      path: AppRouter.kVerification,
       builder: (context, state) {
-        print(state.extra as String);
+        final extraData = state.extra as Map<String, dynamic>; // Cast extra to a Map
+        final email = extraData['email'] as String;
+        final title = extraData['title'] as String;
         return VerificationScreen(
-          email: state.extra as String,
+          email: email,
+          title: title,
         );
       },
     ),
+
     GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
     GoRoute(
         path: kCategoryDetailsView,

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shagaf/core/utils/functions/app_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shagaf/features/auth/presentation/manager/forget_password/forget_password_cubit.dart';
 import 'package:shagaf/features/auth/presentation/manager/login/login_cubit.dart';
 import 'package:shagaf/features/auth/presentation/manager/verification/verification_cubit.dart';
 import 'core/utils/functions/service_locator.dart';
@@ -30,6 +31,9 @@ class ShaghafApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LoginCubit(getIt.get<AuthRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => ForgetPasswordCubit(getIt.get<AuthRepoImpl>()),
         ),
       ],
       child: ScreenUtilInit(

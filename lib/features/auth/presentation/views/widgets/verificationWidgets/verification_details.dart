@@ -11,10 +11,10 @@ import 'package:shagaf/features/auth/presentation/views/widgets/verificationWidg
 import '../../../../../../core/utils/functions/app_router.dart';
 
 class VerificationDetails extends StatefulWidget {
-  VerificationDetails({super.key, required this.email});
+  VerificationDetails({super.key, required this.email, required this.title});
 
   final String email;
-
+  final String title;
   @override
   State<VerificationDetails> createState() => _VerificationDetailsState();
 }
@@ -30,10 +30,11 @@ class _VerificationDetailsState extends State<VerificationDetails> {
          if(isValidatebutton){
            isValidatebutton = false;
            // Handle success - navigate or show a success message
-           ScaffoldMessenger.of(context).showSnackBar(
-             SnackBar(content: Text('Validated your email successfly!')),
-           );
-           GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
+           // ScaffoldMessenger.of(context).showSnackBar(
+           //   SnackBar(content: Text('Validated your email successfly!')),
+           // );
+           // GoRouter.of(context).push(AppRouter.kHomeView);
+           return _showAlertDialog(context: context,title: widget.title);
          }else{
            ScaffoldMessenger.of(context).showSnackBar(
              SnackBar(content: Text('Check your email ${widget.email}')),
@@ -93,7 +94,6 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                       print(code);
                       print(widget.email);
                       context.read<VerificationCubit>().verifyEmail(email: widget.email, code: code);
-                      // return _showAlertDialog(context);
                     },
                   ),
                 ),
@@ -122,7 +122,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
     );
   }
 
-  _showAlertDialog(BuildContext context) {
+  _showAlertDialog({required BuildContext context,required String title}) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -170,7 +170,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                           child: Center(
                             child: Text(
                               textAlign: TextAlign.center,
-                              "You have successfully reset your password.",
+                              title,
                               style: Styles.textStyle16
                                   .copyWith(color: const Color(0xffA1A8B0)),
                             ),
@@ -192,7 +192,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                           color: Colors.white),
                       borderRadius: BorderRadius.circular(12.r),
                       onPressed: () {
-                        GoRouter.of(context).pop();
+                        GoRouter.of(context).push(AppRouter.kHomeView);
                       },
                     ),
                   )

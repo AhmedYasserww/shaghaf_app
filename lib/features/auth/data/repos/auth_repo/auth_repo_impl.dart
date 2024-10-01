@@ -75,4 +75,19 @@ class AuthRepoImpl implements AuthRepo{
       return left(ServerFailure(errorMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, Unit>> resetPassword({required String email}) async{
+    try {
+      var data = await apiService.get(endPoint: 'api/users/reset-password', data: {
+        "email" : email,
+      });
+      return right(unit);
+    } on Exception catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
 }
