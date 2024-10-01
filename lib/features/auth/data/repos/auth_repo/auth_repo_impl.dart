@@ -12,7 +12,7 @@ class AuthRepoImpl implements AuthRepo{
   @override
   Future<Either<Failure, Unit>> signUp({required String phone, required String email, required String useName, required String password, required String birthDate})  async{
     try {
-      var data = await apiService.post(endPoint: 'api/users/signup', data: {
+      await apiService.post(endPoint: 'api/users/signup', data: {
         "username" : useName,
         "birthdate" : birthDate,
         "phone" : phone,
@@ -21,7 +21,7 @@ class AuthRepoImpl implements AuthRepo{
       });
       return right(unit);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
       return left(ServerFailure(errorMessage: e.toString()));
@@ -31,13 +31,13 @@ class AuthRepoImpl implements AuthRepo{
   @override
   Future<Either<Failure, Unit>> verifyEmail({required String code, required String email}) async{
     try {
-      var data = await apiService.post(endPoint: 'api/users/verify', data: {
+       await apiService.post(endPoint: 'api/users/verify', data: {
         "code" : code,
         "email" : email,
       });
       return right(unit);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
       return left(ServerFailure(errorMessage: e.toString()));
@@ -46,12 +46,12 @@ class AuthRepoImpl implements AuthRepo{
   @override
   Future<Either<Failure, Unit>> resendCode({required String email}) async{
     try {
-      var data = await apiService.post(endPoint: 'api/users/resend-code', data: {
+      await apiService.post(endPoint: 'api/users/resend-code', data: {
         "email" : email,
       });
       return right(unit);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
       return left(ServerFailure(errorMessage: e.toString()));
@@ -63,13 +63,13 @@ class AuthRepoImpl implements AuthRepo{
     required String password,
   }) async {
     try {
-      var data = await apiService.post(endPoint: 'api/users/signin', data: {
+       await apiService.post(endPoint: 'api/users/signin', data: {
         "email": email,
         "password": password,
       });
       return right(unit);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
       return left(ServerFailure(errorMessage: e.toString()));
@@ -79,12 +79,12 @@ class AuthRepoImpl implements AuthRepo{
   @override
   Future<Either<Failure, Unit>> resetPassword({required String email}) async{
     try {
-      var data = await apiService.get(endPoint: 'api/users/reset-password', data: {
+      await apiService.get(endPoint: 'api/users/reset-password', data: {
         "email" : email,
       });
       return right(unit);
     } on Exception catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       }
       return left(ServerFailure(errorMessage: e.toString()));
