@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../constants.dart';
 import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 
-class ConfirmPasswordField extends StatelessWidget {
+class ConfirmPasswordField extends StatefulWidget {
   const ConfirmPasswordField({super.key, required this.confirmPasswordController,});
  final TextEditingController confirmPasswordController;
 
   @override
+  State<ConfirmPasswordField> createState() => _ConfirmPasswordFieldState();
+}
+
+class _ConfirmPasswordFieldState extends State<ConfirmPasswordField> {
+  bool visible = true;
+  @override
   Widget build(BuildContext context) {
-    String? confirmPassword;
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,8 +28,17 @@ class ConfirmPasswordField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(
+          obscureText: visible,
             validator: (value) => value == null || value.isEmpty ? 'Field is required' : null,
-            controller: confirmPasswordController,
+            suffixIcon: IconButton(
+              onPressed: (){
+                setState(() {
+                  visible =!visible;
+                });
+              },
+              icon: Icon(visible ? Icons.visibility_off : Icons.visibility, color: kIconsColorForAuth,),
+            ),
+            controller: widget.confirmPasswordController,
             hintText: "Confirm password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
       ],
     );

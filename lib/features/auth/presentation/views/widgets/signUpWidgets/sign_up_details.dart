@@ -51,13 +51,6 @@ class _SignUpDetailsState extends State<SignUpDetails> {
   }
   @override
   Widget build(BuildContext context) {
-    // GlobalKey<FormState> formState = GlobalKey();
-    // String email = '';
-    // String userName = '';
-    // String password = '';
-    // String phone = '';
-    // String confirmPassword = '';
-
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
@@ -80,10 +73,9 @@ class _SignUpDetailsState extends State<SignUpDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (state is SignUpLoading)
-                const Center(child: CircularProgressIndicator()), // Show loading indicator during sign-up
+                const Center(child: CircularProgressIndicator()),
               GmailField(
          emailController:emailController ,
-               // onSaved: (value) => email = value ?? '',
               ),
               SizedBox(height: 19.h),
               PhoneField(
@@ -98,9 +90,9 @@ class _SignUpDetailsState extends State<SignUpDetails> {
                passwordController: passwordController,
               ),
               SizedBox(height: 19.h),
-              // ConfirmPasswordField(
-              //
-              // ),
+              ConfirmPasswordField(
+confirmPasswordController: confirmPasswordController,
+              ),
               SizedBox(height: 19.h),
               Row(
                 children: [

@@ -10,7 +10,8 @@ class CustomTextFormField extends StatelessWidget {
     required this.icon,
     required this.textInputType,
     this.controller,
-     this.validator,
+     this.validator, this.obscureText = false,
+    this.suffixIcon
   });
 
   //final void Function(String?) onSaved;
@@ -19,18 +20,21 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType textInputType;
    final TextEditingController? controller;
    final String? Function(String?)? validator;
-
+ final  bool  obscureText ;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller:controller ,
      validator: validator,
+      obscureText:obscureText ,
       decoration: InputDecoration(
-       // constraints: BoxConstraints(maxHeight: 50),
         filled: true,
         fillColor: Colors.white,
         hintText: hintText,
         hintStyle: Styles.textStyle10,
+        suffixIcon: suffixIcon,
+
         prefixIcon: Icon(
           icon,
           size: 12.25.sp,
