@@ -58,7 +58,10 @@ class _SignUpDetailsState extends State<SignUpDetails> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Validate your email!')),
           );
-          GoRouter.of(context).push(AppRouter.kVerification,extra: emailController.text); // Navigate to home page
+          GoRouter.of(context).push(AppRouter.kVerification,extra: {
+            'email': emailController.text,
+            'title': "Validated your email successfly!",
+          },); // Navigate to home page
         } else if (state is SignUpFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
