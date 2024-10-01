@@ -10,22 +10,43 @@ import 'package:shagaf/features/auth/presentation/manager/login/login_cubit.dart
 import 'package:shagaf/features/auth/presentation/views/widgets/gmail_field.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/password_field.dart';
 
-class LoginDetails extends StatelessWidget {
+class LoginDetails extends StatefulWidget {
   const LoginDetails({super.key});
 
   @override
+  State<LoginDetails> createState() => _LoginDetailsState();
+}
+
+class _LoginDetailsState extends State<LoginDetails> {
+  final GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+
+  @override
+  void initState() {
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    GlobalKey<FormState> formState = GlobalKey();
-    String email = '';
-    String password = '';
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
           // Handle success - navigate or show a success message
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('login Successed')),
+            const SnackBar(content: Text('login Successfully')),
           );
-          GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
+          GoRouter.of(context).push(
+              AppRouter.kHomeView); // Navigate to home page
         } else if (state is LoginFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -35,20 +56,20 @@ class LoginDetails extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          key: formState,
+          key: globalKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (state is LoginLoading)
-                Center(child: CircularProgressIndicator()),
+                const Center(child: CircularProgressIndicator()),
               GmailField(
-                onSaved: (value) => email = value ?? '',
+                emailController: emailController,
               ),
               SizedBox(
                 height: 24.h,
               ),
               PasswordField(
-                onSaved: (value) => password = value ?? '',
+                passwordController: passwordController,
               ),
               SizedBox(
                 height: 6.h,
@@ -76,11 +97,14 @@ class LoginDetails extends StatelessWidget {
                     child: CustomButton(
                       text: "LOGIN",
                       onPressed: () {
-                        if (formState.currentState!.validate()) {
-                          formState.currentState!.save();
-                          context.read<LoginCubit>().login(email: email, password: password);
-                          print(email);
-                          print(password);
+                        if (globalKey.currentState!.validate()) {
+                          globalKey.currentState!.save();
+                          context.read<LoginCubit>().login(
+                              email:emailController.text,
+                              password: passwordController.text
+                          );
+                          print(emailController.text);
+                          print(passwordController.text);
                         } else {}
                       },
                     ),

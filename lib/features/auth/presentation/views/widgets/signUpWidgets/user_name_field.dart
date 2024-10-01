@@ -5,9 +5,10 @@ import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 
 class UserNameField extends StatelessWidget {
-  const UserNameField({super.key, required this.onSaved});
+  const UserNameField({super.key, required this.userNameController});
+  final TextEditingController userNameController;
 
-  final void Function(String?) onSaved;
+ // final void Function(String?) onSaved;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,9 @@ class UserNameField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(
-            onSaved: onSaved,
+          controller:userNameController ,
+            validator: (value) => value == null || value.isEmpty ? 'Field is required' : null,
+            //onSaved: onSaved,
             hintText: "Enter your name",
             icon: Icons.person,
             textInputType: TextInputType.name),

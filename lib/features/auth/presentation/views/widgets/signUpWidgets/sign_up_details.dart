@@ -13,26 +13,59 @@ import 'package:shagaf/features/auth/presentation/views/widgets/signUpWidgets/us
 
 import '../../../manager/sign_up/sign_up_cubit.dart'; // Import your cubit
 
-class SignUpDetails extends StatelessWidget {
+class SignUpDetails extends StatefulWidget {
   const SignUpDetails({super.key});
 
   @override
+  State<SignUpDetails> createState() => _SignUpDetailsState();
+}
+
+class _SignUpDetailsState extends State<SignUpDetails> {
+  final GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+  late TextEditingController nameController;
+  late TextEditingController phoneNumberController;
+  late TextEditingController confirmPasswordController;
+
+
+  @override
+  void initState() {
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    nameController = TextEditingController();
+    phoneNumberController = TextEditingController();
+    confirmPasswordController=TextEditingController();
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    nameController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
-    GlobalKey<FormState> formState = GlobalKey();
-    String email = '';
-    String userName = '';
-    String password = '';
-    String phone = '';
-    String confirmPassword = '';
+    // GlobalKey<FormState> formState = GlobalKey();
+    // String email = '';
+    // String userName = '';
+    // String password = '';
+    // String phone = '';
+    // String confirmPassword = '';
 
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
           // Handle success - navigate or show a success message
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Validate your email!')),
+            const SnackBar(content: Text('Validate your email!')),
           );
-          GoRouter.of(context).push(AppRouter.kVerification,extra: email); // Navigate to home page
+          GoRouter.of(context).push(AppRouter.kVerification,extra: emailController.text); // Navigate to home page
         } else if (state is SignUpFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -42,31 +75,32 @@ class SignUpDetails extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          key: formState,
+          key: globalKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (state is SignUpLoading)
-                Center(child: CircularProgressIndicator()), // Show loading indicator during sign-up
+                const Center(child: CircularProgressIndicator()), // Show loading indicator during sign-up
               GmailField(
-                onSaved: (value) => email = value ?? '',
+         emailController:emailController ,
+               // onSaved: (value) => email = value ?? '',
               ),
               SizedBox(height: 19.h),
               PhoneField(
-                onSaved: (value) => phone = value ?? '',
+               phoneController: phoneNumberController,
               ),
               SizedBox(height: 19.h),
               UserNameField(
-                onSaved: (value) => userName = value ?? '',
+              userNameController: nameController,
               ),
               SizedBox(height: 19.h),
               PasswordField(
-                onSaved: (value) => password = value ?? '',
+               passwordController: passwordController,
               ),
               SizedBox(height: 19.h),
-              ConfirmPasswordField(
-                onSaved: (value) => confirmPassword = value ?? '',
-              ),
+              // ConfirmPasswordField(
+              //
+              // ),
               SizedBox(height: 19.h),
               Row(
                 children: [
@@ -74,20 +108,20 @@ class SignUpDetails extends StatelessWidget {
                     child: CustomButton(
                       text: "Sign Up",
                       onPressed: () {
-                        if (formState.currentState!.validate()) {
-                          formState.currentState!.save();
+                        if (globalKey.currentState!.validate()) {
+                          globalKey.currentState!.save();
                           // Call the cubit's signUp method with form data
                           context.read<SignUpCubit>().signUp(
-                            phone: phone,
-                            email: email,
-                            useName: userName,
-                            password: password,
+                            phone:phoneNumberController.text,
+                            email:emailController.text ,
+                            useName: nameController.text,
+                            password: passwordController.text,
                             birthDate: '2000-02-01', // Example birthDate, change it accordingly
                           );
-                          print(email);
-                          print(phone);
-                          print(userName);
-                          print(password);
+                          print(phoneNumberController.text);
+                          print(emailController.text);
+                          print(nameController.text);
+                          print(passwordController.text);
                         }
                       },
                     ),

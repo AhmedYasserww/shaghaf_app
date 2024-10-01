@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 class PhoneField extends StatelessWidget {
-  const PhoneField({super.key, required this.onSaved});
-  final void Function(String?) onSaved;
+  final TextEditingController phoneController;
+
+  const PhoneField({super.key,required this.phoneController});
+
   @override
   Widget build(BuildContext context) {
     String? phone;
@@ -20,7 +22,15 @@ class PhoneField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(
-            onSaved: onSaved,
+            controller: phoneController,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'This field is required. Please enter a phone number.';
+              } else if (value.length != 11) {
+                return 'Phone number must be exactly 11 digits long.';
+              }
+              return null;
+            },
             hintText: "Enter your Phone",
             icon: Icons.phone,
             textInputType: TextInputType.number),

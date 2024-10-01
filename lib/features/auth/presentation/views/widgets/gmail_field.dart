@@ -5,9 +5,10 @@ import '../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 
 class GmailField extends StatelessWidget {
-  final void Function(String?) onSaved;
+  final TextEditingController emailController;
 
-  const GmailField({super.key, required this.onSaved}); // Accept onSaved as a parameter
+
+  const GmailField({super.key, required this.emailController}); // Accept onSaved as a parameter
 
 
   @override
@@ -23,7 +24,16 @@ class GmailField extends StatelessWidget {
           height: 5.h,
         ),
         CustomTextFormField(
-          onSaved: onSaved, // Pass the onSaved callback to the text form field
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Field is required';
+            }
+            final bool emailValid = RegExp(
+              r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+            ).hasMatch(value);
+            return emailValid ? null : 'Email format must be valid';
+          },
+          controller: emailController,
           hintText: "Enter your gmail",
           icon: Icons.email,
           textInputType: TextInputType.emailAddress,

@@ -72,9 +72,12 @@ class _HomeViewState extends State<BoardingViewBody> {
                     SizedBox(
                       height: 8.h,
                     ),
-                    Text(
-                      content[i].title,
-                      style: Styles.textStyle20.copyWith(color: Colors.white),
+                    FittedBox(
+                     fit:BoxFit.scaleDown,
+                      child: Text(
+                        content[i].title,
+                        style: Styles.textStyle20.copyWith(color: Colors.white),
+                      ),
                     ),
                     SizedBox(
                       height: 16.h,

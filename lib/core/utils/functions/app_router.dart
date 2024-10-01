@@ -42,7 +42,7 @@ abstract class AppRouter {
   static const kProfileView = '/profileView';
 
   static final router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (context, state) => const LoginScreen()),
+    GoRoute(path: '/', builder: (context, state) => const SplashView()),
     GoRoute(
         path: kBoardingView, builder: (context, state) => const BoardingView()),
     GoRoute(

@@ -5,8 +5,8 @@ import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 
 class ConfirmPasswordField extends StatelessWidget {
-  const ConfirmPasswordField({super.key, required this.onSaved});
-  final void Function(String?) onSaved;
+  const ConfirmPasswordField({super.key, required this.confirmPasswordController,});
+ final TextEditingController confirmPasswordController;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,10 @@ class ConfirmPasswordField extends StatelessWidget {
         SizedBox(
           height: 5.h,
         ),
-        CustomTextFormField(onSaved: onSaved, hintText: "Confirm password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
+        CustomTextFormField(
+            validator: (value) => value == null || value.isEmpty ? 'Field is required' : null,
+            controller: confirmPasswordController,
+            hintText: "Confirm password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
       ],
     );
   }

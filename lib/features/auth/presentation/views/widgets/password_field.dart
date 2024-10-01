@@ -5,9 +5,8 @@ import '../../../../../core/utils/functions/styles.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 
 class PasswordField extends StatelessWidget {
-  const PasswordField({super.key, required this.onSaved});
-
-  final void Function(String?) onSaved;
+  const PasswordField({super.key,required this.passwordController });
+  final TextEditingController passwordController;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,10 @@ class PasswordField extends StatelessWidget {
         SizedBox(
           height: 5.h,
         ),
-        CustomTextFormField(onSaved: onSaved,
+        CustomTextFormField(
+            controller: passwordController,
+            validator: (value) => value == null || value.isEmpty ? 'Field is required' : null,
+
             hintText: "Enter your password",
             icon: Icons.lock,
             textInputType: TextInputType.visiblePassword),
