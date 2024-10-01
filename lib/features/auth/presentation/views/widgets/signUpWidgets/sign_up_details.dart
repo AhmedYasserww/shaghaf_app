@@ -91,6 +91,7 @@ class _SignUpDetailsState extends State<SignUpDetails> {
               ),
               SizedBox(height: 19.h),
               ConfirmPasswordField(
+                passwordController: passwordController,
 confirmPasswordController: confirmPasswordController,
               ),
               SizedBox(height: 19.h),
