@@ -14,7 +14,6 @@ import 'package:shagaf/features/home/presentation/views/member_ship_view.dart';
 import 'package:shagaf/features/settings/presentation/views/notifications_view.dart';
 import 'package:shagaf/features/rooms/presentations/views/room_details_view.dart';
 import 'package:shagaf/features/onboarding/presentation/views/boarding_view.dart';
-import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
 import 'package:shagaf/features/settings/presentation/views/profile_view.dart';
 import '../../../features/events/presentations/views/event_details_view.dart';
 import '../../../features/home/presentation/views/birthday_view.dart';
@@ -42,7 +41,7 @@ abstract class AppRouter {
   static const kProfileView = '/profileView';
 
   static final router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (context, state) => const LoginScreen()),
+    GoRoute(path: '/', builder: (context, state) => const HomeView()),
     GoRoute(
         path: kBoardingView, builder: (context, state) => const BoardingView()),
     GoRoute(
@@ -69,7 +68,6 @@ abstract class AppRouter {
         );
       },
     ),
-
     GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
     GoRoute(
         path: kCategoryDetailsView,
