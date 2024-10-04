@@ -5,9 +5,10 @@ import 'package:shagaf/core/widgets/favourite_container.dart';
 import 'package:shagaf/core/widgets/rating_container.dart';
 
 import '../../../../../../core/utils/functions/styles.dart';
+import '../../../../data/models/rooms_model/rooms_model.dart';
 class RoomsListViewItem extends StatelessWidget {
-  const RoomsListViewItem({super.key});
-
+  const RoomsListViewItem({super.key, required this.roomsModel});
+  final RoomsModel roomsModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +50,7 @@ class RoomsListViewItem extends StatelessWidget {
           ),
           Padding(
             padding:  EdgeInsets.only(left: 12.w,top: 16.h),
-            child: Text("Training room",style: Styles.textStyle16.copyWith(
+            child: Text(roomsModel.title,style: Styles.textStyle16.copyWith(
               fontWeight: FontWeight.w500,
             ),),
           )
