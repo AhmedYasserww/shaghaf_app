@@ -9,6 +9,7 @@ import 'package:shagaf/core/widgets/custom_button.dart';
 import 'package:shagaf/features/auth/presentation/manager/login/login_cubit.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/gmail_field.dart';
 import 'package:shagaf/features/auth/presentation/views/widgets/password_field.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Import for SharedPreferences
 
 class LoginDetails extends StatefulWidget {
   const LoginDetails({super.key});
@@ -36,22 +37,30 @@ class _LoginDetailsState extends State<LoginDetails> {
     super.dispose();
   }
 
+  Future<void> _printToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('auth_token');
+    print('Token: $token');  // Print the token here
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is LoginSuccess) {
-          // Handle success - navigate or show a success message
+          // Handle success - print token and navigate
+          await _printToken(); // Print the token after successful login
+
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('login Successfully')),
+            const SnackBar(content: Text('Login Successfully')),
           );
-          GoRouter.of(context).push(
-              AppRouter.kHomeView); // Navigate to home page
+          GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
         } else if (state is LoginFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(state.errMessage)),
           );
+          print(state.errMessage);
         }
       },
       builder: (context, state) {
@@ -100,12 +109,12 @@ class _LoginDetailsState extends State<LoginDetails> {
                         if (globalKey.currentState!.validate()) {
                           globalKey.currentState!.save();
                           context.read<LoginCubit>().login(
-                              email:emailController.text,
+                              email: emailController.text,
                               password: passwordController.text
                           );
                           print(emailController.text);
                           print(passwordController.text);
-                        } else {}
+                        }
                       },
                     ),
                   ),

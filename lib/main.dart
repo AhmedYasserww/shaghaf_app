@@ -13,6 +13,7 @@ import 'features/auth/presentation/manager/sign_up/sign_up_cubit.dart';
 
 void main() {
   setupServiceLocator();
+
   runApp(const ShaghafApp());
 }
 

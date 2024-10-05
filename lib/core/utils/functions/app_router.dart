@@ -5,6 +5,7 @@ import 'package:shagaf/features/auth/presentation/views/sign_up_screen.dart';
 import 'package:shagaf/features/auth/presentation/views/verification_screen.dart';
 import 'package:shagaf/features/booking/presentation/views/booking_review_view.dart';
 import 'package:shagaf/features/home/presentation/views/photo_session_view.dart';
+import 'package:shagaf/features/onboarding/presentation/views/splash_view.dart';
 import 'package:shagaf/features/rooms/presentations/views/rooms_view.dart';
 import 'package:shagaf/features/settings/presentation/views/contact_us_view.dart';
 import 'package:shagaf/features/home/presentation/views/date_and_time_view.dart';
@@ -41,7 +42,7 @@ abstract class AppRouter {
   static const kProfileView = '/profileView';
 
   static final router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (context, state) => const HomeView()),
+    GoRoute(path: '/', builder: (context, state) => const SplashView()),
     GoRoute(
         path: kBoardingView, builder: (context, state) => const BoardingView()),
     GoRoute(

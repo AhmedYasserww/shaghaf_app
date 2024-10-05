@@ -10,10 +10,10 @@ class AuthRepoImpl implements AuthRepo{
 
   AuthRepoImpl({required this.apiService});
   @override
-  Future<Either<Failure, Unit>> signUp({required String phone, required String email, required String useName, required String password, required String birthDate})  async{
+  Future<Either<Failure, Unit>> signUp({required String phone, required String email, required String userName, required String password, required String birthDate})  async{
     try {
       await apiService.post(endPoint: 'api/users/signup', data: {
-        "username" : useName,
+        "username" : userName,
         "birthdate" : birthDate,
         "phone" : phone,
         "password" : password,
@@ -58,16 +58,20 @@ class AuthRepoImpl implements AuthRepo{
     }
   }
   @override
-  Future<Either<Failure, Unit>> logIn({
+  Future<Either<Failure, String>> logIn({
     required String email,
     required String password,
   }) async {
     try {
-       await apiService.post(endPoint: 'api/users/signin', data: {
+      // Send the login request
+      final response = await apiService.post(endPoint: 'api/users/signin', data: {
         "email": email,
         "password": password,
       });
-      return right(unit);
+      // Extract the token from the response
+      String token = response['data']['token']; // Adjust this based on your API response format
+
+      return right(token);
     } on Exception catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
