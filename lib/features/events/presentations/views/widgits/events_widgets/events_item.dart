@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shagaf/core/utils/functions/app_router.dart';
+import 'package:shagaf/features/events/data/models/event_model.dart';
 
 import '../../../../../../constants.dart';
 import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_image.dart';
 
 class EventsItem extends StatelessWidget {
-  const EventsItem({super.key});
-
+  const EventsItem({super.key, required this.eventModel});
+final EventModel eventModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,17 +42,16 @@ class EventsItem extends StatelessWidget {
                 Expanded(
                   // Allow the Text widget to use available space
                   child: Text(
-                    "Positive education workshop",
+                    eventModel.title,
                     style: Styles.textStyle10.copyWith(
                       color: const Color(0xff252525)
                     ),
-                    maxLines: 2, // Limits the// text to a maximum of 2 lines
+                    maxLines: 2,
                     overflow: TextOverflow
-                        .ellipsis, // Handles overflow with an ellipsis
+                        .ellipsis,
                   ),
                 ),
                 SizedBox(width: 14.w),
-                // Adds spacing between text and CircleAvatar
                 InkWell(
                   onTap: () {
               GoRouter.of(context).push(AppRouter.kEventDetailsView);

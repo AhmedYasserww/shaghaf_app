@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/core/widgets/custom_app_bar_with_two_icons.dart';
+import 'package:shagaf/features/events/presentations/views/widgits/events_widgets/events_bloc_builder.dart';
 
 import 'events_app_bar.dart';
 import 'events_gird_view.dart';
@@ -16,7 +17,7 @@ class EventsBody extends StatelessWidget {
           SizedBox(height: 16.h,),
           const CustomAppBarWithTwoIcons(title: "Events"),
           SizedBox(height: 16.h,),
-          const Expanded(child: EventsGirdView())
+          const Expanded(child:EventsBlocBuilder())
         ],
       ),
     );

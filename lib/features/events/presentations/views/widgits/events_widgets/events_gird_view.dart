@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shagaf/features/events/data/models/event_model.dart';
 
 import 'events_item.dart';
 class EventsGirdView extends StatelessWidget {
-  const EventsGirdView({super.key});
-
+  const EventsGirdView({super.key, required this.eventModel});
+final List<EventModel> eventModel;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -13,9 +14,9 @@ class EventsGirdView extends StatelessWidget {
             crossAxisSpacing: 16.w,
             mainAxisSpacing: 16.h
         ),
-        itemCount: 10,
+        itemCount: eventModel.length,
         itemBuilder: (context,index){
-          return const EventsItem();
+          return  EventsItem(eventModel:eventModel[index],);
         });
   }
 }
