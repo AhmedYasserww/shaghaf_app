@@ -14,7 +14,7 @@ class BookingHistoryContianerForClock extends StatelessWidget {
       width: 390.w,
       height: 329,
       url: "assets/images/Rectangle 346.png",
-      child:  Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const Clock(),

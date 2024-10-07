@@ -11,13 +11,12 @@ final getIt = GetIt.instance;
 void setupServiceLocator() {
   getIt.registerSingleton<ApiService>(ApiService(Dio()));
   getIt.registerSingleton<AuthRepoImpl>(AuthRepoImpl(
-     apiService: getIt.get<ApiService>(),
+    apiService: getIt.get<ApiService>(),
   ));
   getIt.registerSingleton<RoomsRepoImpl>(RoomsRepoImpl(
-     apiService: getIt.get<ApiService>(),
+    apiService: getIt.get<ApiService>(),
   ));
   getIt.registerSingleton<EventsRepoImpl>(EventsRepoImpl(
-     apiService: getIt.get<ApiService>(),
+    apiService: getIt.get<ApiService>(),
   ));
-
 }

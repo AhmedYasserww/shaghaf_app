@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -7,7 +6,6 @@ import '../utils/functions/styles.dart';
 
 class CustomAppBarTitleAndArrow extends StatelessWidget {
   const CustomAppBarTitleAndArrow({super.key, required this.title});
-
 
   final String title;
 
@@ -19,7 +17,7 @@ class CustomAppBarTitleAndArrow extends StatelessWidget {
           onTap: () {
             GoRouter.of(context).pop();
           },
-          child:  Icon(
+          child: Icon(
             Icons.arrow_back_ios_new_outlined,
             size: 20.sp,
           ),

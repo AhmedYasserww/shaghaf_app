@@ -30,14 +30,19 @@ class _BookingHistoryTapBarState extends State<BookingHistoryTapBar> {
                 onPressed: () {
                   setState(() {
                     _selectedIndex = 0;
-                    widget.onIndexChanged(_selectedIndex); // Notify parent of the index change
+                    widget.onIndexChanged(
+                        _selectedIndex); // Notify parent of the index change
                   });
                 },
-                color: _selectedIndex == 0 ? kMostColorPicked : const Color(0xffE7E3E3),
+                color: _selectedIndex == 0
+                    ? kMostColorPicked
+                    : const Color(0xffE7E3E3),
                 textStyle: Styles.textStyle14.copyWith(
                   color: _selectedIndex == 0 ? Colors.white : Colors.black,
                 ),
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), bottomLeft: Radius.circular(10.r)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.r),
+                    bottomLeft: Radius.circular(10.r)),
               ),
             ),
             Expanded(
@@ -46,14 +51,19 @@ class _BookingHistoryTapBarState extends State<BookingHistoryTapBar> {
                 onPressed: () {
                   setState(() {
                     _selectedIndex = 1;
-                    widget.onIndexChanged(_selectedIndex); // Notify parent of the index change
+                    widget.onIndexChanged(
+                        _selectedIndex); // Notify parent of the index change
                   });
                 },
-                color: _selectedIndex == 1 ? kMostColorPicked : const Color(0xffE7E3E3),
+                color: _selectedIndex == 1
+                    ? kMostColorPicked
+                    : const Color(0xffE7E3E3),
                 textStyle: Styles.textStyle14.copyWith(
                   color: _selectedIndex == 1 ? Colors.white : Colors.black,
                 ),
-                borderRadius: BorderRadius.only(topRight: Radius.circular(10.r), bottomRight: Radius.circular(10.r)),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(10.r),
+                    bottomRight: Radius.circular(10.r)),
               ),
             ),
           ],

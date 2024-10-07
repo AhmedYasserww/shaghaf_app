@@ -34,7 +34,7 @@ class _HomeViewState extends State<BoardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 16.h, right: 24.w,left: 24.w),
+      padding: EdgeInsets.only(top: 16.h, right: 24.w, left: 24.w),
       child: Column(
         children: [
           Align(
@@ -73,7 +73,7 @@ class _HomeViewState extends State<BoardingViewBody> {
                       height: 8.h,
                     ),
                     FittedBox(
-                     fit:BoxFit.scaleDown,
+                      fit: BoxFit.scaleDown,
                       child: Text(
                         content[i].title,
                         style: Styles.textStyle20.copyWith(color: Colors.white),
@@ -102,7 +102,9 @@ class _HomeViewState extends State<BoardingViewBody> {
           ),
           SizedBox(height: 24.h),
           NextButton(onPressed: onNextButtonPressed),
-          SizedBox(height: 60.h,)
+          SizedBox(
+            height: 60.h,
+          )
         ],
       ),
     );

@@ -4,6 +4,7 @@ import '../../../../../../core/widgets/custom_carousel.dart';
 import '../../../../../home/data/models/image_model.dart';
 import 'custom_botton_section.dart';
 import 'event_details_view_details.dart';
+
 class EventDetailsViewBody extends StatefulWidget {
   const EventDetailsViewBody({super.key});
 
@@ -23,19 +24,21 @@ class _EventDetailsViewBodyState extends State<EventDetailsViewBody> {
               setState(() {
                 _currentIndex = index;
               });
-            }, height: 454,
+            },
+            height: 454,
           ),
-          EventDetailsViewDetails(currentIndex: _currentIndex, length: images.length,),
+          EventDetailsViewDetails(
+            currentIndex: _currentIndex,
+            length: images.length,
+          ),
           const Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: CustomButtonSection(),
           ),
-
         ],
       ),
-
     );
   }
 }

@@ -9,12 +9,9 @@ class OffersGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16.w,
-          mainAxisSpacing: 16.h
-        ),
+            crossAxisCount: 2, crossAxisSpacing: 16.w, mainAxisSpacing: 16.h),
         itemCount: 10,
-        itemBuilder: (context,index){
+        itemBuilder: (context, index) {
           return const OffersItem();
         });
   }

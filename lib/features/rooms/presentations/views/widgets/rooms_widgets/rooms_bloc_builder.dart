@@ -12,7 +12,9 @@ class RoomsBlocBuilder extends StatelessWidget {
     return BlocBuilder<FetchRoomsCubit, FetchRoomsState>(
         builder: (context, state) {
       if (state is FetchRoomsSuccess) {
-        return  RoomsListView(roomsModels: state.rooms,);
+        return RoomsListView(
+          roomsModels: state.rooms,
+        );
       } else if (state is FetchRoomsFailure) {
         return CustomFailureWidget(errMessage: state.errMessage);
       } else {

@@ -13,7 +13,8 @@ List<OnboardingContent> content = [
   OnboardingContent(
       image: "assets/images/Shared workspace-amico (1) 1.svg",
       title: "Your favorite place to work",
-      desc: "In Shaghaf Co-working space, we provide a place that makes you more productive, enjoyable and comfortable A place made up of different parts"),
+      desc:
+          "In Shaghaf Co-working space, we provide a place that makes you more productive, enjoyable and comfortable A place made up of different parts"),
   OnboardingContent(
       image: "assets/images/Game day-amico 22.svg",
       title: "Delightful open air",

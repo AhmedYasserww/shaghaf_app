@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class OtpWidget extends StatelessWidget {
   const OtpWidget({super.key, required this.onSubmit});
   final void Function(String) onSubmit;
@@ -12,10 +13,9 @@ class OtpWidget extends StatelessWidget {
       cursorColor: Colors.red,
       enabledBorderColor: Colors.red,
       fieldWidth: 32.w,
-      onSubmit: (String verificationCode){
+      onSubmit: (String verificationCode) {
         onSubmit(verificationCode);
       },
     );
-
   }
 }

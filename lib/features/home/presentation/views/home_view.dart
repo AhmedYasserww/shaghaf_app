@@ -31,7 +31,9 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
         backgroundColor: Colors.white,
         drawer: selectedIndex == 0 ? const CustomDrawerItem() : null,
-        endDrawer: (selectedIndex == 1 || selectedIndex == 3)  ? const CustomDrawerItem() : null,
+        endDrawer: (selectedIndex == 1 || selectedIndex == 3)
+            ? const CustomDrawerItem()
+            : null,
         bottomNavigationBar: CustomBottomNavigationBar(
           onIndexChanged: (int value) {
             setState(() {

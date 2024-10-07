@@ -60,7 +60,8 @@ abstract class AppRouter {
     GoRoute(
       path: AppRouter.kVerification,
       builder: (context, state) {
-        final extraData = state.extra as Map<String, dynamic>; // Cast extra to a Map
+        final extraData =
+            state.extra as Map<String, dynamic>; // Cast extra to a Map
         final email = extraData['email'] as String;
         final title = extraData['title'] as String;
         return VerificationScreen(
@@ -75,7 +76,7 @@ abstract class AppRouter {
         builder: (context, state) => const RoomsView()),
     GoRoute(
         path: kRoomDetailsView,
-        builder: (context, state) => const RoomDetailsView()),
+        builder: (context, state) =>  RoomDetailsView(id: state.extra as String,)),
     GoRoute(
         path: kDateAndTimeView,
         builder: (context, state) => const DateAndTimeView()),

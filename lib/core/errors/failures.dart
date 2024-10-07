@@ -43,7 +43,10 @@ class ServerFailure extends Failure {
   }
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403 || statusCode == 422) {
+    if (statusCode == 400 ||
+        statusCode == 401 ||
+        statusCode == 403 ||
+        statusCode == 422) {
       if (response is Map && response.containsKey('errors')) {
         // Extract the first error message from the errors array
         var errors = response['errors'] as List;
@@ -53,7 +56,8 @@ class ServerFailure extends Failure {
           return ServerFailure(errorMessage: "An unknown error occurred.");
         }
       } else {
-        return ServerFailure(errorMessage: "Invalid input, please check your data.");
+        return ServerFailure(
+            errorMessage: "Invalid input, please check your data.");
       }
     } else if (statusCode == 404) {
       return ServerFailure(
@@ -66,5 +70,4 @@ class ServerFailure extends Failure {
           errorMessage: "Oops, there was an error, please try again");
     }
   }
-
 }

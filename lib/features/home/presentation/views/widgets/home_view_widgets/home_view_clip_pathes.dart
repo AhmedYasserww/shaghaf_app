@@ -15,7 +15,7 @@ class HomeViewClipPathes extends StatelessWidget {
     return Stack(
       children: [
         InkWell(
-          onTap: (){
+          onTap: () {
             GoRouter.of(context).push(AppRouter.kCategoryDetailsView);
           },
           child: ClipPath(
@@ -28,16 +28,21 @@ class HomeViewClipPathes extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: Padding(
-                padding:  EdgeInsets.only(left: 30.0.w,right: 15.w),
+                padding: EdgeInsets.only(left: 30.0.w, right: 15.w),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Rooms",style: Styles.textStyle24.copyWith(
-                      color: Colors.white,
-                    ),),
+                    Text(
+                      "Rooms",
+                      style: Styles.textStyle24.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
                     const Spacer(),
-                    const Image(image: AssetImage("assets/images/Game day-amico 2.png")),
+                    const Image(
+                        image:
+                            AssetImage("assets/images/Game day-amico 2.png")),
                   ],
                 ),
               ),
@@ -60,15 +65,21 @@ class HomeViewClipPathes extends StatelessWidget {
                         color: kMostColorPicked.withOpacity(.65),
                         borderRadius: BorderRadius.circular(20.r)),
                     child: Padding(
-                      padding:  EdgeInsets.only(top: 56.0.h,left: 6.h),
+                      padding: EdgeInsets.only(top: 56.0.h, left: 6.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Orders",style: Styles.textStyle18.copyWith(
-                            color: Colors.white,
-                          ),),
-                          const CustomImage(width: 115, height: 115, url: "assets/images/Ecommerce web page-amico 1.png")
-
+                          Text(
+                            "Orders",
+                            style: Styles.textStyle18.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          const CustomImage(
+                              width: 115,
+                              height: 115,
+                              url:
+                                  "assets/images/Ecommerce web page-amico 1.png")
                         ],
                       ),
                     ),
@@ -76,7 +87,7 @@ class HomeViewClipPathes extends StatelessWidget {
                 ),
                 const Spacer(),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     GoRouter.of(context).push(AppRouter.kEventsView);
                   },
                   child: ClipPath(
@@ -88,18 +99,25 @@ class HomeViewClipPathes extends StatelessWidget {
                           color: const Color(0xffFFCC0A).withOpacity(.65),
                           borderRadius: BorderRadius.circular(20.r)),
                       child: Padding(
-                        padding:  EdgeInsets.only(top: 56.0.h,right: 6.h),
+                        padding: EdgeInsets.only(top: 56.0.h, right: 6.h),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text("Events",style: Styles.textStyle18.copyWith(
-                              color: Colors.white,
-                            ),),
-                            const CustomImage(width: 115, height: 115, url: "assets/images/Prototyping process-amico (1) 3.png")
-
+                            Text(
+                              "Events",
+                              style: Styles.textStyle18.copyWith(
+                                color: Colors.white,
+                              ),
+                            ),
+                            const CustomImage(
+                                width: 115,
+                                height: 115,
+                                url:
+                                    "assets/images/Prototyping process-amico (1) 3.png")
                           ],
                         ),
-                      ),                  ),
+                      ),
+                    ),
                   ),
                 ),
               ],

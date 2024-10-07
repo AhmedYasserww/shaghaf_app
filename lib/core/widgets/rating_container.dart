@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/functions/styles.dart';
+
 class RatingContainer extends StatelessWidget {
   const RatingContainer({super.key, required this.rating});
   final double rating;

@@ -13,9 +13,7 @@ class OffersItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          kBoxShadow
-        ],
+        boxShadow: [kBoxShadow],
         color: Colors.white,
       ),
       child: Column(
@@ -26,32 +24,43 @@ class OffersItem extends StatelessWidget {
             borderRadius: BorderRadius.vertical(top: Radius.circular(12.r)),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 8.0.w, right: 12.w, top: 4.h,bottom: 8.h),
+            padding: EdgeInsets.only(
+                left: 8.0.w, right: 12.w, top: 4.h, bottom: 8.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Today’s offer", style: Styles.textStyle14),
                 SizedBox(height: 2.h),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start, // Aligns children to the start
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start, // Aligns children to the start
                   children: [
-                    Expanded( // Allow the Text widget to use available space
+                    Expanded(
+                      // Allow the Text widget to use available space
                       child: Text(
                         "10% discount on 3 hours or more",
                         style: Styles.textStyle10,
                         maxLines: 2, // Limits the text to a maximum of 2 lines
-                        overflow: TextOverflow.ellipsis, // Handles overflow with an ellipsis
+                        overflow: TextOverflow
+                            .ellipsis, // Handles overflow with an ellipsis
                       ),
                     ),
-                    SizedBox(width: 8.w), // Adds spacing between text and CircleAvatar
+                    SizedBox(
+                        width:
+                            8.w), // Adds spacing between text and CircleAvatar
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         showAlertDialog(context);
                       },
                       child: CircleAvatar(
                         radius: 12.r,
                         backgroundColor: kMostColorPicked,
-                        child: Center(child: Icon(Icons.arrow_forward_rounded, size: 16.sp,color: Colors.white,)),
+                        child: Center(
+                            child: Icon(
+                          Icons.arrow_forward_rounded,
+                          size: 16.sp,
+                          color: Colors.white,
+                        )),
                       ),
                     ),
                   ],
@@ -63,6 +72,7 @@ class OffersItem extends StatelessWidget {
       ),
     );
   }
+
   showAlertDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -71,46 +81,53 @@ class OffersItem extends StatelessWidget {
           child: Container(
             height: 220.h,
             width: 320.w,
-            padding: EdgeInsets.symmetric(vertical: 36.h,horizontal: 20.w),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24.r),
-                color: Colors.white,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const CustomImage(width: 22, height: 17, url: "assets/images/Group.png"),
-                      SizedBox(height: 3.h,),
-                      Expanded(
-                        child: Text(
-                          '30% off 10 booking (up to EGP 150)',
-                          style: Styles.textStyle14.copyWith(
-                            fontWeight: FontWeight.w500
-                          ),
-                        ),
+            padding: EdgeInsets.symmetric(vertical: 36.h, horizontal: 20.w),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24.r),
+              color: Colors.white,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    const CustomImage(
+                        width: 22, height: 17, url: "assets/images/Group.png"),
+                    SizedBox(
+                      height: 3.h,
+                    ),
+                    Expanded(
+                      child: Text(
+                        '30% off 10 booking (up to EGP 150)',
+                        style: Styles.textStyle14
+                            .copyWith(fontWeight: FontWeight.w500),
                       ),
-                    ],
-                  ),
-                  Container(
-                    width: 139.w,
-                    decoration: BoxDecoration(
+                    ),
+                  ],
+                ),
+                Container(
+                  width: 139.w,
+                  decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
-                        border: Border.all(color: kMostColorPicked,width: 2)
-                    ),
-                    child: Center(
-                      child:  Text(
-                        'Shagaf150',
-                        style: Styles.textStyle14,
-                      ),
+                      border: Border.all(color: kMostColorPicked, width: 2)),
+                  child: Center(
+                    child: Text(
+                      'Shagaf150',
+                      style: Styles.textStyle14,
                     ),
                   ),
-                  SizedBox(width: 113.w,child: const CustomButton(text: "Copy",color: kMostColorPicked,))
-                ],
-              ),),
+                ),
+                SizedBox(
+                    width: 113.w,
+                    child: const CustomButton(
+                      text: "Copy",
+                      color: kMostColorPicked,
+                    ))
+              ],
+            ),
+          ),
         );
       },
     );

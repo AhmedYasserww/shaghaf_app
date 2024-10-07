@@ -27,19 +27,19 @@ class _VerificationDetailsState extends State<VerificationDetails> {
     return BlocConsumer<VerificationCubit, VerificationState>(
       listener: (context, state) {
         if (state is VerificationSuccess) {
-         if(isValidatebutton){
-           isValidatebutton = false;
-           // Handle success - navigate or show a success message
-           // ScaffoldMessenger.of(context).showSnackBar(
-           //   SnackBar(content: Text('Validated your email successfly!')),
-           // );
-           // GoRouter.of(context).push(AppRouter.kHomeView);
-           return _showAlertDialog(context: context,title: widget.title);
-         }else{
-           ScaffoldMessenger.of(context).showSnackBar(
-             SnackBar(content: Text('Check your email ${widget.email}')),
-           );
-         }
+          if (isValidatebutton) {
+            isValidatebutton = false;
+            // Handle success - navigate or show a success message
+            // ScaffoldMessenger.of(context).showSnackBar(
+            //   SnackBar(content: Text('Validated your email successfly!')),
+            // );
+            // GoRouter.of(context).push(AppRouter.kHomeView);
+            return _showAlertDialog(context: context, title: widget.title);
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Check your email ${widget.email}')),
+            );
+          }
         } else if (state is VerificationFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -93,7 +93,9 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                       isValidatebutton = true;
                       print(code);
                       print(widget.email);
-                      context.read<VerificationCubit>().verifyEmail(email: widget.email, code: code);
+                      context
+                          .read<VerificationCubit>()
+                          .verifyEmail(email: widget.email, code: code);
                     },
                   ),
                 ),
@@ -109,7 +111,9 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                     text: "Resend Code",
                     onPressed: () {
                       print(widget.email);
-                      context.read<VerificationCubit>().resendCode(email: widget.email);
+                      context
+                          .read<VerificationCubit>()
+                          .resendCode(email: widget.email);
                       // return _showAlertDialog(context);
                     },
                   ),
@@ -122,7 +126,7 @@ class _VerificationDetailsState extends State<VerificationDetails> {
     );
   }
 
-  _showAlertDialog({required BuildContext context,required String title}) {
+  _showAlertDialog({required BuildContext context, required String title}) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -156,10 +160,10 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                           width: 211.w,
                           child: Center(
                               child: Text(
-                                "Success",
-                                style: Styles.textStyle20
-                                    .copyWith(fontWeight: FontWeight.w700),
-                              )),
+                            "Success",
+                            style: Styles.textStyle20
+                                .copyWith(fontWeight: FontWeight.w700),
+                          )),
                         ),
                         SizedBox(
                           height: 8.h,
@@ -174,7 +178,6 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                               style: Styles.textStyle16
                                   .copyWith(color: const Color(0xffA1A8B0)),
                             ),
-
                           ),
                         )
                       ],
@@ -188,8 +191,8 @@ class _VerificationDetailsState extends State<VerificationDetails> {
                     width: 187.w,
                     child: CustomButton(
                       text: "Done",
-                      textStyle: Styles.textStyle17.copyWith(
-                          color: Colors.white),
+                      textStyle:
+                          Styles.textStyle17.copyWith(color: Colors.white),
                       borderRadius: BorderRadius.circular(12.r),
                       onPressed: () {
                         GoRouter.of(context).push(AppRouter.kHomeView);

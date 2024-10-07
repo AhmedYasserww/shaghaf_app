@@ -8,6 +8,9 @@ class ForgetPasswordBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AuthBody(ContainerDetails: ForgetPasswordDetails(), paddingFromBottom: 35,);
+    return const AuthBody(
+      ContainerDetails: ForgetPasswordDetails(),
+      paddingFromBottom: 35,
+    );
   }
 }

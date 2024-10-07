@@ -49,7 +49,7 @@ class CustomButtonSection extends StatelessWidget {
             textStyle: Styles.textStyle16.copyWith(
               color: Colors.white,
             ),
-            onPressed: (){
+            onPressed: () {
               GoRouter.of(context).push(AppRouter.kBookingReviewView);
             },
           )

@@ -40,7 +40,7 @@ class _LoginDetailsState extends State<LoginDetails> {
   Future<void> _printToken() async {
     final prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('auth_token');
-    print('Token: $token');  // Print the token here
+    print('Token: $token'); // Print the token here
   }
 
   @override
@@ -54,7 +54,8 @@ class _LoginDetailsState extends State<LoginDetails> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Login Successfully')),
           );
-          GoRouter.of(context).push(AppRouter.kHomeView); // Navigate to home page
+          GoRouter.of(context)
+              .push(AppRouter.kHomeView); // Navigate to home page
         } else if (state is LoginFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -110,8 +111,7 @@ class _LoginDetailsState extends State<LoginDetails> {
                           globalKey.currentState!.save();
                           context.read<LoginCubit>().login(
                               email: emailController.text,
-                              password: passwordController.text
-                          );
+                              password: passwordController.text);
                           print(emailController.text);
                           print(passwordController.text);
                         }
@@ -136,8 +136,8 @@ class _LoginDetailsState extends State<LoginDetails> {
                       },
                       child: Text(
                         "Sign up",
-                        style: Styles.textStyle12.copyWith(
-                            color: kMostColorPicked),
+                        style: Styles.textStyle12
+                            .copyWith(color: kMostColorPicked),
                       ))
                 ],
               ),

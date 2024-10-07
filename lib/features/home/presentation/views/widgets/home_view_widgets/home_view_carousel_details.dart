@@ -6,11 +6,12 @@ import 'home_view_location_and_name.dart';
 
 class HomeViewCarouselDetails extends StatelessWidget {
   const HomeViewCarouselDetails({
-    super.key, required this.currentIndex, required this.length,
+    super.key,
+    required this.currentIndex,
+    required this.length,
   });
   final int currentIndex;
   final int length;
-
 
   @override
   Widget build(BuildContext context) {

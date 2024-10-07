@@ -8,7 +8,8 @@ class DateAndTimeTableCalender extends StatefulWidget {
   const DateAndTimeTableCalender({super.key});
 
   @override
-  State<DateAndTimeTableCalender> createState() => _DateAndTimeTableCalenderState();
+  State<DateAndTimeTableCalender> createState() =>
+      _DateAndTimeTableCalenderState();
 }
 
 class _DateAndTimeTableCalenderState extends State<DateAndTimeTableCalender> {
@@ -23,20 +24,21 @@ class _DateAndTimeTableCalenderState extends State<DateAndTimeTableCalender> {
       onDaySelected: (selectedDay, focusedDay) {
         if (selectedDay.isAfter(DateTime.now())) {
           setState(() {
-            _selectedDay = selectedDay; // Update only if the selected day is in the future
+            _selectedDay =
+                selectedDay; // Update only if the selected day is in the future
           });
         } else {
           print('Selected date is not in the future.');
         }
       },
       calendarFormat: CalendarFormat.month,
-      headerStyle:  HeaderStyle(
+      headerStyle: HeaderStyle(
         formatButtonVisible: false,
         titleCentered: true,
         formatButtonShowsNext: false,
         titleTextStyle: Styles.textStyle20,
       ),
-      calendarStyle:  CalendarStyle(
+      calendarStyle: CalendarStyle(
         defaultTextStyle: Styles.textStyle16,
         todayDecoration: const BoxDecoration(
           color: kMostColorPicked,

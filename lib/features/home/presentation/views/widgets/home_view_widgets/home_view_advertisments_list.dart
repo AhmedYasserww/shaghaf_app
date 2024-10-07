@@ -14,10 +14,11 @@ class HomeViewAdvertismentsList extends StatelessWidget {
           return Row(
             children: [
               CustomImage(
-                  width: 243.w,
-                  height: 108.h,
-                  url: "assets/images/Rectangle 346.png",
-              borderRadius: BorderRadius.circular(12),),
+                width: 243.w,
+                height: 108.h,
+                url: "assets/images/Rectangle 346.png",
+                borderRadius: BorderRadius.circular(12),
+              ),
               SizedBox(
                 width: 16.w,
               )

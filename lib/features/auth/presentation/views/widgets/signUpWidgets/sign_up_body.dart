@@ -8,6 +8,9 @@ class SignUpBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AuthBody(ContainerDetails: const SignUpDetails(), paddingFromBottom: 11.h,);
+    return AuthBody(
+      ContainerDetails: const SignUpDetails(),
+      paddingFromBottom: 11.h,
+    );
   }
 }

@@ -20,7 +20,8 @@ class _SplashViewState extends State<SplashView> {
 
   // Function to check if token exists and navigate accordingly
   Future<void> navigateBasedOnToken() async {
-    await Future.delayed(const Duration(seconds: 3)); // Delay to display splash screen
+    await Future.delayed(
+        const Duration(seconds: 3)); // Delay to display splash screen
 
     // Obtain shared preferences instance
     final SharedPreferences prefs = await SharedPreferences.getInstance();

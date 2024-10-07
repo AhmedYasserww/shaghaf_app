@@ -10,11 +10,13 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
   final AuthRepo authRepo;
   resetPassword({
     required String email,
-  }) async{
+  }) async {
     emit(ForgetPasswordLoading());
     var result = await authRepo.resetPassword(email: email);
     result.fold((l) {
-      emit(ForgetPasswordFailure( errMessage: l.errorMessage,));
+      emit(ForgetPasswordFailure(
+        errMessage: l.errorMessage,
+      ));
     }, (r) {
       emit(ForgetPasswordSuccess());
     });

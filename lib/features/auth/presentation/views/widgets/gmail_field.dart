@@ -7,9 +7,9 @@ import '../../../../../../core/widgets/custom_text_form_field.dart';
 class GmailField extends StatelessWidget {
   final TextEditingController emailController;
 
-
-  const GmailField({super.key, required this.emailController}); // Accept onSaved as a parameter
-
+  const GmailField(
+      {super.key,
+      required this.emailController}); // Accept onSaved as a parameter
 
   @override
   Widget build(BuildContext context) {

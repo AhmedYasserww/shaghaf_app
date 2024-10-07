@@ -13,7 +13,7 @@ Widget buildTimelineDot() {
 }
 
 Widget buildDottedLine({required double lineLength}) {
-  return  DottedLine(
+  return DottedLine(
     direction: Axis.vertical,
     lineLength: lineLength,
     dashColor: kMostColorPicked,

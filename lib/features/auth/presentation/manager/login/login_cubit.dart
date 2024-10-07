@@ -21,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
     }, (token) async {
       // Save the token in SharedPreferences
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('auth_token', token);  // Assuming token is a string
+      await prefs.setString('auth_token', token); // Assuming token is a string
 
       emit(LoginSuccess());
     });

@@ -31,7 +31,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         if (index != 2) {
           setState(() {
             selectedIndex = index;
-            widget.onIndexChanged(selectedIndex); // Notify parent of the index change
+            widget.onIndexChanged(
+                selectedIndex); // Notify parent of the index change
           });
         }
       },

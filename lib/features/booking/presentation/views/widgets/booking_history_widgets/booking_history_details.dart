@@ -17,9 +17,7 @@ class BookingHistoryDetails extends StatelessWidget {
       height: 300.h,
       decoration: BoxDecoration(
         color: Colors.white,
-        boxShadow: [
-          kBoxShadow
-        ],
+        boxShadow: [kBoxShadow],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

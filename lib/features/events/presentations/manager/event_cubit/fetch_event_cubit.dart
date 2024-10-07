@@ -13,7 +13,7 @@ class FetchEventCubit extends Cubit<FetchEventState> {
     emit(FetchEventLoading());
     var result = await eventsRepo.fetchEvents();
     result.fold((failure) {
-      emit(FetchEventFailure( errorMessage: failure.errorMessage));
+      emit(FetchEventFailure(errorMessage: failure.errorMessage));
     }, (rooms) {
       emit(FetchEventSuccess(events: rooms));
     });

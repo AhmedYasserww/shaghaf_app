@@ -21,13 +21,23 @@ class _BookingHistoryBodyState extends State<BookingHistoryBody> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 16.h,),
+            SizedBox(
+              height: 16.h,
+            ),
             const BookingHistoryAppBar(),
-            SizedBox(height: 24.h,),
-            BookingHistoryTapBar(onIndexChanged: (int value) { setState(() {
-              _index = value;
-            }); },),
-            _index == 1 ? const BookingHistoryUpcoming() : const BookingHistoryPast(),
+            SizedBox(
+              height: 24.h,
+            ),
+            BookingHistoryTapBar(
+              onIndexChanged: (int value) {
+                setState(() {
+                  _index = value;
+                });
+              },
+            ),
+            _index == 1
+                ? const BookingHistoryUpcoming()
+                : const BookingHistoryPast(),
           ],
         ),
       ),

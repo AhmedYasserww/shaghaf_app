@@ -13,20 +13,27 @@ class VerificationCubit extends Cubit<VerificationState> {
   verifyEmail({
     required String email,
     required String code,
-  }) async{
+  }) async {
     emit(VerificationLoading());
     var result = await authRepo.verifyEmail(code: code, email: email);
     result.fold((l) {
-      emit(VerificationFailure( errMessage: l.errorMessage,));
+      emit(VerificationFailure(
+        errMessage: l.errorMessage,
+      ));
     }, (r) {
       emit(VerificationSuccess());
     });
   }
-  resendCode({required String email,})async{
+
+  resendCode({
+    required String email,
+  }) async {
     emit(VerificationLoading());
     var result = await authRepo.resendCode(email: email);
     result.fold((l) {
-      emit(VerificationFailure( errMessage: l.errorMessage,));
+      emit(VerificationFailure(
+        errMessage: l.errorMessage,
+      ));
     }, (r) {
       emit(VerificationSuccess());
     });

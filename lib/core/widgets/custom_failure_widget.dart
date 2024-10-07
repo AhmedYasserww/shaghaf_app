@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class CustomFailureWidget extends StatelessWidget {
   const CustomFailureWidget({super.key, required this.errMessage});
   final String errMessage;

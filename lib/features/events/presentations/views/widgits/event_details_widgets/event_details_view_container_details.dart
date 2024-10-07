@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/widgets/custom_dotted_line.dart';
 import '../../../../../../core/utils/functions/styles.dart';
+
 class EventDetailsViewContainerDetails extends StatelessWidget {
   const EventDetailsViewContainerDetails({super.key});
 
@@ -13,11 +14,15 @@ class EventDetailsViewContainerDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
-            padding: EdgeInsets.only(top: 24.h,left: 25.w),
-            child: Text("Details",style: Styles.textStyle16.copyWith(color: kMostColorPicked,fontWeight: FontWeight.w600),)),
-         SizedBox(height: 16.h),
+            padding: EdgeInsets.only(top: 24.h, left: 25.w),
+            child: Text(
+              "Details",
+              style: Styles.textStyle16.copyWith(
+                  color: kMostColorPicked, fontWeight: FontWeight.w600),
+            )),
+        SizedBox(height: 16.h),
         Padding(
-          padding:  EdgeInsets.only(left:42.w , right: 24.w ),
+          padding: EdgeInsets.only(left: 42.w, right: 24.w),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,7 +39,7 @@ class EventDetailsViewContainerDetails extends StatelessWidget {
                   buildTimelineDot(),
                 ],
               ),
-               SizedBox(width: 7.w),
+              SizedBox(width: 7.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

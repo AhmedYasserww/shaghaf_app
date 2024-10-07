@@ -10,11 +10,17 @@ class BookingHistoryUpcoming extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 16.h,),
+        SizedBox(
+          height: 16.h,
+        ),
         const BookingHistoryContianerForClock(),
-        SizedBox(height: 12.h,),
+        SizedBox(
+          height: 12.h,
+        ),
         const BookingHistoryDetails(),
-        SizedBox(height: 20.h,),
+        SizedBox(
+          height: 20.h,
+        ),
       ],
     );
   }
