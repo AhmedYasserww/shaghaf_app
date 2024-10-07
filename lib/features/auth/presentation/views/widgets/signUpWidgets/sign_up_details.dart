@@ -28,14 +28,13 @@ class _SignUpDetailsState extends State<SignUpDetails> {
   late TextEditingController phoneNumberController;
   late TextEditingController confirmPasswordController;
 
-
   @override
   void initState() {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     nameController = TextEditingController();
     phoneNumberController = TextEditingController();
-    confirmPasswordController=TextEditingController();
+    confirmPasswordController = TextEditingController();
 
     super.initState();
   }
@@ -49,6 +48,7 @@ class _SignUpDetailsState extends State<SignUpDetails> {
     confirmPasswordController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
@@ -58,10 +58,13 @@ class _SignUpDetailsState extends State<SignUpDetails> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Validate your email!')),
           );
-          GoRouter.of(context).push(AppRouter.kVerification,extra: {
-            'email': emailController.text,
-            'title': "Validated your email successfly!",
-          },); // Navigate to home page
+          GoRouter.of(context).push(
+            AppRouter.kVerification,
+            extra: {
+              'email': emailController.text,
+              'title': "Validated your email successfly!",
+            },
+          ); // Navigate to home page
         } else if (state is SignUpFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -78,24 +81,24 @@ class _SignUpDetailsState extends State<SignUpDetails> {
               if (state is SignUpLoading)
                 const Center(child: CircularProgressIndicator()),
               GmailField(
-         emailController:emailController ,
+                emailController: emailController,
               ),
               SizedBox(height: 19.h),
               PhoneField(
-               phoneController: phoneNumberController,
+                phoneController: phoneNumberController,
               ),
               SizedBox(height: 19.h),
               UserNameField(
-              userNameController: nameController,
+                userNameController: nameController,
               ),
               SizedBox(height: 19.h),
               PasswordField(
-               passwordController: passwordController,
+                passwordController: passwordController,
               ),
               SizedBox(height: 19.h),
               ConfirmPasswordField(
                 passwordController: passwordController,
-confirmPasswordController: confirmPasswordController,
+                confirmPasswordController: confirmPasswordController,
               ),
               SizedBox(height: 19.h),
               Row(
@@ -108,12 +111,13 @@ confirmPasswordController: confirmPasswordController,
                           globalKey.currentState!.save();
                           // Call the cubit's signUp method with form data
                           context.read<SignUpCubit>().signUp(
-                            phone:phoneNumberController.text,
-                            email:emailController.text ,
-                            useName: nameController.text,
-                            password: passwordController.text,
-                            birthDate: '2000-02-01', // Example birthDate, change it accordingly
-                          );
+                                phone: phoneNumberController.text,
+                                email: emailController.text,
+                                useName: nameController.text,
+                                password: passwordController.text,
+                                birthDate:
+                                    '2000-02-01', // Example birthDate, change it accordingly
+                              );
                           print(phoneNumberController.text);
                           print(emailController.text);
                           print(nameController.text);
@@ -138,7 +142,8 @@ confirmPasswordController: confirmPasswordController,
                     },
                     child: Text(
                       "Log in",
-                      style: Styles.textStyle12.copyWith(color: const Color(0xffF04C29)),
+                      style: Styles.textStyle12
+                          .copyWith(color: const Color(0xffF04C29)),
                     ),
                   ),
                 ],

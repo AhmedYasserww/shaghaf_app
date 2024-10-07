@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shagaf/features/home/presentation/views/widgets/birthday_widgets/section%20two%20of%20birthday%20widget/birthday_item_of_decorations.dart';
+
 class BirthDayListViewDecorations extends StatelessWidget {
   const BirthDayListViewDecorations({super.key, required this.onItemSelected});
   final Function(bool) onItemSelected;
@@ -14,7 +15,9 @@ class BirthDayListViewDecorations extends StatelessWidget {
       itemBuilder: (context, i) {
         return Padding(
           padding: EdgeInsets.only(bottom: 12.h),
-          child:  BirthDayItemDecorations(onItemSelected: onItemSelected,),
+          child: BirthDayItemDecorations(
+            onItemSelected: onItemSelected,
+          ),
         );
       },
     );

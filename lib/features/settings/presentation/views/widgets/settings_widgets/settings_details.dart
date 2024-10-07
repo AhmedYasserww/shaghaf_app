@@ -14,7 +14,7 @@ class SettingsDetails extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: (){
+          onTap: () {
             GoRouter.of(context).push(AppRouter.kProfileView);
           },
           child: Row(
@@ -28,14 +28,18 @@ class SettingsDetails extends StatelessWidget {
               ),
               Text(
                 "Profile",
-                style:
-                    Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+                style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
               ),
             ],
           ),
         ),
-        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
-        SizedBox(height: 24.h,),
+        const Divider(
+          thickness: 1,
+          color: Color(0xffDCDCDC),
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
         Row(
           children: [
             const Icon(
@@ -47,8 +51,7 @@ class SettingsDetails extends StatelessWidget {
             ),
             Text(
               "English",
-              style:
-              Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
             ),
             const Spacer(),
             const Icon(
@@ -57,10 +60,15 @@ class SettingsDetails extends StatelessWidget {
             ),
           ],
         ),
-        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
-        SizedBox(height: 24.h,),
+        const Divider(
+          thickness: 1,
+          color: Color(0xffDCDCDC),
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
         InkWell(
-          onTap: (){
+          onTap: () {
             GoRouter.of(context).push(AppRouter.kNotificationsView);
           },
           child: Row(
@@ -74,16 +82,20 @@ class SettingsDetails extends StatelessWidget {
               ),
               Text(
                 "Notifications",
-                style:
-                Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+                style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
               ),
             ],
           ),
         ),
-        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
-        SizedBox(height: 24.h,),
+        const Divider(
+          thickness: 1,
+          color: Color(0xffDCDCDC),
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
         InkWell(
-          onTap: (){
+          onTap: () {
             GoRouter.of(context).push(AppRouter.kContactUsView);
           },
           child: Row(
@@ -97,14 +109,18 @@ class SettingsDetails extends StatelessWidget {
               ),
               Text(
                 "Contact Us",
-                style:
-                Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+                style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
               ),
             ],
           ),
         ),
-        const Divider(thickness: 1,color: Color(0xffDCDCDC),),
-        SizedBox(height: 24.h,),
+        const Divider(
+          thickness: 1,
+          color: Color(0xffDCDCDC),
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
         Row(
           children: [
             const Icon(
@@ -116,14 +132,15 @@ class SettingsDetails extends StatelessWidget {
             ),
             Text(
               "About Us",
-              style:
-              Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
             ),
           ],
         ),
-        const Divider(thickness: 1,color: Color(0xffDCDCDC),)
+        const Divider(
+          thickness: 1,
+          color: Color(0xffDCDCDC),
+        )
       ],
     );
   }
-
 }

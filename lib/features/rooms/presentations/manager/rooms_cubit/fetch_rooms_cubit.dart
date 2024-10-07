@@ -13,7 +13,7 @@ class FetchRoomsCubit extends Cubit<FetchRoomsState> {
     emit(FetchRoomsLoading());
     var result = await roomsRepo.fetchRooms();
     result.fold((failure) {
-      emit(FetchRoomsFailure( errMessage: failure.errorMessage));
+      emit(FetchRoomsFailure(errMessage: failure.errorMessage));
     }, (rooms) {
       emit(FetchRoomsSuccess(rooms: rooms));
     });

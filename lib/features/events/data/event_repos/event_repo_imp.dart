@@ -15,13 +15,12 @@ class EventsRepoImpl implements EventsRepo {
     try {
       var data = await apiService.get(endPoint: 'api/events');
       List<EventModel> events = [];
-      if(data['data']!=null){
-        for(var item in data["data"]){
+      if (data['data'] != null) {
+        for (var item in data["data"]) {
           events.add(EventModel.fromJson(item));
         }
-      }
-      else {
-        return Left(ServerFailure(errorMessage:"no item found "));
+      } else {
+        return Left(ServerFailure(errorMessage: "no item found "));
       }
       return right(events);
     } on Exception catch (e) {
@@ -31,5 +30,4 @@ class EventsRepoImpl implements EventsRepo {
       return left(ServerFailure(errorMessage: e.toString()));
     }
   }
-
 }

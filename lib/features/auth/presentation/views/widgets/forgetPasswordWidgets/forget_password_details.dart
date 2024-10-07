@@ -9,6 +9,7 @@ import 'package:shagaf/features/auth/presentation/manager/forget_password/forget
 import 'package:shagaf/features/auth/presentation/views/widgets/gmail_field.dart';
 
 import '../../../manager/sign_up/sign_up_cubit.dart';
+
 class ForgetPasswordDetails extends StatefulWidget {
   const ForgetPasswordDetails({super.key});
   @override
@@ -38,10 +39,13 @@ class _ForgetPasswordDetailsState extends State<ForgetPasswordDetails> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Validate your email!')),
           );
-          GoRouter.of(context).push(AppRouter.kVerification,extra: {
-            'email': emailController.text,
-            'title': 'You have successfully reset your password.',
-          },); // Navigate to home page
+          GoRouter.of(context).push(
+            AppRouter.kVerification,
+            extra: {
+              'email': emailController.text,
+              'title': 'You have successfully reset your password.',
+            },
+          ); // Navigate to home page
         } else if (state is ForgetPasswordFailure) {
           // Handle failure - show an error message
           ScaffoldMessenger.of(context).showSnackBar(
@@ -49,45 +53,55 @@ class _ForgetPasswordDetailsState extends State<ForgetPasswordDetails> {
           );
         }
       },
-  builder: (context, state) {
-    return Form(
-      key: globalKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (state is SignUpLoading)
-            const Center(child: CircularProgressIndicator()),
-          Text("Forgot Your Password?",style: Styles.textStyle20,),
-          SizedBox(height: 13.h,),
-          Text("Enter your gmail, we will send you confirmation code",style: Styles.textStyle12.copyWith(
-            fontWeight: FontWeight.w400,
-            color: const Color(0xff787878)
-          ),),
-          SizedBox(height: 47.h,),
-          GmailField(
-              emailController: emailController
-          ),
-          SizedBox(height: 24.h,),
-          Row(
+      builder: (context, state) {
+        return Form(
+          key: globalKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: CustomButton(
-                  text: "Reset Password",
-                  onPressed: () {
-                    if (globalKey.currentState!.validate()) {
-                      globalKey.currentState!.save();
-                      context.read<ForgetPasswordCubit>().resetPassword(email: emailController.text);
-                    } else {
-                    }
-                  },
-                ),
+              if (state is SignUpLoading)
+                const Center(child: CircularProgressIndicator()),
+              Text(
+                "Forgot Your Password?",
+                style: Styles.textStyle20,
+              ),
+              SizedBox(
+                height: 13.h,
+              ),
+              Text(
+                "Enter your gmail, we will send you confirmation code",
+                style: Styles.textStyle12.copyWith(
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xff787878)),
+              ),
+              SizedBox(
+                height: 47.h,
+              ),
+              GmailField(emailController: emailController),
+              SizedBox(
+                height: 24.h,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: CustomButton(
+                      text: "Reset Password",
+                      onPressed: () {
+                        if (globalKey.currentState!.validate()) {
+                          globalKey.currentState!.save();
+                          context
+                              .read<ForgetPasswordCubit>()
+                              .resetPassword(email: emailController.text);
+                        } else {}
+                      },
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
-  },
-);
   }
 }

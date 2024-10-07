@@ -15,21 +15,13 @@ class CustomDrawerItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              width: 95,
-              height: 160,
+                width: 95,
+                height: 160,
                 child: Image(image: AssetImage(AssetsData.logo))),
-
-            CustomDrawerListView(
-              onItemTap: (value){
-
-              }
-                ,
-                items: items),
+            CustomDrawerListView(onItemTap: (value) {}, items: items),
           ],
         ),
       ),
     );
   }
 }
-
-

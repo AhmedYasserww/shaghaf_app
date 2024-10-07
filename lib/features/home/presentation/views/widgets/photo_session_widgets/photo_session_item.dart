@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/functions/styles.dart';
+
 class PhotoSessionItem extends StatefulWidget {
   final Function(bool) onItemSelected;
   const PhotoSessionItem({super.key, required this.onItemSelected});
@@ -11,21 +12,19 @@ class PhotoSessionItem extends StatefulWidget {
 }
 
 class _PhotoSessionItemState extends State<PhotoSessionItem> {
-  bool isSelected = false ;
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         setState(() {
           isSelected = !isSelected;
           widget.onItemSelected(isSelected); // Notify parent about selection
-
         });
-
       },
       child: Container(
         decoration: BoxDecoration(
-          color:isSelected==false? Colors.white:const Color(0xffffbcac),
+          color: isSelected == false ? Colors.white : const Color(0xffffbcac),
           borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(12.r), top: Radius.circular(12.r)),
           boxShadow: const [
@@ -38,7 +37,7 @@ class _PhotoSessionItemState extends State<PhotoSessionItem> {
         ),
         child: Padding(
           padding:
-          const EdgeInsets.only(top: 10, bottom: 10, left: 8, right: 15),
+              const EdgeInsets.only(top: 10, bottom: 10, left: 8, right: 15),
           child: Row(
             children: [
               SizedBox(
@@ -63,20 +62,21 @@ class _PhotoSessionItemState extends State<PhotoSessionItem> {
               const Spacer(),
               Row(
                 children: [
-                  isSelected==false?
-                  CircleAvatar(
-                    radius: 20,
-                    child: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          isSelected = !isSelected;
-                          widget.onItemSelected(isSelected);
-                        });
-                      },
-                      icon: const Icon(Icons.add, color: Colors.orange, size: 26),
-
-                    ),
-                  ):const Text("")
+                  isSelected == false
+                      ? CircleAvatar(
+                          radius: 20,
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isSelected = !isSelected;
+                                widget.onItemSelected(isSelected);
+                              });
+                            },
+                            icon: const Icon(Icons.add,
+                                color: Colors.orange, size: 26),
+                          ),
+                        )
+                      : const Text("")
                 ],
               )
             ],

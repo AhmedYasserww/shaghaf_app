@@ -14,14 +14,16 @@ class LocationContainer extends StatelessWidget {
       constraints: const BoxConstraints(
         minWidth: 75, // Ensure there's a minimum width
       ),
-      padding: EdgeInsets.symmetric(horizontal: 12.w), // Add padding around text
+      padding:
+          EdgeInsets.symmetric(horizontal: 12.w), // Add padding around text
       height: 27,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
         color: const Color(0xffF04C29),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min, // Ensures the Row takes only as much width as needed
+        mainAxisSize: MainAxisSize
+            .min, // Ensures the Row takes only as much width as needed
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(

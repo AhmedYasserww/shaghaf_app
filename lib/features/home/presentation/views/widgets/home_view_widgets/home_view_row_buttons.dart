@@ -7,7 +7,7 @@ import 'package:shagaf/core/widgets/custom_button.dart';
 import '../../../../../../core/utils/functions/styles.dart';
 
 class HomeViewRowButtons extends StatelessWidget {
-  const HomeViewRowButtons({super.key}) ;
+  const HomeViewRowButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,10 @@ class HomeViewRowButtons extends StatelessWidget {
           width: 110,
           height: 48,
           text: "Membership",
-          textStyle: Styles.textStyle16.copyWith(color: Colors.white,fontWeight: FontWeight.w500),
+          textStyle: Styles.textStyle16
+              .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
           color: const Color(0xffF04C29).withOpacity(.9),
-          onPressed: (){
+          onPressed: () {
             GoRouter.of(context).push(AppRouter.kMemberShipView);
           },
         ),
@@ -28,21 +29,21 @@ class HomeViewRowButtons extends StatelessWidget {
           width: 110,
           height: 48,
           text: "Birthday",
-          textStyle: Styles.textStyle16.copyWith(color: Colors.white,fontWeight: FontWeight.w500),
+          textStyle: Styles.textStyle16
+              .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
           color: const Color(0xffF04C29).withOpacity(.9),
-
-          onPressed: (){
+          onPressed: () {
             GoRouter.of(context).push(AppRouter.kBirthDayView);
           },
         ),
         CustomButton(
-
           width: 110,
           height: 48,
           text: "Photo session",
-          textStyle: Styles.textStyle16.copyWith(color: Colors.white,fontWeight: FontWeight.w500),
+          textStyle: Styles.textStyle16
+              .copyWith(color: Colors.white, fontWeight: FontWeight.w500),
           color: const Color(0xffF04C29).withOpacity(.9),
-          onPressed: (){
+          onPressed: () {
             GoRouter.of(context).push(AppRouter.kPhotoSessionView);
           },
         ),
@@ -50,5 +51,3 @@ class HomeViewRowButtons extends StatelessWidget {
     );
   }
 }
-
-

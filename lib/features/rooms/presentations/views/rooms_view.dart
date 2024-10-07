@@ -5,13 +5,15 @@ import 'package:shagaf/features/rooms/presentations/manager/rooms_cubit/fetch_ro
 import 'package:shagaf/features/rooms/presentations/views/widgets/rooms_widgets/rooms_body.dart';
 
 import '../../../../core/utils/functions/service_locator.dart';
+
 class RoomsView extends StatelessWidget {
   const RoomsView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FetchRoomsCubit(getIt.get<RoomsRepoImpl>())..fetchRooms(),
+      create: (context) =>
+          FetchRoomsCubit(getIt.get<RoomsRepoImpl>())..fetchRooms(),
       child: const Scaffold(
         body: SafeArea(child: RoomsBody()),
       ),

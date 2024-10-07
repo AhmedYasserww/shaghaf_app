@@ -5,7 +5,7 @@ abstract class AuthRepo {
   Future<Either<Failure, Unit>> signUp({
     required String phone,
     required String email,
-    required String useName,
+    required String userName,
     required String password,
     required String birthDate,
   });
@@ -19,7 +19,7 @@ abstract class AuthRepo {
   Future<Either<Failure, Unit>> resetPassword({
     required String email,
   });
-  Future<Either<Failure, Unit>> logIn({
+  Future<Either<Failure, String>> logIn({
     required String email,
     required String password,
   });

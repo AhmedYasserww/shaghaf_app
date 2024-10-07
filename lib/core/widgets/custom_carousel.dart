@@ -4,8 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../features/home/data/models/image_model.dart';
 import 'custom_image.dart';
+
 class CustomCarousel extends StatefulWidget {
-  const CustomCarousel({super.key, required this.onIndexChanged, required this.height});
+  const CustomCarousel(
+      {super.key, required this.onIndexChanged, required this.height});
   final ValueChanged<int> onIndexChanged;
   final double height;
   @override

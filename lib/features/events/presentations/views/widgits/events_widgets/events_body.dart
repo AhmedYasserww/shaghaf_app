@@ -5,19 +5,24 @@ import 'package:shagaf/features/events/presentations/views/widgits/events_widget
 
 import 'events_app_bar.dart';
 import 'events_gird_view.dart';
+
 class EventsBody extends StatelessWidget {
   const EventsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 24.w),
-      child:  Column(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
         children: [
-          SizedBox(height: 16.h,),
+          SizedBox(
+            height: 16.h,
+          ),
           const CustomAppBarWithTwoIcons(title: "Events"),
-          SizedBox(height: 16.h,),
-          const Expanded(child:EventsBlocBuilder())
+          SizedBox(
+            height: 16.h,
+          ),
+          const Expanded(child: EventsBlocBuilder())
         ],
       ),
     );

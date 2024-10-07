@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shagaf/features/events/presentations/views/widgits/event_details_widgets/event_details_view_body.dart';
+
 class EventDetailsView extends StatelessWidget {
   const EventDetailsView({super.key});
 

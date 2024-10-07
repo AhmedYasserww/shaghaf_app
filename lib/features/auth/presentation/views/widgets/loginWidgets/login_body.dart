@@ -7,6 +7,9 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AuthBody(ContainerDetails: LoginDetails(), paddingFromBottom: 29,);
+    return const AuthBody(
+      ContainerDetails: LoginDetails(),
+      paddingFromBottom: 29,
+    );
   }
 }

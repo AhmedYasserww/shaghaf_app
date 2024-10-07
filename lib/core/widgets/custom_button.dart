@@ -12,7 +12,8 @@ class CustomButton extends StatelessWidget {
     this.color,
     this.textStyle,
     this.height,
-    this.shadow = false, this.width, // Default to false
+    this.shadow = false,
+    this.width, // Default to false
   });
 
   final String text;
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
   final TextStyle? textStyle;
   final double? height;
   final bool shadow;
-  final double? width;// Changed to non-nullable, default is false
+  final double? width; // Changed to non-nullable, default is false
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +33,8 @@ class CustomButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           // Conditionally apply shadow if `shadow` is true
-          boxShadow: shadow
-              ? [
-            kBoxShadow
-          ]
-              : [], // No shadow when `shadow` is false
+          boxShadow:
+              shadow ? [kBoxShadow] : [], // No shadow when `shadow` is false
           borderRadius: borderRadius ?? BorderRadius.circular(10.r),
         ),
         child: TextButton(

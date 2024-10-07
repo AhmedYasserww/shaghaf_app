@@ -10,7 +10,7 @@ import '../../../../../../core/widgets/custom_image.dart';
 
 class EventsItem extends StatelessWidget {
   const EventsItem({super.key, required this.eventModel});
-final EventModel eventModel;
+  final EventModel eventModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +35,7 @@ final EventModel eventModel;
             borderRadius: BorderRadius.vertical(top: Radius.circular(12.r)),
           ),
           Padding(
-            padding:  EdgeInsets.only(left: 8.0.w,right: 12.w,top: 14.h),
+            padding: EdgeInsets.only(left: 8.0.w, right: 12.w, top: 14.h),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,18 +43,16 @@ final EventModel eventModel;
                   // Allow the Text widget to use available space
                   child: Text(
                     eventModel.title,
-                    style: Styles.textStyle10.copyWith(
-                      color: const Color(0xff252525)
-                    ),
+                    style: Styles.textStyle10
+                        .copyWith(color: const Color(0xff252525)),
                     maxLines: 2,
-                    overflow: TextOverflow
-                        .ellipsis,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
                 SizedBox(width: 14.w),
                 InkWell(
                   onTap: () {
-              GoRouter.of(context).push(AppRouter.kEventDetailsView);
+                    GoRouter.of(context).push(AppRouter.kEventDetailsView);
                   },
                   child: CircleAvatar(
                     radius: 12.r,

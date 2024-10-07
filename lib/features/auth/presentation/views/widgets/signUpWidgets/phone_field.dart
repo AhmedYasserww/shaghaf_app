@@ -3,10 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
+
 class PhoneField extends StatelessWidget {
   final TextEditingController phoneController;
 
-  const PhoneField({super.key,required this.phoneController});
+  const PhoneField({super.key, required this.phoneController});
 
   @override
   Widget build(BuildContext context) {

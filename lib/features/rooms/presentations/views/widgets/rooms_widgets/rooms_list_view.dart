@@ -5,6 +5,7 @@ import 'package:shagaf/features/rooms/presentations/views/widgets/rooms_widgets/
 
 import '../../../../../../core/utils/functions/app_router.dart';
 import '../../../../data/models/rooms_model/rooms_model.dart';
+
 class RoomsListView extends StatelessWidget {
   const RoomsListView({super.key, required this.roomsModels});
   final List<RoomsModel> roomsModels;
@@ -16,10 +17,12 @@ class RoomsListView extends StatelessWidget {
           return Column(
             children: [
               InkWell(
-                  onTap: (){
-                    GoRouter.of(context).push(AppRouter.kRoomDetailsView);
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kRoomDetailsView,extra: roomsModels[index].id);
                   },
-                  child:  RoomsListViewItem(roomsModel: roomsModels[index],)),
+                  child: RoomsListViewItem(
+                    roomsModel: roomsModels[index],
+                  )),
               SizedBox(
                 height: 16.h,
               ),

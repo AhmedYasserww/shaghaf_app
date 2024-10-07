@@ -10,7 +10,8 @@ class SelectPlanBottomSheet extends StatefulWidget {
   final String? selectedPlan;
   final ValueChanged<String?> onPlanSelected;
 
-  const SelectPlanBottomSheet({super.key, 
+  const SelectPlanBottomSheet({
+    super.key,
     required this.selectedPlan,
     required this.onPlanSelected,
   });

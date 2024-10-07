@@ -42,20 +42,19 @@ class _BirthdayViewBodyState extends State<BirthdayViewBody> {
               style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
             ),
             SizedBox(height: 4.h),
-
             BirthDayListViewCakes(onItemSelected: updateItemSelected),
-
             SizedBox(height: 20.h),
             Text(
               "Decoration",
               style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w400),
             ),
-
-           BirthDayListViewDecorations(onItemSelected: updateItemSelected),
-
+            BirthDayListViewDecorations(onItemSelected: updateItemSelected),
             const SizedBox(height: 20),
-
-            isItemSelected? CustomButtonOfBirthDayView(price: "EGP 500.0",):Text(""),
+            isItemSelected
+                ? CustomButtonOfBirthDayView(
+                    price: "EGP 500.0",
+                  )
+                : Text(""),
             const SizedBox(height: 20),
           ],
         ),

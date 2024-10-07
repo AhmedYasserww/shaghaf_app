@@ -5,8 +5,12 @@ import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 
 class ConfirmPasswordField extends StatefulWidget {
-  const ConfirmPasswordField({super.key, required this.confirmPasswordController, required this.passwordController,});
- final TextEditingController confirmPasswordController;
+  const ConfirmPasswordField({
+    super.key,
+    required this.confirmPasswordController,
+    required this.passwordController,
+  });
+  final TextEditingController confirmPasswordController;
   final TextEditingController passwordController;
 
   @override
@@ -18,7 +22,7 @@ class _ConfirmPasswordFieldState extends State<ConfirmPasswordField> {
   @override
   Widget build(BuildContext context) {
     return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Confirm Password",
@@ -28,7 +32,7 @@ class _ConfirmPasswordFieldState extends State<ConfirmPasswordField> {
           height: 5.h,
         ),
         CustomTextFormField(
-          obscureText: visible,
+            obscureText: visible,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Field is required';
@@ -38,15 +42,20 @@ class _ConfirmPasswordFieldState extends State<ConfirmPasswordField> {
               return null;
             },
             suffixIcon: IconButton(
-              onPressed: (){
+              onPressed: () {
                 setState(() {
-                  visible =!visible;
+                  visible = !visible;
                 });
               },
-              icon: Icon(visible ? Icons.visibility_off : Icons.visibility, color: kIconsColorForAuth,),
+              icon: Icon(
+                visible ? Icons.visibility_off : Icons.visibility,
+                color: kIconsColorForAuth,
+              ),
             ),
             controller: widget.confirmPasswordController,
-            hintText: "Confirm password", icon: Icons.lock, textInputType: TextInputType.visiblePassword),
+            hintText: "Confirm password",
+            icon: Icons.lock,
+            textInputType: TextInputType.visiblePassword),
       ],
     );
   }

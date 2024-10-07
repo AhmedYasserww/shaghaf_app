@@ -74,7 +74,8 @@ class RoomDetailsViewBottomSection extends StatelessWidget {
       backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return SelectPlanBottomSheet(
-          selectedPlan: null, // Set initial selected plan or handle state management as needed
+          selectedPlan:
+              null, // Set initial selected plan or handle state management as needed
           onPlanSelected: (value) {
             // Handle plan selection
           },

@@ -4,37 +4,36 @@ import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/utils/functions/styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    required this.hintText,
-    required this.icon,
-    required this.textInputType,
-    this.controller,
-     this.validator, this.obscureText = false,
-    this.suffixIcon
-  });
+  const CustomTextFormField(
+      {super.key,
+      required this.hintText,
+      required this.icon,
+      required this.textInputType,
+      this.controller,
+      this.validator,
+      this.obscureText = false,
+      this.suffixIcon});
 
   //final void Function(String?) onSaved;
   final String hintText;
   final IconData icon;
   final TextInputType textInputType;
-   final TextEditingController? controller;
-   final String? Function(String?)? validator;
- final  bool  obscureText ;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final bool obscureText;
   final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:controller ,
-     validator: validator,
-      obscureText:obscureText ,
+      controller: controller,
+      validator: validator,
+      obscureText: obscureText,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,
         hintText: hintText,
         hintStyle: Styles.textStyle10,
         suffixIcon: suffixIcon,
-
         prefixIcon: Icon(
           icon,
           size: 12.25.sp,

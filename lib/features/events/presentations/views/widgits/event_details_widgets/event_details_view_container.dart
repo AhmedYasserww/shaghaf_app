@@ -11,9 +11,10 @@ class EventDetailsViewContainer extends StatelessWidget {
       child: Container(
         width: 390.w,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(32.r),topRight: Radius.circular(32.r)),
-            color: Colors.white
-        ),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(32.r),
+                topRight: Radius.circular(32.r)),
+            color: Colors.white),
         child: const EventDetailsViewContainerDetails(),
       ),
     );

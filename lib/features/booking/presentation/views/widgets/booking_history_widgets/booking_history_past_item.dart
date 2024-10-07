@@ -4,6 +4,7 @@ import 'package:shagaf/constants.dart';
 
 import '../../../../../../core/utils/functions/styles.dart';
 import 'booking_historty_custom_item.dart';
+
 class BookingHistoryPastItem extends StatelessWidget {
   const BookingHistoryPastItem({super.key});
 
@@ -14,9 +15,7 @@ class BookingHistoryPastItem extends StatelessWidget {
       width: 370.w,
       decoration: BoxDecoration(
         color: Colors.white,
-        boxShadow: [
-          kBoxShadow
-        ],
+        boxShadow: [kBoxShadow],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

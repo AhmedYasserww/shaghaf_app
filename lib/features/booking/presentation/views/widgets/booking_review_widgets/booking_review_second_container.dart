@@ -16,9 +16,7 @@ class BookingReviewSecondContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
-        boxShadow: [
-          kBoxShadow
-        ],
+        boxShadow: [kBoxShadow],
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 14.0.w, vertical: 6.h),
@@ -26,9 +24,10 @@ class BookingReviewSecondContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Booking Details", style: Styles.textStyle14.copyWith(
-                fontWeight: FontWeight.w500
-            ),),
+            Text(
+              "Booking Details",
+              style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w500),
+            ),
             Row(
               children: [
                 Column(
@@ -38,20 +37,23 @@ class BookingReviewSecondContainer extends StatelessWidget {
                     buildTimelineDot(),
                   ],
                 ),
-                SizedBox(width: 3.w,),
+                SizedBox(
+                  width: 3.w,
+                ),
                 Column(
                   children: [
-                    Text(
-                        "Tus, 13 Feb 2024 04:00 PM", style: Styles.textStyle10),
+                    Text("Tus, 13 Feb 2024 04:00 PM",
+                        style: Styles.textStyle10),
                     SizedBox(
                       height: 31.5.h,
                     ),
-                    Text(
-                        "Tus, 13 Feb 2024 10:00 PM", style: Styles.textStyle10),
+                    Text("Tus, 13 Feb 2024 10:00 PM",
+                        style: Styles.textStyle10),
                   ],
                 ),
                 const Spacer(),
-                CustomButton(text: "Change",
+                CustomButton(
+                  text: "Change",
                   borderRadius: BorderRadius.circular(20),
                   textStyle: Styles.textStyle12.copyWith(
                     color: kMostColorPicked,
@@ -63,14 +65,21 @@ class BookingReviewSecondContainer extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.event_seat,color: kMostColorPicked,size: 12.sp,),
-                SizedBox(width: 6.w,),
-                Text("1 Seat", style: Styles.textStyle12.copyWith(
-                    fontWeight: FontWeight.w400
-                ),),
+                Icon(
+                  Icons.event_seat,
+                  color: kMostColorPicked,
+                  size: 12.sp,
+                ),
+                SizedBox(
+                  width: 6.w,
+                ),
+                Text(
+                  "1 Seat",
+                  style:
+                      Styles.textStyle12.copyWith(fontWeight: FontWeight.w400),
+                ),
               ],
             )
-
           ],
         ),
       ),

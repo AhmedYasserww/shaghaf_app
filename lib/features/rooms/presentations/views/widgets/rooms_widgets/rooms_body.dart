@@ -10,15 +10,18 @@ class RoomsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Column(
-        children: [
-          SizedBox(height: 16.h,),
-          const CustomAppBarTitleAndArrow(title: "Rooms"),
-          SizedBox(height: 24.h,),
-          const Expanded(child: RoomsBlocBuilder())
-        ],
-      )
-    );
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 16.h,
+            ),
+            const CustomAppBarTitleAndArrow(title: "Rooms"),
+            SizedBox(
+              height: 24.h,
+            ),
+            const Expanded(child: RoomsBlocBuilder())
+          ],
+        ));
   }
 }

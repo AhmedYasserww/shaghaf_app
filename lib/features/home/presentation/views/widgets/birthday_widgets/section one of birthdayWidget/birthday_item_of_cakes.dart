@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/utils/functions/styles.dart';
+
 class BirthDayItemCakes extends StatefulWidget {
   final Function(bool) onItemSelected;
 
@@ -42,7 +43,8 @@ class _BirthDayItemCakesState extends State<BirthDayItemCakes> {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 10, left: 8, right: 15),
+          padding:
+              const EdgeInsets.only(top: 10, bottom: 10, left: 8, right: 15),
           child: Row(
             children: [
               SizedBox(
@@ -60,7 +62,8 @@ class _BirthDayItemCakesState extends State<BirthDayItemCakes> {
                   Text("From 1 to 6 person", style: Styles.textStyle14),
                   SizedBox(height: 16.h),
                   Text("300 LE",
-                      style: Styles.textStyle12.copyWith(fontWeight: FontWeight.w700)),
+                      style: Styles.textStyle12
+                          .copyWith(fontWeight: FontWeight.w700)),
                 ],
               ),
               const Spacer(),
@@ -81,8 +84,7 @@ class _BirthDayItemCakesState extends State<BirthDayItemCakes> {
                       ),
                     ),
                   SizedBox(width: 10.w),
-                  if (count > 0)
-                    Text('$count', style: Styles.textStyle14),
+                  if (count > 0) Text('$count', style: Styles.textStyle14),
                   SizedBox(width: 10.w),
                   CircleAvatar(
                     radius: 20,
@@ -93,7 +95,8 @@ class _BirthDayItemCakesState extends State<BirthDayItemCakes> {
                           widget.onItemSelected(true);
                         });
                       },
-                      icon: const Icon(Icons.add, color: Colors.orange, size: 26),
+                      icon:
+                          const Icon(Icons.add, color: Colors.orange, size: 26),
                     ),
                   ),
                 ],

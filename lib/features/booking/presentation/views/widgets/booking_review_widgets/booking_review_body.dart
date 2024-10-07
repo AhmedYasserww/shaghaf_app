@@ -18,7 +18,9 @@ class BookingReviewBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 16.h,),
+            SizedBox(
+              height: 16.h,
+            ),
             const CustomAppBarTitleAndArrow(title: "Booking Review"),
             SizedBox(
               height: 20.h,
@@ -59,7 +61,8 @@ class BookingReviewBody extends StatelessWidget {
                   shadow: true,
                   color: Colors.white,
                   textStyle: Styles.textStyle16.copyWith(
-                      fontWeight: FontWeight.w500, color: const Color(0xff455A64)),
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xff455A64)),
                   height: 51.h,
                 ))
               ],

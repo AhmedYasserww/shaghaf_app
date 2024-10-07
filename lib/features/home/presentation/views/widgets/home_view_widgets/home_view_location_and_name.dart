@@ -14,7 +14,7 @@ class HomeViewLocationAndName extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           const LocationContainer(text: "Location"),
+          const LocationContainer(text: "Location"),
           SizedBox(height: 20.h), // Adjust the height here
           Row(
             children: [
@@ -23,7 +23,9 @@ class HomeViewLocationAndName extends StatelessWidget {
                 style: Styles.textStyle20.copyWith(color: Colors.white),
               ),
               const Spacer(),
-              RatingContainer(rating: 4.7,),
+              RatingContainer(
+                rating: 4.7,
+              ),
             ],
           ),
         ],
