@@ -5,7 +5,9 @@ import 'package:table_calendar/table_calendar.dart';
 import '../../../../../../core/utils/functions/styles.dart';
 
 class DateAndTimeTableCalender extends StatefulWidget {
-  const DateAndTimeTableCalender({super.key});
+  const DateAndTimeTableCalender({super.key, required this.onDateSelected});
+
+  final Function(DateTime) onDateSelected;
 
   @override
   State<DateAndTimeTableCalender> createState() =>
@@ -14,6 +16,7 @@ class DateAndTimeTableCalender extends StatefulWidget {
 
 class _DateAndTimeTableCalenderState extends State<DateAndTimeTableCalender> {
   DateTime _selectedDay = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
@@ -24,8 +27,8 @@ class _DateAndTimeTableCalenderState extends State<DateAndTimeTableCalender> {
       onDaySelected: (selectedDay, focusedDay) {
         if (selectedDay.isAfter(DateTime.now())) {
           setState(() {
-            _selectedDay =
-                selectedDay; // Update only if the selected day is in the future
+            _selectedDay = selectedDay;
+            widget.onDateSelected(selectedDay);
           });
         } else {
           print('Selected date is not in the future.');

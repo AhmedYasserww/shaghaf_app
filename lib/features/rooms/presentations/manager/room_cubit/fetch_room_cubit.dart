@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:shagaf/features/rooms/data/models/rooms_model/rooms_model.dart';
 
 import '../../../data/models/room_model/room_model.dart';
 import '../../../data/rooms_repos/rooms_repo.dart';

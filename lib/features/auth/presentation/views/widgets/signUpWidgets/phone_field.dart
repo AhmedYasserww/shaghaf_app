@@ -11,7 +11,6 @@ class PhoneField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? phone;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

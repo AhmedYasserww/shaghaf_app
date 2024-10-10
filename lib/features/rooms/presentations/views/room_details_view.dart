@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shagaf/features/rooms/presentations/views/widgets/room_details_view_widgets/room_details_bloc.dart';
-import 'package:shagaf/features/rooms/presentations/views/widgets/room_details_view_widgets/room_details_view_body.dart';
 
 import '../../../../core/utils/functions/service_locator.dart';
 import '../../data/rooms_repos/rooms_repo_impl.dart';
