@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shagaf/core/widgets/custom_app_bar_title_and_arrow.dart';
 import 'package:shagaf/core/widgets/custom_app_bar_with_two_icons.dart';
 import 'package:shagaf/features/settings/presentation/views/widgets/settings_widgets/settings_details.dart';
 

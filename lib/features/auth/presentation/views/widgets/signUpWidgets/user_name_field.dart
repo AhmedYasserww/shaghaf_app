@@ -12,7 +12,6 @@ class UserNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String? userName;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -9,8 +9,10 @@ import 'booking_review_second_container.dart';
 import 'booking_review_third_container.dart';
 
 class BookingReviewBody extends StatelessWidget {
-  const BookingReviewBody({super.key});
-
+  const BookingReviewBody({super.key, required this.numberOfSeats, required this.selectedFromTime, required this.selectedToTime});
+  final int numberOfSeats;
+  final DateTime selectedFromTime;
+  final DateTime selectedToTime;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,7 +31,7 @@ class BookingReviewBody extends StatelessWidget {
             SizedBox(
               height: 24.h,
             ),
-            const BookingReviewSecondContainer(),
+            BookingReviewSecondContainer(numberOfSeats: numberOfSeats, selectedFromTime: selectedFromTime, selectedToTime: selectedToTime),
             SizedBox(
               height: 24.h,
             ),

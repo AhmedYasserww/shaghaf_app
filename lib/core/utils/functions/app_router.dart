@@ -76,13 +76,21 @@ abstract class AppRouter {
         builder: (context, state) => const RoomsView()),
     GoRoute(
         path: kRoomDetailsView,
-        builder: (context, state) =>  RoomDetailsView(id: state.extra as String,)),
+        builder: (context, state) => RoomDetailsView(
+              id: state.extra as String,
+            )),
     GoRoute(
         path: kDateAndTimeView,
         builder: (context, state) => const DateAndTimeView()),
     GoRoute(
         path: kBookingReviewView,
-        builder: (context, state) => const BookingReviewView()),
+        builder: (context, state) {
+          final extraData = state.extra as Map<String, dynamic>;
+          final selectedFromTime = extraData['selectedFromTime'] as DateTime;
+          final selectedToTime = extraData['selectedToTime'] as DateTime;
+          final numberOfSeats = extraData['numberOfSeats'] as int;
+          return BookingReviewView(numberOfSeats: numberOfSeats, selectedFromTime: selectedFromTime, selectedToTime: selectedToTime,);
+        }),
     GoRoute(path: kEventsView, builder: (context, state) => const EventsView()),
     GoRoute(
         path: kContactUsView,

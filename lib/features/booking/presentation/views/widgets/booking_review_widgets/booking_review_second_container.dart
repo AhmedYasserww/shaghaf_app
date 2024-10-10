@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:shagaf/constants.dart';
 import 'package:shagaf/core/widgets/custom_button.dart';
 
@@ -7,8 +8,10 @@ import '../../../../../../core/utils/functions/styles.dart';
 import '../../../../../../core/widgets/custom_dotted_line.dart';
 
 class BookingReviewSecondContainer extends StatelessWidget {
-  const BookingReviewSecondContainer({super.key});
-
+  const BookingReviewSecondContainer({super.key, required this.numberOfSeats, required this.selectedFromTime, required this.selectedToTime});
+  final int numberOfSeats;
+  final DateTime selectedFromTime;
+  final DateTime selectedToTime;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,13 +45,17 @@ class BookingReviewSecondContainer extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Text("Tus, 13 Feb 2024 04:00 PM",
-                        style: Styles.textStyle10),
+                    Text(
+                      DateFormat('E, dd MMM yyyy hh:mm a').format(selectedFromTime),  // Format DateTime
+                      style: Styles.textStyle10,
+                    ),
                     SizedBox(
                       height: 31.5.h,
                     ),
-                    Text("Tus, 13 Feb 2024 10:00 PM",
-                        style: Styles.textStyle10),
+                    Text(
+                      DateFormat('E, dd MMM yyyy hh:mm a').format(selectedToTime),  // Format DateTime
+                      style: Styles.textStyle10,
+                    ),
                   ],
                 ),
                 const Spacer(),
@@ -74,7 +81,7 @@ class BookingReviewSecondContainer extends StatelessWidget {
                   width: 6.w,
                 ),
                 Text(
-                  "1 Seat",
+                  "$numberOfSeats Seat",
                   style:
                       Styles.textStyle12.copyWith(fontWeight: FontWeight.w400),
                 ),
